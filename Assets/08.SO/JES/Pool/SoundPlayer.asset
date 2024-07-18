@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcbf29d706103404e985e966fd40482b, type: 3}
+  m_Name: SoundPlayer
+  m_EditorClassIdentifier: 
+  poolName: SoundPlayer
+  prefab: {fileID: 6454328667119652590, guid: 9d47902eb66b73e46b3a6afb5ab0738f, type: 3}
+  count: 5
