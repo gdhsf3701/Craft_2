@@ -17,7 +17,7 @@ public class CSI_DATA : MonoBehaviour
                          
         }
     }
-  bnm bmvcgjcghcjnmbnmvb
+trtyhyjyhhy
     private void Start()
     {
         
