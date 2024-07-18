@@ -14,8 +14,6 @@ public class Zipline : MonoBehaviour
     public static bool isMove= false;
 
     Player _player;
-    float saveSpeed = 0;
-    float saveJump = 0;
 
     [SerializeField] float Speed=10;
     private void OnTriggerEnter2D(Collider2D collision)
