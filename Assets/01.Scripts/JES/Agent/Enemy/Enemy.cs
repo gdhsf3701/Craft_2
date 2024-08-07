@@ -16,6 +16,7 @@ public abstract class Enemy : Agent
 
     protected int _enemyLayer;
 
+    public SpriteRenderer EnemySpriteRender { get; private set; }
 
     private Collider2D[] _colliders;
 
@@ -30,6 +31,7 @@ public abstract class Enemy : Agent
     protected override void Awake()
     {
         base.Awake();
+        EnemySpriteRender = transform.Find("Visual").GetComponent<SpriteRenderer>();
         _enemyLayer = LayerMask.NameToLayer("Enemy");
         _colliders = new Collider2D[1];
     }
@@ -67,10 +69,6 @@ public abstract class Enemy : Agent
         Gizmos.DrawWireSphere(transform.position, detectRadius);
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRadius);
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, attackRadius-5);
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackRadius-8);
     }
 #endif
 
