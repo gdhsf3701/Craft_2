@@ -17,6 +17,7 @@ public abstract class Enemy : Agent
     protected int _enemyLayer;
 
     public SpriteRenderer EnemySpriteRender { get; private set; }
+    public EnemyVFX EnemyVFXCompo { get; private set; }
 
     private Collider2D[] _colliders;
 
@@ -32,6 +33,7 @@ public abstract class Enemy : Agent
     {
         base.Awake();
         EnemySpriteRender = transform.Find("Visual").GetComponent<SpriteRenderer>();
+        EnemyVFXCompo = transform.Find("AgentVFX").GetComponent<EnemyVFX>();
         _enemyLayer = LayerMask.NameToLayer("Enemy");
         _colliders = new Collider2D[1];
     }

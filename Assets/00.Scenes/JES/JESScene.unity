@@ -133,6 +133,8 @@ GameObject:
   m_Component:
   - component: {fileID: 80291212}
   - component: {fileID: 80291213}
+  - component: {fileID: 80291215}
+  - component: {fileID: 80291214}
   m_Layer: 0
   m_Name: AgentVFX
   m_TagString: Untagged
@@ -169,6 +171,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _canGenerateAfterImage: 0
   _generateTerm: 0.05
+--- !u!114 &80291214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 80291211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 986d3e081d654ed1b66545feb86b9822, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillEnabled: 1
+  _coolDown: 1
+--- !u!114 &80291215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 80291211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d256cff8e5a4c8bb380d68de1bd4243, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &148917156
 GameObject:
   m_ObjectHideFlags: 0
@@ -2213,13 +2241,16 @@ GameObject:
   - component: {fileID: 1911444892}
   - component: {fileID: 1911444894}
   - component: {fileID: 1911444893}
+  - component: {fileID: 1911444895}
+  - component: {fileID: 1911444896}
+  - component: {fileID: 1911444897}
   m_Layer: 0
   m_Name: Boss1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1911444892
 Transform:
   m_ObjectHideFlags: 0
@@ -2229,7 +2260,7 @@ Transform:
   m_GameObject: {fileID: 1911444891}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.67, y: -1.5, z: 0}
+  m_LocalPosition: {x: 10.97, y: -1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2301,6 +2332,91 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1911444895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911444891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5fefa5ebfb91db4da3999ea78f095e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lastAttackTime: 0
+  FinalDeadEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  detectRadius: 0
+  attackRadius: 0
+  attackCooldown: 0
+  KnockbackPower: 0
+  attackDamage: 0
+  contactFilter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  targerTrm: {fileID: 0}
+  muzzleTrm: {fileID: 0}
+  bulletDamage: 0
+  bulletKnockBack: 0
+  dashSpeed: 30
+  dashTime: 30
+--- !u!114 &1911444896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911444891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def77b3fc3615bf4eb8b83d5c9cc976a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _groundCheckerTrm: {fileID: 0}
+  moveSpeed: 5
+  jumpPower: 7
+  extraGravity: 30
+  gravityDelay: 0.15
+  knockbackTime: 0.2
+  _whatIsGround:
+    serializedVersion: 2
+    m_Bits: 0
+  _groundCheckerSize: {x: 0, y: 0}
+  isGround:
+    _value: 0
+  _xMove: 0
+--- !u!114 &1911444897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911444891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6ee82410dd0b224d8a1e7d4ba77fe63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnHitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeadEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _maxHealth: 150
 --- !u!1 &1926747943
 GameObject:
   m_ObjectHideFlags: 0
