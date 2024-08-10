@@ -1,11 +1,10 @@
 using UnityEngine;
 
-public class GunAttackState : EnemyState
+public class Boss1Attack1State : EnemyState
 {
-    public GunAttackState(Enemy enemy, EnemyStateMachine stateMachine, string animBoolName) : base(enemy, stateMachine, animBoolName)
+    public Boss1Attack1State(Enemy enemy, EnemyStateMachine stateMachine, string animBoolName) : base(enemy, stateMachine, animBoolName)
     {
     }
-
     public override void Enter()
     {
         base.Enter();
@@ -23,7 +22,6 @@ public class GunAttackState : EnemyState
     {
         base.UpdateState();
         if (_endTriggerCalled)
-            _stateMachine.ChangeState(EnemyEnum.KnifeChase);
-
+            _stateMachine.ChangeState(EnemyEnum.Chase);
     }
 }
