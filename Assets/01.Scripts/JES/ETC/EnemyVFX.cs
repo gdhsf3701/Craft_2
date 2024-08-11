@@ -26,9 +26,10 @@ public class EnemyVFX : MonoBehaviour
         {
             _currentTime = 0;
             AfterImage img =PoolManager.Instance.Pop("AfterImage") as AfterImage;
-            Sprite sprite= _enemy.EnemySpriteRender.sprite;
+            //Sprite sprite= _enemy.EnemySpriteRender.sprite;
             bool isFlip = !_enemy.IsFacingRight();
-            img.SetAfterImage(sprite,transform.position,0.2f,isFlip);
+            //
+            //img.SetAfterImage(sprite,transform.position,0.2f,isFlip);
         }
     }
 }

@@ -21,7 +21,7 @@ public class Player : Agent
     [field: SerializeField] public InputReader PlayerInput { get; private set; }
     public float attackCoolDown;
 
-
+    public PlayerDamageSO skill1, skill2;
     public int comboCount= 0;
     protected override void Awake()
     {
@@ -37,31 +37,63 @@ public class Player : Agent
         stateMachine.AddState(PlayerEnum.Attack3,new PlayerAttack3State(this,stateMachine,"Attack3"));
         stateMachine.AddState(PlayerEnum.Hit,new PlayerHitState(this,stateMachine,"Hit"));
         stateMachine.AddState(PlayerEnum.Wire,new PlayerWireState(this,stateMachine,"Wire"));
-        
-        stateMachine.Initialize(PlayerEnum.Idle, this);
+        stateMachine.AddState(PlayerEnum.Kick,new PlayerKickState(this,stateMachine,"Kick"));
+        stateMachine.AddState(PlayerEnum.Knife,new PlayerKnifeState(this,stateMachine,"Knife"));
+        stateMachine.Initialize(PlayerEnum.Fall, this);
         
         PlayerInput.OnJumpKeyEvent += HandleJumpKeyEvent;
+        PlayerInput.OnKickKeyEvent += HandleKickKeyEvent;
+        PlayerInput.OnKnifeKeyEvent += HandleKnifeKeyEvent;
     }
 
+    private void HandleKnifeKeyEvent()
+    {
+        if (SkillManager.Instance.GetSkill<KnifeSkill>().AttemptUseSkill())
+        {
+            Attack(skill1);
+            stateMachine.ChangeState(PlayerEnum.Knife);
+        }
+    }
+
+    private void HandleKickKeyEvent()
+    {
+        if (SkillManager.Instance.GetSkill<KickSkill>().AttemptUseSkill())
+        {
+            Attack(skill2);
+            stateMachine.ChangeState(PlayerEnum.Kick);
+        }
+    }
+    
     private void OnDestroy()
     {
         PlayerInput.OnJumpKeyEvent -= HandleJumpKeyEvent;
     }
 
-    public void Attack()
+    public void AttackSetting()
     {
         damageData = damageDataList[comboCount];
         
         attackCoolDown = 0;
         
+        Attack(damageData);
+
+        CastDamage();
+        
+        comboCount++;
+    }
+
+    private void Attack(PlayerDamageSO damageSo)
+    {
         DamageCasterCompo.transform.localPosition = damageData.damagePos;
         DamageCasterCompo.damageRadius = damageData.damageRadius;
 
         _damage = damageData.damage;
         _knockPower = damageData.knockPower;
+    }
+
+    public void CastDamage()
+    {
         DamageCasterCompo.CastDamage(_damage, _knockPower);
-        
-        comboCount++;
     }
     private void HandleJumpKeyEvent()
     {

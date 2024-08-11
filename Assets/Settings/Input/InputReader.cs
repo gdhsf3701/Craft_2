@@ -14,7 +14,7 @@ public class InputReader : ScriptableObject, ILeftPlayerActions, IRightPlayerAct
     public event Action OnAttackKeyEvent;
     public event Action OnKickKeyEvent;
     public event Action OnJumpKeyEvent;
-    public event Action OnSkillEvent;
+    public event Action OnKnifeKeyEvent;
 
 
     private void OnEnable()
@@ -25,6 +25,7 @@ public class InputReader : ScriptableObject, ILeftPlayerActions, IRightPlayerAct
         }
         _controls.LeftPlayer.SetCallbacks(this);
         _controls.LeftPlayer.Enable();
+        _controls.RightPlayer.Disable();
         
         _controls.RightPlayer.SetCallbacks(this);
     }
@@ -35,7 +36,10 @@ public class InputReader : ScriptableObject, ILeftPlayerActions, IRightPlayerAct
 
     public void OnAttack(InputAction.CallbackContext context)
     {
-        if (context.performed) OnAttackKeyEvent?.Invoke();
+        if (context.performed)
+        {
+            OnAttackKeyEvent?.Invoke();
+        }
     }
 
     public void OnKick(InputAction.CallbackContext context)
@@ -45,7 +49,7 @@ public class InputReader : ScriptableObject, ILeftPlayerActions, IRightPlayerAct
 
     public void OnKnife(InputAction.CallbackContext context)
     {
-        if (context.performed) OnSkillEvent?.Invoke();
+        if (context.performed) OnKnifeKeyEvent?.Invoke();
     }
     public void OnMovement(InputAction.CallbackContext context)
     {
