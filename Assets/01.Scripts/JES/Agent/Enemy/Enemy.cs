@@ -20,7 +20,7 @@ public abstract class Enemy : Agent
 
     [Header("Gun Settings")]
     [SerializeField]
-    private Transform muzzleTrm;
+    protected Transform muzzleTrm;
     [SerializeField]
     private int bulletDamage;
     [SerializeField]

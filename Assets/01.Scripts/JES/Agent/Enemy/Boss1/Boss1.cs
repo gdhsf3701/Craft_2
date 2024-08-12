@@ -1,55 +1,44 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
+using Update = Unity.VisualScripting.Update;
 
-public class Boss1 : Enemy
+public class Boss1 : Boss
 {
-    public EnemyStateMachine stateMachine;
-    public int faseNum=1;
-
-    [Header("Fase2 Setting")]
-    [SerializeField] private int _coolTime; 
+    public float SpreadAngle=15f;
     protected override void Awake()
     {
         base.Awake();
+        stateMachine = new EnemyStateMachine();            
         
-        stateMachine.AddState(EnemyEnum.Chase,new Boss1ChaseState(this,stateMachine,"Chasae"));
+        stateMachine.AddState(EnemyEnum.Chase,new Boss1ChaseState(this,stateMachine,"Chase"));
         stateMachine.AddState(EnemyEnum.Attack1, new Boss1Attack1State(this,stateMachine,"Attack1"));
-    }
-
-    private void Start()
-    {
-        targerTrm = PlayerManager.Instance.PlayerTrm;
-    }
-
-    public void FaseNumSet()
-    {
-        if(faseNum>1) return;
+        stateMachine.AddState(EnemyEnum.Attack2, new Boss1Attack2State(this,stateMachine,"Attack2"));
         
-        if (HealthCompo.CurrentHealth <= 600)
-        {
-            faseNum = 2;
-            attackCooldown = _coolTime;
-            
-        }
-    }
-    private void Update()
-    {
-        stateMachine.CurrentState.UpdateState(); // 현재 상태의 업데이트 우선 실행
-
-        if (targerTrm != null && IsDead == false)
-        {
-            HandleSpriteFlip(targerTrm.position);
-        }
-    }
-    public override void SetDeadState()
-    {
-        stateMachine.ChangeState(EnemyEnum.Dead);
+        stateMachine.Initalize(EnemyEnum.Chase,this);
     }
 
-    public override void AnimationEndTrigger()
+    public override void FireBullet()
     {
-        stateMachine.CurrentState.AnimationEndTrigger();
+        for (int i = 0; i < Random.Range(5, 8); i++)
+        {
+            float spreadAngle = Random.Range(-SpreadAngle, SpreadAngle);
+
+            Quaternion rotation = Quaternion.Euler(new Vector3(0, 0, spreadAngle));
+
+            EnemyBullet bullet = PoolManager.Instance.Pop("Enemybullet") as EnemyBullet;
+        
+            bullet.transform.position = muzzleTrm.position;
+            bullet.transform.rotation = rotation * muzzleTrm.rotation;
+        }
+    }
+
+    public override void Update()
+    {
+        base.Update();
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            stateMachine.ChangeState(EnemyEnum.Attack2);
+        }
     }
 }
