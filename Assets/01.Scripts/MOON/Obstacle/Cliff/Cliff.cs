@@ -10,9 +10,12 @@ public class Cliff : MonoBehaviour
     public Player player;
     [SerializeField] float delayTime=0.25f;
     int childIndex;
+    [SerializeField] float darkTime = 0.5f;
+    [SerializeField] GameObject dark;
     private void Awake()
     {
         player = Player.GetComponent<Player>();
+        dark.SetActive(false);
     }
 
     public void OnChildTrigger(CliffCollison child, Collider2D other)
@@ -40,7 +43,9 @@ public class Cliff : MonoBehaviour
     private IEnumerator DownTimeDelay()
     {
         yield return new WaitForSeconds(delayTime);
-        EasterEggSorry.deathCount++;
+        dark.SetActive(true);
+        yield return new WaitForSeconds(darkTime);
+        dark.SetActive(false);
         Player.transform.position = cliffReturn[childIndex].position;
     }
 }
