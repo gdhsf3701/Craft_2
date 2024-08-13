@@ -1,10 +1,13 @@
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
-using Update = Unity.VisualScripting.Update;
 
 public class Boss1 : Boss
 {
     public float SpreadAngle=15f;
+    
+    
+    private Stack<SawedOff> guns = new Stack<SawedOff>();
+    private SawedOff currentGun = null;
     protected override void Awake()
     {
         base.Awake();
@@ -15,30 +18,16 @@ public class Boss1 : Boss
         stateMachine.AddState(EnemyEnum.Attack2, new Boss1Attack2State(this,stateMachine,"Attack2"));
         
         stateMachine.Initalize(EnemyEnum.Chase,this);
+
+        for (int i = 0; i < 2; i++)
+        {
+            guns.Push(new SawedOff());
+        }
+        currentGun = guns.Pop();
     }
 
     public override void FireBullet()
     {
-        for (int i = 0; i < Random.Range(5, 8); i++)
-        {
-            float spreadAngle = Random.Range(-SpreadAngle, SpreadAngle);
-
-            Quaternion rotation = Quaternion.Euler(new Vector3(0, 0, spreadAngle));
-
-            EnemyBullet bullet = PoolManager.Instance.Pop("Enemybullet") as EnemyBullet;
         
-            bullet.transform.position = muzzleTrm.position;
-            bullet.transform.rotation = rotation * muzzleTrm.rotation;
-        }
-    }
-
-    public override void Update()
-    {
-        base.Update();
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            stateMachine.ChangeState(EnemyEnum.Attack2);
-        }
     }
 }
