@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class Boss1Attack2State : EnemyState
+public class Boss1Skill1State : EnemyState
 {
-    public Boss1Attack2State(Enemy enemy, EnemyStateMachine stateMachine, string animBoolName) : base(enemy, stateMachine, animBoolName)
+    public Boss1Skill1State(Enemy enemy, EnemyStateMachine stateMachine, string animBoolName) : base(enemy, stateMachine, animBoolName)
     {
     }
     public override void Enter()
@@ -11,7 +11,6 @@ public class Boss1Attack2State : EnemyState
         
         ((Boss1)_enemy).VFXCompo.ToggleAfterImage(true);
         _enemy.MovementCompo.StopImmediately(false);
-            _enemy.FireBullet();
     }
 
     public override void Exit()

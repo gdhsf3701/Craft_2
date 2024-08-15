@@ -14,7 +14,10 @@ public enum EnemyEnum
     Attack2,
     Dead,
     Skill1,
-    Skill2
+    Skill2,
+    Reload1,
+    Reload2,
+    Attack21
 }
 public class GunKnifeEnemy : Enemy, Ipoolable
 {

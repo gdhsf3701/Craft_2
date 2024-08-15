@@ -29,7 +29,7 @@ public class SawedOff
         bulletCount--;
     }
 
-    public void Reroad()
+    public void Reload()
     {
         bulletCount = 3;
     }
@@ -37,5 +37,10 @@ public class SawedOff
     public bool TryShot()
     {
         return (attackCooldown + lastAttackTime < Time.time);
+    }
+
+    public bool ReloadCheck()
+    {
+        return bulletCount < 1;
     }
 }
