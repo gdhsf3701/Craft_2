@@ -23,7 +23,6 @@ public class SawedOff
         
             bullet.transform.position = muzzleTrm.position;
             bullet.transform.rotation = rotation * muzzleTrm.rotation;
-
         }
         lastAttackTime = Time.time;
         bulletCount--;

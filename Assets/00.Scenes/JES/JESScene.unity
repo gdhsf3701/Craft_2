@@ -1702,7 +1702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91c3dacecfc16c3498fbf360bdd07f36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemy: {fileID: 0}
+  _enemy: {fileID: 1911444898}
 --- !u!1 &1273792516
 GameObject:
   m_ObjectHideFlags: 0
@@ -2942,6 +2942,8 @@ MonoBehaviour:
   VFXCompo: {fileID: 0}
   _coolTime: 0
   SpreadAngle: 15
+  gundatas: []
+  gunData: {fileID: 0}
 --- !u!1 &1926747943
 GameObject:
   m_ObjectHideFlags: 0
