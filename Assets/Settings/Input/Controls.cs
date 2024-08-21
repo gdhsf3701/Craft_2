@@ -24,7 +24,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     ""name"": ""Controls"",
     ""maps"": [
         {
-            ""name"": ""LeftPlayer"",
+            ""name"": ""Player"",
             ""id"": ""c95343cf-245a-44e0-964b-25f6c068a27f"",
             ""actions"": [
                 {
@@ -67,6 +67,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""name"": ""Knife"",
                     ""type"": ""Button"",
                     ""id"": ""a1891814-db30-45b6-9c01-cb99138b3ee7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Run"",
+                    ""type"": ""Button"",
+                    ""id"": ""516477c8-7a31-488c-ba55-1d5a9d7cf8bd"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -172,156 +181,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""Knife"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""RightPlayer"",
-            ""id"": ""56ca53f1-e235-4ee5-b995-ec4333785f63"",
-            ""actions"": [
-                {
-                    ""name"": ""Movement"",
-                    ""type"": ""Value"",
-                    ""id"": ""e276edef-504d-4509-a5f6-ae31864606b4"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Jump"",
-                    ""type"": ""Button"",
-                    ""id"": ""9684775f-ed2e-40a6-9998-8731fda83f4a"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Attack"",
-                    ""type"": ""Button"",
-                    ""id"": ""68647b3a-da38-40e8-88ea-72a06acb0cca"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Kick"",
-                    ""type"": ""Button"",
-                    ""id"": ""8bd62b90-e829-45e9-a228-6ad120b9d9bb"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Knife"",
-                    ""type"": ""Button"",
-                    ""id"": ""df2076cb-0ca3-4f6c-9746-a09912bb4954"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": ""WASD"",
-                    ""id"": ""660d5d01-f7f3-41e6-af1c-8954eb9fb387"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""ee47dd42-f5e0-4059-9207-97384be4cfb5"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""0e47e8de-9aa4-4b8c-af9c-777961149e63"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""fd5d04f2-38c1-4a37-a2da-b40135d916d0"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyMouse"",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""6fa484d5-9d8a-4c91-8b51-3a3c7a6ef4a0"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyMouse"",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
-                    ""id"": ""19a4c8f5-bdde-41e1-a7cb-98c6d25f89e1"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""id"": ""0162a8cc-c5a8-446a-ac58-31e3d6c8befb"",
+                    ""path"": ""<Keyboard>/leftShift"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""KeyMouse"",
-                    ""action"": ""Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""aca7b5e6-3e1c-4fff-a71c-0b14f8562426"",
-                    ""path"": ""<Keyboard>/z"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Attack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""809684b3-ff1a-40dd-9b59-d59b88e55c01"",
-                    ""path"": ""<Keyboard>/x"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Kick"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""fd84042b-ebdc-4b80-9e2b-df8726f31f6b"",
-                    ""path"": ""<Keyboard>/v"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyMouse"",
-                    ""action"": ""Knife"",
+                    ""action"": ""Run"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -347,20 +215,14 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         }
     ]
 }");
-        // LeftPlayer
-        m_LeftPlayer = asset.FindActionMap("LeftPlayer", throwIfNotFound: true);
-        m_LeftPlayer_Movement = m_LeftPlayer.FindAction("Movement", throwIfNotFound: true);
-        m_LeftPlayer_Jump = m_LeftPlayer.FindAction("Jump", throwIfNotFound: true);
-        m_LeftPlayer_Attack = m_LeftPlayer.FindAction("Attack", throwIfNotFound: true);
-        m_LeftPlayer_Kick = m_LeftPlayer.FindAction("Kick", throwIfNotFound: true);
-        m_LeftPlayer_Knife = m_LeftPlayer.FindAction("Knife", throwIfNotFound: true);
-        // RightPlayer
-        m_RightPlayer = asset.FindActionMap("RightPlayer", throwIfNotFound: true);
-        m_RightPlayer_Movement = m_RightPlayer.FindAction("Movement", throwIfNotFound: true);
-        m_RightPlayer_Jump = m_RightPlayer.FindAction("Jump", throwIfNotFound: true);
-        m_RightPlayer_Attack = m_RightPlayer.FindAction("Attack", throwIfNotFound: true);
-        m_RightPlayer_Kick = m_RightPlayer.FindAction("Kick", throwIfNotFound: true);
-        m_RightPlayer_Knife = m_RightPlayer.FindAction("Knife", throwIfNotFound: true);
+        // Player
+        m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
+        m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
+        m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
+        m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
+        m_Player_Kick = m_Player.FindAction("Kick", throwIfNotFound: true);
+        m_Player_Knife = m_Player.FindAction("Knife", throwIfNotFound: true);
+        m_Player_Run = m_Player.FindAction("Run", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -419,32 +281,34 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // LeftPlayer
-    private readonly InputActionMap m_LeftPlayer;
-    private List<ILeftPlayerActions> m_LeftPlayerActionsCallbackInterfaces = new List<ILeftPlayerActions>();
-    private readonly InputAction m_LeftPlayer_Movement;
-    private readonly InputAction m_LeftPlayer_Jump;
-    private readonly InputAction m_LeftPlayer_Attack;
-    private readonly InputAction m_LeftPlayer_Kick;
-    private readonly InputAction m_LeftPlayer_Knife;
-    public struct LeftPlayerActions
+    // Player
+    private readonly InputActionMap m_Player;
+    private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
+    private readonly InputAction m_Player_Movement;
+    private readonly InputAction m_Player_Jump;
+    private readonly InputAction m_Player_Attack;
+    private readonly InputAction m_Player_Kick;
+    private readonly InputAction m_Player_Knife;
+    private readonly InputAction m_Player_Run;
+    public struct PlayerActions
     {
         private @Controls m_Wrapper;
-        public LeftPlayerActions(@Controls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Movement => m_Wrapper.m_LeftPlayer_Movement;
-        public InputAction @Jump => m_Wrapper.m_LeftPlayer_Jump;
-        public InputAction @Attack => m_Wrapper.m_LeftPlayer_Attack;
-        public InputAction @Kick => m_Wrapper.m_LeftPlayer_Kick;
-        public InputAction @Knife => m_Wrapper.m_LeftPlayer_Knife;
-        public InputActionMap Get() { return m_Wrapper.m_LeftPlayer; }
+        public PlayerActions(@Controls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Movement => m_Wrapper.m_Player_Movement;
+        public InputAction @Jump => m_Wrapper.m_Player_Jump;
+        public InputAction @Attack => m_Wrapper.m_Player_Attack;
+        public InputAction @Kick => m_Wrapper.m_Player_Kick;
+        public InputAction @Knife => m_Wrapper.m_Player_Knife;
+        public InputAction @Run => m_Wrapper.m_Player_Run;
+        public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(LeftPlayerActions set) { return set.Get(); }
-        public void AddCallbacks(ILeftPlayerActions instance)
+        public static implicit operator InputActionMap(PlayerActions set) { return set.Get(); }
+        public void AddCallbacks(IPlayerActions instance)
         {
-            if (instance == null || m_Wrapper.m_LeftPlayerActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_LeftPlayerActionsCallbackInterfaces.Add(instance);
+            if (instance == null || m_Wrapper.m_PlayerActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_PlayerActionsCallbackInterfaces.Add(instance);
             @Movement.started += instance.OnMovement;
             @Movement.performed += instance.OnMovement;
             @Movement.canceled += instance.OnMovement;
@@ -460,9 +324,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Knife.started += instance.OnKnife;
             @Knife.performed += instance.OnKnife;
             @Knife.canceled += instance.OnKnife;
+            @Run.started += instance.OnRun;
+            @Run.performed += instance.OnRun;
+            @Run.canceled += instance.OnRun;
         }
 
-        private void UnregisterCallbacks(ILeftPlayerActions instance)
+        private void UnregisterCallbacks(IPlayerActions instance)
         {
             @Movement.started -= instance.OnMovement;
             @Movement.performed -= instance.OnMovement;
@@ -479,101 +346,26 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Knife.started -= instance.OnKnife;
             @Knife.performed -= instance.OnKnife;
             @Knife.canceled -= instance.OnKnife;
+            @Run.started -= instance.OnRun;
+            @Run.performed -= instance.OnRun;
+            @Run.canceled -= instance.OnRun;
         }
 
-        public void RemoveCallbacks(ILeftPlayerActions instance)
+        public void RemoveCallbacks(IPlayerActions instance)
         {
-            if (m_Wrapper.m_LeftPlayerActionsCallbackInterfaces.Remove(instance))
+            if (m_Wrapper.m_PlayerActionsCallbackInterfaces.Remove(instance))
                 UnregisterCallbacks(instance);
         }
 
-        public void SetCallbacks(ILeftPlayerActions instance)
+        public void SetCallbacks(IPlayerActions instance)
         {
-            foreach (var item in m_Wrapper.m_LeftPlayerActionsCallbackInterfaces)
+            foreach (var item in m_Wrapper.m_PlayerActionsCallbackInterfaces)
                 UnregisterCallbacks(item);
-            m_Wrapper.m_LeftPlayerActionsCallbackInterfaces.Clear();
+            m_Wrapper.m_PlayerActionsCallbackInterfaces.Clear();
             AddCallbacks(instance);
         }
     }
-    public LeftPlayerActions @LeftPlayer => new LeftPlayerActions(this);
-
-    // RightPlayer
-    private readonly InputActionMap m_RightPlayer;
-    private List<IRightPlayerActions> m_RightPlayerActionsCallbackInterfaces = new List<IRightPlayerActions>();
-    private readonly InputAction m_RightPlayer_Movement;
-    private readonly InputAction m_RightPlayer_Jump;
-    private readonly InputAction m_RightPlayer_Attack;
-    private readonly InputAction m_RightPlayer_Kick;
-    private readonly InputAction m_RightPlayer_Knife;
-    public struct RightPlayerActions
-    {
-        private @Controls m_Wrapper;
-        public RightPlayerActions(@Controls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Movement => m_Wrapper.m_RightPlayer_Movement;
-        public InputAction @Jump => m_Wrapper.m_RightPlayer_Jump;
-        public InputAction @Attack => m_Wrapper.m_RightPlayer_Attack;
-        public InputAction @Kick => m_Wrapper.m_RightPlayer_Kick;
-        public InputAction @Knife => m_Wrapper.m_RightPlayer_Knife;
-        public InputActionMap Get() { return m_Wrapper.m_RightPlayer; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(RightPlayerActions set) { return set.Get(); }
-        public void AddCallbacks(IRightPlayerActions instance)
-        {
-            if (instance == null || m_Wrapper.m_RightPlayerActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_RightPlayerActionsCallbackInterfaces.Add(instance);
-            @Movement.started += instance.OnMovement;
-            @Movement.performed += instance.OnMovement;
-            @Movement.canceled += instance.OnMovement;
-            @Jump.started += instance.OnJump;
-            @Jump.performed += instance.OnJump;
-            @Jump.canceled += instance.OnJump;
-            @Attack.started += instance.OnAttack;
-            @Attack.performed += instance.OnAttack;
-            @Attack.canceled += instance.OnAttack;
-            @Kick.started += instance.OnKick;
-            @Kick.performed += instance.OnKick;
-            @Kick.canceled += instance.OnKick;
-            @Knife.started += instance.OnKnife;
-            @Knife.performed += instance.OnKnife;
-            @Knife.canceled += instance.OnKnife;
-        }
-
-        private void UnregisterCallbacks(IRightPlayerActions instance)
-        {
-            @Movement.started -= instance.OnMovement;
-            @Movement.performed -= instance.OnMovement;
-            @Movement.canceled -= instance.OnMovement;
-            @Jump.started -= instance.OnJump;
-            @Jump.performed -= instance.OnJump;
-            @Jump.canceled -= instance.OnJump;
-            @Attack.started -= instance.OnAttack;
-            @Attack.performed -= instance.OnAttack;
-            @Attack.canceled -= instance.OnAttack;
-            @Kick.started -= instance.OnKick;
-            @Kick.performed -= instance.OnKick;
-            @Kick.canceled -= instance.OnKick;
-            @Knife.started -= instance.OnKnife;
-            @Knife.performed -= instance.OnKnife;
-            @Knife.canceled -= instance.OnKnife;
-        }
-
-        public void RemoveCallbacks(IRightPlayerActions instance)
-        {
-            if (m_Wrapper.m_RightPlayerActionsCallbackInterfaces.Remove(instance))
-                UnregisterCallbacks(instance);
-        }
-
-        public void SetCallbacks(IRightPlayerActions instance)
-        {
-            foreach (var item in m_Wrapper.m_RightPlayerActionsCallbackInterfaces)
-                UnregisterCallbacks(item);
-            m_Wrapper.m_RightPlayerActionsCallbackInterfaces.Clear();
-            AddCallbacks(instance);
-        }
-    }
-    public RightPlayerActions @RightPlayer => new RightPlayerActions(this);
+    public PlayerActions @Player => new PlayerActions(this);
     private int m_KeyMouseSchemeIndex = -1;
     public InputControlScheme KeyMouseScheme
     {
@@ -583,20 +375,13 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             return asset.controlSchemes[m_KeyMouseSchemeIndex];
         }
     }
-    public interface ILeftPlayerActions
+    public interface IPlayerActions
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnKick(InputAction.CallbackContext context);
         void OnKnife(InputAction.CallbackContext context);
-    }
-    public interface IRightPlayerActions
-    {
-        void OnMovement(InputAction.CallbackContext context);
-        void OnJump(InputAction.CallbackContext context);
-        void OnAttack(InputAction.CallbackContext context);
-        void OnKick(InputAction.CallbackContext context);
-        void OnKnife(InputAction.CallbackContext context);
+        void OnRun(InputAction.CallbackContext context);
     }
 }

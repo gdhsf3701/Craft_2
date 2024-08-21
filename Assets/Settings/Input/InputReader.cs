@@ -5,7 +5,7 @@ using static Controls;
 
 
 [CreateAssetMenu(menuName = "SO/InputReader")]
-public class InputReader : ScriptableObject, ILeftPlayerActions, IRightPlayerActions
+public class InputReader : ScriptableObject, IPlayerActions
 {
     public Vector2 Movement { get; private set; }
 
@@ -16,6 +16,8 @@ public class InputReader : ScriptableObject, ILeftPlayerActions, IRightPlayerAct
     public event Action OnJumpKeyEvent;
     public event Action OnKnifeKeyEvent;
 
+    public event Action OnRunKeyHoldEvent;
+    public event Action OnRunKeyReleasedEvent;
 
     private void OnEnable()
     {
@@ -23,11 +25,9 @@ public class InputReader : ScriptableObject, ILeftPlayerActions, IRightPlayerAct
         {
             _controls = new Controls();
         }
-        _controls.LeftPlayer.SetCallbacks(this);
-        _controls.LeftPlayer.Enable();
-        _controls.RightPlayer.Disable();
+        _controls.Player.SetCallbacks(this);
+        _controls.Player.Enable();
         
-        _controls.RightPlayer.SetCallbacks(this);
     }
     public void OnJump(InputAction.CallbackContext context)
     {
@@ -51,6 +51,13 @@ public class InputReader : ScriptableObject, ILeftPlayerActions, IRightPlayerAct
     {
         if (context.performed) OnKnifeKeyEvent?.Invoke();
     }
+
+    public void OnRun(InputAction.CallbackContext context)
+    {
+        if(context.performed) OnRunKeyHoldEvent?.Invoke();
+        if(context.canceled) OnRunKeyReleasedEvent?.Invoke();
+    }
+
     public void OnMovement(InputAction.CallbackContext context)
     {
         Movement = context.ReadValue<Vector2>();

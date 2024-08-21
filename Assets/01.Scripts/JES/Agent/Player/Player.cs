@@ -13,7 +13,8 @@ public class Player : Agent
     [SerializeField] private int _damage;
 
     [SerializeField] private float _knockPower;
-    
+
+    public bool isRun = false;
     
     public List<PlayerDamageSO> damageDataList;
     public UnityEvent JumpEvent;
@@ -23,12 +24,14 @@ public class Player : Agent
 
     public PlayerDamageSO skill1, skill2;
     public int comboCount= 0;
+    public int skillCount=0;
     protected override void Awake()
     {
         base.Awake();
         stateMachine = new PlayerStateMachine(); 
         
         stateMachine.AddState(PlayerEnum.Idle,new PlayerIdleState(this,stateMachine,"Idle"));
+        stateMachine.AddState(PlayerEnum.Walk,new PlayerWalkState(this,stateMachine,"Walk"));
         stateMachine.AddState(PlayerEnum.Run,new PlayerRunState(this,stateMachine,"Run"));
         stateMachine.AddState(PlayerEnum.Jump,new PlayerJumpState(this,stateMachine,"Jump"));
         stateMachine.AddState(PlayerEnum.Fall,new PlayerFallState(this,stateMachine,"Fall"));
@@ -41,9 +44,24 @@ public class Player : Agent
         stateMachine.AddState(PlayerEnum.Knife,new PlayerKnifeState(this,stateMachine,"Knife"));
         stateMachine.Initialize(PlayerEnum.Fall, this);
         
+        
         PlayerInput.OnJumpKeyEvent += HandleJumpKeyEvent;
         PlayerInput.OnKickKeyEvent += HandleKickKeyEvent;
         PlayerInput.OnKnifeKeyEvent += HandleKnifeKeyEvent;
+        PlayerInput.OnRunKeyHoldEvent += HandleRunKeyEvnet;
+        PlayerInput.OnRunKeyReleasedEvent += HandleCancleRunEvent;
+    }
+
+    private void HandleCancleRunEvent()
+    {
+        MovementCompo.moveSpeed = 7f;
+        isRun = false;
+    }
+
+    private void HandleRunKeyEvnet()
+    {
+        MovementCompo.moveSpeed = 10f;
+        isRun = true;
     }
 
     private void HandleKnifeKeyEvent()
@@ -51,6 +69,7 @@ public class Player : Agent
         if (SkillManager.Instance.GetSkill<KnifeSkill>().AttemptUseSkill())
         {
             Attack(skill1);
+            skillCount = 1;
             stateMachine.ChangeState(PlayerEnum.Knife);
         }
     }
@@ -60,6 +79,7 @@ public class Player : Agent
         if (SkillManager.Instance.GetSkill<KickSkill>().AttemptUseSkill())
         {
             Attack(skill2);
+            skillCount = 2;
             stateMachine.ChangeState(PlayerEnum.Kick);
         }
     }
@@ -67,6 +87,10 @@ public class Player : Agent
     private void OnDestroy()
     {
         PlayerInput.OnJumpKeyEvent -= HandleJumpKeyEvent;
+        PlayerInput.OnKickKeyEvent -= HandleKickKeyEvent;
+        PlayerInput.OnKnifeKeyEvent -= HandleKnifeKeyEvent;
+        PlayerInput.OnRunKeyHoldEvent -= HandleRunKeyEvnet;
+        PlayerInput.OnRunKeyReleasedEvent -= HandleCancleRunEvent;
     }
 
     public void AttackSetting()
@@ -93,7 +117,25 @@ public class Player : Agent
 
     public void CastDamage()
     {
-        DamageCasterCompo.CastDamage(_damage, _knockPower);
+        bool suc = DamageCasterCompo.CastDamage(_damage, _knockPower);
+        SoundSO sound = null;
+        
+        if (skillCount == 1)
+        {
+            sound = skill1.AttackSound(suc);
+        }
+        else if (skillCount == 2)
+        {
+            sound = skill2.AttackSound(suc);
+        }
+        else
+        {
+            sound = damageData.AttackSound(suc);
+        }
+        
+        SoundPlayer soundPlayer = PoolManager.Instance.Pop("SoundPlayer") as SoundPlayer;
+        soundPlayer.PlaySound(sound);
+        skillCount = 0;
     }
     private void HandleJumpKeyEvent()
     {

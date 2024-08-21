@@ -1,13 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class PlayerRunState : PlayerGroundState
+public class PlayerWalkState : PlayerGroundState
 {
-    public PlayerRunState(Player player, PlayerStateMachine stateMachine, string animBoolName) : base(player, stateMachine, animBoolName)
+    public PlayerWalkState(Player player, PlayerStateMachine stateMachine, string animBoolName) : base(player, stateMachine, animBoolName)
     {
     }
-    
     public override void Exit()
     {
         _player.MovementCompo.StopImmediately(false);
@@ -21,9 +16,9 @@ public class PlayerRunState : PlayerGroundState
         {
             _stateMachine.ChangeState(PlayerEnum.Idle);
         }
-        if (!_player.isRun)
+        if (_player.isRun)
         {
-            _stateMachine.ChangeState(PlayerEnum.Walk);
+            _stateMachine.ChangeState(PlayerEnum.Run);
         }
     }
 }
