@@ -43,7 +43,7 @@ public class MasterMeet : MonoBehaviour
     {
         if (playableDirector == aDirector)
         {
-        PlayerManager.Instance.Player.PlayerInput._controls.Enable();
+            PlayerManager.Instance.Player.PlayerInput._controls.Enable();
             StartCoroutine(Jump());
 
         }
@@ -56,7 +56,7 @@ public class MasterMeet : MonoBehaviour
         ChatSystem.Instance.StopTyp();
         keyUI.DOFade(1, 1);
         yield return new WaitUntil(() => PlayerManager.Instance.Player.MovementCompo.rbCompo.velocity.y>0);
-
+   
         keyUI.DOFade(0, 1).SetDelay(0.5f);
 
     }

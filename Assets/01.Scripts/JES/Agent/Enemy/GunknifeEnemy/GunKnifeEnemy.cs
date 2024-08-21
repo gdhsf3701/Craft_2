@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,8 +10,11 @@ public enum EnemyEnum
     Chase,
     Fire,
     KnifeChase,
-    Attack,
-    Dead
+    Attack1,
+    Attack2,
+    Dead,
+    Skill1,
+    Skill2
 }
 public class GunKnifeEnemy : Enemy, Ipoolable
 {
@@ -33,7 +37,7 @@ public class GunKnifeEnemy : Enemy, Ipoolable
         stateMachine.AddState(EnemyEnum.Fire,new GunFireState(this, stateMachine, "Fire"));
         stateMachine.AddState(EnemyEnum.Dead,new GunDeadState(this, stateMachine, "Dead"));
         stateMachine.AddState(EnemyEnum.KnifeChase,new GunKnifeChaseState(this, stateMachine, "KnifeChase"));
-        stateMachine.AddState(EnemyEnum.Attack,new GunAttackState(this, stateMachine, "Attack"));
+        stateMachine.AddState(EnemyEnum.Attack1,new GunAttackState(this, stateMachine, "Attack"));
 
         stateMachine.Initalize(EnemyEnum.Idle,this);
 
@@ -67,4 +71,14 @@ public class GunKnifeEnemy : Enemy, Ipoolable
         stateMachine.ChangeState(EnemyEnum.Idle); // idle 상태로 바꾸기
         gameObject.layer = _enemyLayer; // 레이어 에너미 레이어로 바꾸기
     }
+    
+    #if UNITY_EDITOR
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, attackRadius-5);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRadius-8);
+    }
+    #endif
 }

@@ -24,6 +24,7 @@ public class AgentMovement : MonoBehaviour
     protected bool _canMove = true;
     protected Coroutine _kbCoroutine;
 
+    private bool _isDash = false;
 
     private Agent _owner;
     public void Initialize(Agent agent)
@@ -74,6 +75,7 @@ public class AgentMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if(_isDash) return;
         CheckGrounded();
         ApplyXMovement();
         ApllyExtraGravity();
@@ -123,6 +125,4 @@ public class AgentMovement : MonoBehaviour
         _canMove = true;
     }
     #endregion
-
-
 }
