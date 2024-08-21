@@ -61,8 +61,8 @@ public class SettingMove : MonoBehaviour
 
         SoundPlayer soundPlayer = PoolManager.Instance.Pop("SoundPlayer") as SoundPlayer;
 
-        seq.Append(transform.DOLocalMoveY(-970, 1.5f)).SetEase(Ease.OutSine);
         soundPlayer.PlaySound(scrollDown);
+        seq.Append(transform.DOLocalMoveY(-970, 1.5f)).SetEase(Ease.OutSine);
         seq.AppendInterval(1f);
 
         seq.Append(transform.DOLocalMoveY(-950, 0.15f)).SetEase(Ease.OutExpo);
@@ -73,10 +73,10 @@ public class SettingMove : MonoBehaviour
         seq.Append(transform.DOLocalMoveY(-990, 0.275f)).SetEase(Ease.OutExpo);
 
         seq.AppendCallback(()=> SettingPanel.SetActive(true));
-        soundPlayer.PlaySound(scrollOpen);
         seq.Join(SettingBorderLeft.DOAnchorPosX(openBorderLeftX, 0.75f));
         seq.Join(SettingBorderRight.DOAnchorPosX(openBorderRightX, 0.75f));
         seq.Join(SettingBack.DOScaleX(15, 0.75f));
+        soundPlayer.PlaySound(scrollOpen);
     }
     private void SettingClose()
     {
