@@ -1104,8 +1104,8 @@ MonoBehaviour:
   SettingBorderLeft: {fileID: 7458851587703474546}
   SettingBorderRight: {fileID: 432196445862680531}
   SettingBack: {fileID: 2190128152056608050}
-  scrollDown: {fileID: 0}
-  scrollOpen: {fileID: 0}
+  scrollDown: {fileID: 11400000, guid: a22220f64f5b6f4429e256dd11777097, type: 2}
+  scrollOpen: {fileID: 11400000, guid: 4be80ac961fa2e949a86ba9823d59e4b, type: 2}
 --- !u!1 &7061112651897598208
 GameObject:
   m_ObjectHideFlags: 0
