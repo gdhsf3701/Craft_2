@@ -50,14 +50,16 @@ public class Health : MonoBehaviour
     public void TakeDamage(int amount, Vector2 normal, Vector2 point, float knockbackPower)
     {
         _currentHealth -= amount;
+        if(_currentHealth <= 0)
+        {
+            OnDeadEvent?.Invoke();
+            return;
+        }
         OnHitEvent?.Invoke();
 
         if(knockbackPower > 0&&_owner!=null)
             _owner.MovementCompo.GetKnockback(normal * -1, knockbackPower);
 
-        if(_currentHealth <= 0)
-        {
-            OnDeadEvent?.Invoke();
-        }
+        
     }
 }
