@@ -1,12 +1,12 @@
 {
-    "playTime": 69.45964813232422,
-    "playDate": "2024 - 08 - 09 - 00",
+    "playTime": 41.341575622558597,
+    "playDate": "2024 - 08 - 11 - 01",
     "spawnPos": {
-        "x": 59.61598587036133,
-        "y": -2.3970589637756349
+        "x": 15.476061820983887,
+        "y": -0.05204358696937561
     },
     "savePoint": 0,
-    "playerHp": -113,
+    "playerHp": -146,
     "currentScene": "JESScene",
     "StageNumber": 0
 }
