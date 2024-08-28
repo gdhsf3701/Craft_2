@@ -12,10 +12,11 @@ public class Zipline : MonoBehaviour
     // text는 상호작용 안 텍스트 (월드스페이스 캔버스)
     private bool _isPlayer = false;
     public static bool isMove= false;
+    [SerializeField] SoundSO sound, exitSound;
+
+    SoundPlayer soundPlayer;
 
     Player _player;
-    float saveSpeed = 0;
-    float saveJump = 0;
 
     [SerializeField] float Speed=10;
     private void OnTriggerEnter2D(Collider2D collision)
@@ -36,6 +37,8 @@ public class Zipline : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.F)&&!isMove)
             {
                 isMove = true;
+                soundPlayer = PoolManager.Instance.Pop("SoundPlayer") as SoundPlayer;
+                soundPlayer.PlaySound(sound);
                 _player.stateMachine.ChangeState(PlayerEnum.Wire);
             }
         }
@@ -45,6 +48,9 @@ public class Zipline : MonoBehaviour
             if(Mathf.Abs(Vector3.Distance(_player.transform.position, LineEnd.transform.position)) < 0.1f)
             {
                 isMove = false;
+                soundPlayer.StopAndGoToPool();
+                SoundPlayer exitSoundPlayer = PoolManager.Instance.Pop("SoundPlayer") as SoundPlayer;
+                exitSoundPlayer.PlaySound(exitSound);
             }
         }
     }

@@ -19,7 +19,8 @@ public class SettingMove : MonoBehaviour
     [SerializeField]
     private RectTransform SettingBorderLeft,SettingBorderRight, SettingBack;
 
-    
+    [SerializeField] SoundSO scrollDown, scrollOpen;
+
     private void Awake()
     {
         SettingPanel.SetActive(false);
@@ -58,6 +59,9 @@ public class SettingMove : MonoBehaviour
         Sequence seq = DOTween.Sequence().SetUpdate(true);
         Time.timeScale = 0;
 
+        SoundPlayer soundPlayer = PoolManager.Instance.Pop("SoundPlayer") as SoundPlayer;
+
+        soundPlayer.PlaySound(scrollDown);
         seq.Append(transform.DOLocalMoveY(-970, 1.5f)).SetEase(Ease.OutSine);
         seq.AppendInterval(1f);
 
@@ -72,6 +76,7 @@ public class SettingMove : MonoBehaviour
         seq.Join(SettingBorderLeft.DOAnchorPosX(openBorderLeftX, 0.75f));
         seq.Join(SettingBorderRight.DOAnchorPosX(openBorderRightX, 0.75f));
         seq.Join(SettingBack.DOScaleX(15, 0.75f));
+        soundPlayer.PlaySound(scrollOpen);
     }
     private void SettingClose()
     {

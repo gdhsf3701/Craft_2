@@ -52,6 +52,6 @@ public class StageTimeLimit : MonoBehaviour
                 NowTime += 1;
             }
         }
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //게임오버 스크립트
     }
 }
