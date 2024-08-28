@@ -19,7 +19,9 @@ public class SettingMove : MonoBehaviour
     [SerializeField]
     private RectTransform SettingBorderLeft,SettingBorderRight, SettingBack;
 
-    [SerializeField] SoundSO scrollDown, scrollOpen;
+    [SerializeField] SoundSO scrollDown, scrollOpen, SettingBGM;
+
+    SoundPlayer BGMPlayer;
 
     private void Awake()
     {
@@ -59,9 +61,10 @@ public class SettingMove : MonoBehaviour
         Sequence seq = DOTween.Sequence().SetUpdate(true);
         Time.timeScale = 0;
 
+        SoundPlayer scrollPlayer = PoolManager.Instance.Pop("SoundPlayer") as SoundPlayer;
         SoundPlayer soundPlayer = PoolManager.Instance.Pop("SoundPlayer") as SoundPlayer;
-
-        soundPlayer.PlaySound(scrollDown);
+        BGMPlayer = PoolManager.Instance.Pop("SoundPlayer") as SoundPlayer;
+        scrollPlayer.PlaySound(scrollDown);
         seq.Append(transform.DOLocalMoveY(-970, 1.5f)).SetEase(Ease.OutSine);
         seq.AppendInterval(1f);
 
@@ -77,6 +80,8 @@ public class SettingMove : MonoBehaviour
         seq.Join(SettingBorderRight.DOAnchorPosX(openBorderRightX, 0.75f));
         seq.Join(SettingBack.DOScaleX(15, 0.75f));
         soundPlayer.PlaySound(scrollOpen);
+
+        BGMPlayer.PlaySound(SettingBGM);
     }
     private void SettingClose()
     {
@@ -87,7 +92,7 @@ public class SettingMove : MonoBehaviour
         seq.Append(SettingBorderLeft.DOAnchorPosX(closeBorderLeftX, 0.75f));
         seq.Join(SettingBorderRight.DOAnchorPosX(closeBorderRightX, 0.75f));
         seq.Join(SettingBack.DOScaleX(1, 0.75f));
-
+        BGMPlayer.StopAndGoToPool();
         seq.AppendCallback(() => SettingPanel.SetActive(false));
         seq.Append(transform.DOLocalMoveY(162, 1.5f)).SetEase(Ease.OutSine);
 
