@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] List<Transform> spawnPoints = new List<Transform>();
-    [SerializeField] Transform Spawner;
+    //[SerializeField] Transform Spawner;
     float minTime = 0.7f;
     float maxTime = 1.7f;
 
@@ -25,7 +25,7 @@ public class EnemySpawner : MonoBehaviour
     }
     IEnumerator SpawnCoroutine()
     {
-        SetSpawnPoint();
+        //SetSpawnPoint();
         while (enemyCount > 0)
         {
             enemyCount--;
@@ -38,9 +38,9 @@ public class EnemySpawner : MonoBehaviour
         }
         gameObject.SetActive(false);
     }
-    private void SetSpawnPoint()
-    {
-        spawnPoints[0].position = new Vector3(Spawner.position.x - 14, Spawner.position.y, 0);
-        spawnPoints[1].position = new Vector3(Spawner.position.x + 14, Spawner.position.y, 0);
-    }
+    //private void SetSpawnPoint()
+    //{
+    //    spawnPoints[0].position = new Vector3(Spawner.position.x - 14, Spawner.position.y, 0);
+    //    spawnPoints[1].position = new Vector3(Spawner.position.x + 14, Spawner.position.y, 0);
+    //}
 }
