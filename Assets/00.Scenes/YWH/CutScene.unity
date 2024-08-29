@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2725,6 +2725,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 377615866}
   m_CullTransparentMesh: 1
+--- !u!95 &396317173 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3572970943247914850, guid: 9343a14680aa9774a84dd12ae38dd9ef, type: 3}
+  m_PrefabInstance: {fileID: 439716784}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &400649816
 GameObject:
   m_ObjectHideFlags: 0
@@ -3207,11 +3212,31 @@ PrefabInstance:
       objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 4115931028923605270, guid: 9343a14680aa9774a84dd12ae38dd9ef, type: 3}
       propertyPath: OnDeadEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4115931028923605270, guid: 9343a14680aa9774a84dd12ae38dd9ef, type: 3}
+      propertyPath: OnDeadEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115931028923605270, guid: 9343a14680aa9774a84dd12ae38dd9ef, type: 3}
+      propertyPath: OnDeadEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2110460196}
     - target: {fileID: 4115931028923605270, guid: 9343a14680aa9774a84dd12ae38dd9ef, type: 3}
       propertyPath: OnDeadEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115931028923605270, guid: 9343a14680aa9774a84dd12ae38dd9ef, type: 3}
+      propertyPath: OnDeadEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnDead
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115931028923605270, guid: 9343a14680aa9774a84dd12ae38dd9ef, type: 3}
+      propertyPath: OnDeadEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: FailScene, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115931028923605270, guid: 9343a14680aa9774a84dd12ae38dd9ef, type: 3}
+      propertyPath: OnDeadEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4503942969248558047, guid: 9343a14680aa9774a84dd12ae38dd9ef, type: 3}
       propertyPath: _damage
@@ -3243,6 +3268,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6845731709564122931, guid: 9343a14680aa9774a84dd12ae38dd9ef, type: 3}
       insertIndex: -1
       addedObject: {fileID: 656273389}
+    - targetCorrespondingSourceObject: {fileID: 6845731709564122931, guid: 9343a14680aa9774a84dd12ae38dd9ef, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 656273395}
   m_SourcePrefab: {fileID: 100100000, guid: 9343a14680aa9774a84dd12ae38dd9ef, type: 3}
 --- !u!1 &443602965
 GameObject:
@@ -5043,6 +5071,51 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &656273395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656273383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 4f86b58f79b61a944b839a7beab1798a, type: 2}
+    - {fileID: 11400000, guid: 5f251293efadcde4f9515730155ad1bb, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2110460196}
+          m_TargetAssemblyTypeName: FailScene, Assembly-CSharp
+          m_MethodName: Chat
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2110460196}
+          m_TargetAssemblyTypeName: FailScene, Assembly-CSharp
+          m_MethodName: ChatClose
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &656619682
 GameObject:
   m_ObjectHideFlags: 3
@@ -7552,6 +7625,26 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 1144470211}
     m_ColliderPaths:
+    - - X: 2150000128
+        Y: 122500000
+      - X: 2150000128
+        Y: 130000000
+      - X: 2120000000
+        Y: 130000000
+      - X: 2120000000
+        Y: 123125000
+      - X: 2123750016
+        Y: 120000000
+      - X: 2146875008
+        Y: 120000000
+    - - X: 1830000000
+        Y: 120000000
+      - X: 1090000000
+        Y: 120000000
+      - X: 1090000000
+        Y: -160000000
+      - X: 1830000000
+        Y: -160000000
     - - X: 180000000
         Y: -170000000
       - X: 210000000
@@ -7625,10 +7718,6 @@ CompositeCollider2D:
       - X: 890000000
         Y: -160000000
       - X: 890000000
-        Y: 150000000
-      - X: 880000000
-        Y: 150000000
-      - X: 880000000
         Y: 120000000
       - X: 710000000
         Y: 120000000
@@ -7716,26 +7805,6 @@ CompositeCollider2D:
         Y: -180000000
       - X: 180000000
         Y: -180000000
-    - - X: 2150000128
-        Y: 122500000
-      - X: 2150000128
-        Y: 130000000
-      - X: 2120000000
-        Y: 130000000
-      - X: 2120000000
-        Y: 123125000
-      - X: 2123750016
-        Y: 120000000
-      - X: 2146875008
-        Y: 120000000
-    - - X: 1830000000
-        Y: 120000000
-      - X: 1090000000
-        Y: 120000000
-      - X: 1090000000
-        Y: -160000000
-      - X: 1830000000
-        Y: -160000000
     - - X: 3870000128
         Y: -60000000
       - X: 2140000000
@@ -7754,6 +7823,16 @@ CompositeCollider2D:
         Y: -160000000
   m_CompositePaths:
     m_Paths:
+    - - {x: 214.68748, y: 12}
+      - {x: 215.00002, y: 12.250013}
+      - {x: 214.99998, y: 13}
+      - {x: 212, y: 12.99997}
+      - {x: 212.00002, y: 12.312492}
+      - {x: 212.37502, y: 12}
+    - - {x: 182.99997, y: -16}
+      - {x: 182.99997, y: 12}
+      - {x: 109, y: 11.99997}
+      - {x: 109.00003, y: -16}
     - - {x: 17.999971, y: -18}
       - {x: 18.000029, y: -17}
       - {x: 21, y: -16.999971}
@@ -7791,9 +7870,7 @@ CompositeCollider2D:
       - {x: 81, y: -9.00003}
       - {x: 81.00003, y: -16}
       - {x: 89, y: -15.999971}
-      - {x: 88.99997, y: 15}
-      - {x: 88, y: 14.999971}
-      - {x: 87.99997, y: 12}
+      - {x: 88.99997, y: 12}
       - {x: 71, y: 11.99997}
       - {x: 70.99997, y: 11}
       - {x: 70, y: 10.99997}
@@ -7832,16 +7909,6 @@ CompositeCollider2D:
       - {x: -12.99997, y: -9}
       - {x: -9, y: -9.00003}
       - {x: -8.99997, y: -18}
-    - - {x: 214.68748, y: 12}
-      - {x: 215.00002, y: 12.250013}
-      - {x: 214.99998, y: 13}
-      - {x: 212, y: 12.99997}
-      - {x: 212.00002, y: 12.312492}
-      - {x: 212.37502, y: 12}
-    - - {x: 182.99997, y: -16}
-      - {x: 182.99997, y: 12}
-      - {x: 109, y: 11.99997}
-      - {x: 109.00003, y: -16}
     - - {x: 387, y: -27}
       - {x: 387, y: -6}
       - {x: 214, y: -6.000029}
@@ -23553,7 +23620,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 4
-      m_TileSpriteIndex: 4
+      m_TileSpriteIndex: 7
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -83029,16 +83096,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 88, y: 12, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 5
-      m_TileSpriteIndex: 5
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: 212, y: 12, z: 0}
     second:
       serializedVersion: 2
@@ -83069,26 +83126,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 88, y: 13, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 6
-      m_TileSpriteIndex: 6
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: 88, y: 14, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 7
-      m_TileSpriteIndex: 7
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
   - m_RefCount: 325
@@ -83101,12 +83138,12 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 6221e7be613890a4db2ff6666263623b, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 958fc499d456b794eb6d6016059d706b, type: 2}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 0b46aa8caa4d5094cbd571a8bdb73206, type: 2}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: ad758781a89299747934d5c2fb557d0c, type: 2}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 357f61c3e1991414793e932f88d38c4f, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: c47f7a5ed152cec48a75d65d78cd5449, type: 2}
   - m_RefCount: 34
@@ -83128,14 +83165,14 @@ Tilemap:
     m_Data: {fileID: -590276493, guid: 1136ab2da8513104c97f52a17ed9836d, type: 3}
   - m_RefCount: 59
     m_Data: {fileID: -1910505726, guid: 1136ab2da8513104c97f52a17ed9836d, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 977680109, guid: 1136ab2da8513104c97f52a17ed9836d, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -1017222017, guid: 1136ab2da8513104c97f52a17ed9836d, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -1003150585, guid: 1136ab2da8513104c97f52a17ed9836d, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -2012210934, guid: 1136ab2da8513104c97f52a17ed9836d, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: -802790782, guid: 1136ab2da8513104c97f52a17ed9836d, type: 3}
   - m_RefCount: 34
@@ -83149,7 +83186,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: -874672888, guid: 1136ab2da8513104c97f52a17ed9836d, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 7511
+  - m_RefCount: 7508
     m_Data:
       e00: 1
       e01: 0
@@ -83168,7 +83205,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 7511
+  - m_RefCount: 7508
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -88440,6 +88477,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2110460194}
   - component: {fileID: 2110460195}
+  - component: {fileID: 2110460196}
   m_Layer: 0
   m_Name: FailCutScene
   m_TagString: Untagged
@@ -88477,12 +88515,25 @@ PlayableDirector:
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
-  - key: {fileID: -3975292756287161817, guid: be6770ee909b4874cac8c53debaeae7b, type: 2}
-    value: {fileID: 4789870}
   - key: {fileID: -593620448178174977, guid: be6770ee909b4874cac8c53debaeae7b, type: 2}
     value: {fileID: 656273389}
+  - key: {fileID: -3302860761954362617, guid: be6770ee909b4874cac8c53debaeae7b, type: 2}
+    value: {fileID: 396317173}
   m_ExposedReferences:
     m_References: []
+--- !u!114 &2110460196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110460193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e4dfa73131a1064d9ceb893b2dc02eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  director: {fileID: 2110460195}
 --- !u!1 &2123066110
 GameObject:
   m_ObjectHideFlags: 0
