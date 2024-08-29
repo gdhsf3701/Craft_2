@@ -24,7 +24,7 @@ public class CSI_rendomSpwonItem : MonoBehaviour
 
         GameObject b= Instantiate(GameObjects[a]);
 
-        b.transform.position = new Vector2(x, 0);
+        b.transform.position = new Vector2(x, transform.position.y);
 
         StartCoroutine(ItemSpawnCo());
     }
