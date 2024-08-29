@@ -10,7 +10,8 @@ public class Boss : Enemy
     public int fase2Hp;
     public SpriteRenderer spriteRen;
     public EnemyVFX VFXCompo;
-
+    
+        
     [Header("Fase2 Setting")]
     [SerializeField] private int _coolTime; 
     private void Start()
