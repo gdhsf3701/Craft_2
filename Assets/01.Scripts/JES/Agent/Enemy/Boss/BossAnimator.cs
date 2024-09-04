@@ -6,6 +6,7 @@ public class BossAnimator : MonoBehaviour,IBossComponent
     private Animator _animator;
     private readonly int _moveSpeedHash = Animator.StringToHash("moveSpeed");
     private readonly int _attackTriggerhash = Animator.StringToHash("attack");
+    private readonly int _sturnTriggerhash = Animator.StringToHash("sturn");
     private readonly int _atkIndexHash = Animator.StringToHash("atkIndex");
     public void Initialize(Boss enemy)
     {
@@ -20,6 +21,11 @@ public class BossAnimator : MonoBehaviour,IBossComponent
     {
         _animator.SetInteger(_atkIndexHash,obj);
         _animator.SetTrigger(_attackTriggerhash);
+    }
+
+    public void SturnAnimStart()
+    {
+        _animator.SetTrigger(_sturnTriggerhash);
     }
 
     private void HandleVelocityChange(Vector2 velocity)

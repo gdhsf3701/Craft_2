@@ -138,7 +138,8 @@ GameObject:
   - component: {fileID: 201274690}
   - component: {fileID: 201274691}
   - component: {fileID: 201274692}
-  m_Layer: 0
+  - component: {fileID: 201274693}
+  m_Layer: 8
   m_Name: Boss1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +229,7 @@ MonoBehaviour:
       startIndex: 
       variableStartIndex: 
       JSONSerialization: '{"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"target","IsShared":true,"TransformmValue":0},{"Type":"SharedEnemy","Name":"Boss","IsShared":true,"BossmValue":1},{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"FazeNum","IsShared":true,"Int32mValue":1},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"normalAtkTime","IsShared":true,"Tooltip":"\ud3c9\ud0c0
-        \uacf5\uaca9\uc2dc\uac04","SinglemValue":0},{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"animTrigger","IsShared":true,"BooleanmValue":false}]}'
+        \uacf5\uaca9\uc2dc\uac04","SinglemValue":0},{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"animTrigger","IsShared":true,"BooleanmValue":false},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"skillAtkTime","IsShared":true,"SinglemValue":0}]}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
@@ -304,6 +305,25 @@ CapsuleCollider2D:
   m_Offset: {x: -0.6560955, y: -0.26993632}
   m_Size: {x: 1.5722466, y: 3.3493266}
   m_Direction: 0
+--- !u!114 &201274693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201274685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6ee82410dd0b224d8a1e7d4ba77fe63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnHitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeadEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _maxHealth: 150
 --- !u!1 &286533054
 GameObject:
   m_ObjectHideFlags: 3
