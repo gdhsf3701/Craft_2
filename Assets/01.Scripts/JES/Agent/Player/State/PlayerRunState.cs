@@ -21,5 +21,9 @@ public class PlayerRunState : PlayerGroundState
         {
             _stateMachine.ChangeState(PlayerEnum.Idle);
         }
+        if (!_player.isRun)
+        {
+            _stateMachine.ChangeState(PlayerEnum.Walk);
+        }
     }
 }

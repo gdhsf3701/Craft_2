@@ -4,7 +4,8 @@ using UnityEngine;
 
 public enum SkillType
 {
-    Dash
+    Kick,
+    Knife
 }
 public class SkillManager : MonoSingleton<SkillManager>
 {

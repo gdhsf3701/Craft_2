@@ -13,7 +13,8 @@ public class Player : Agent
     [SerializeField] private int _damage;
 
     [SerializeField] private float _knockPower;
-    
+
+    public bool isRun = false;
     
     public List<PlayerDamageSO> damageDataList;
     public UnityEvent JumpEvent;
@@ -21,14 +22,16 @@ public class Player : Agent
     [field: SerializeField] public InputReader PlayerInput { get; private set; }
     public float attackCoolDown;
 
-
+    public PlayerDamageSO skill1, skill2;
     public int comboCount= 0;
+    public int skillCount=0;
     protected override void Awake()
     {
         base.Awake();
         stateMachine = new PlayerStateMachine(); 
         
         stateMachine.AddState(PlayerEnum.Idle,new PlayerIdleState(this,stateMachine,"Idle"));
+        stateMachine.AddState(PlayerEnum.Walk,new PlayerWalkState(this,stateMachine,"Walk"));
         stateMachine.AddState(PlayerEnum.Run,new PlayerRunState(this,stateMachine,"Run"));
         stateMachine.AddState(PlayerEnum.Jump,new PlayerJumpState(this,stateMachine,"Jump"));
         stateMachine.AddState(PlayerEnum.Fall,new PlayerFallState(this,stateMachine,"Fall"));
@@ -37,31 +40,102 @@ public class Player : Agent
         stateMachine.AddState(PlayerEnum.Attack3,new PlayerAttack3State(this,stateMachine,"Attack3"));
         stateMachine.AddState(PlayerEnum.Hit,new PlayerHitState(this,stateMachine,"Hit"));
         stateMachine.AddState(PlayerEnum.Wire,new PlayerWireState(this,stateMachine,"Wire"));
+        stateMachine.AddState(PlayerEnum.Kick,new PlayerKickState(this,stateMachine,"Kick"));
+        stateMachine.AddState(PlayerEnum.Knife,new PlayerKnifeState(this,stateMachine,"Knife"));
+        stateMachine.Initialize(PlayerEnum.Fall, this);
         
-        stateMachine.Initialize(PlayerEnum.Idle, this);
         
         PlayerInput.OnJumpKeyEvent += HandleJumpKeyEvent;
+        PlayerInput.OnKickKeyEvent += HandleKickKeyEvent;
+        PlayerInput.OnKnifeKeyEvent += HandleKnifeKeyEvent;
+        PlayerInput.OnRunKeyHoldEvent += HandleRunKeyEvnet;
+        PlayerInput.OnRunKeyReleasedEvent += HandleCancleRunEvent;
     }
 
+    private void HandleCancleRunEvent()
+    {
+        MovementCompo.moveSpeed = 7f;
+        isRun = false;
+    }
+
+    private void HandleRunKeyEvnet()
+    {
+        MovementCompo.moveSpeed = 10f;
+        isRun = true;
+    }
+
+    private void HandleKnifeKeyEvent()
+    {
+        if (SkillManager.Instance.GetSkill<KnifeSkill>().AttemptUseSkill())
+        {
+            Attack(skill1);
+            skillCount = 1;
+            stateMachine.ChangeState(PlayerEnum.Knife);
+        }
+    }
+
+    private void HandleKickKeyEvent()
+    {
+        if (SkillManager.Instance.GetSkill<KickSkill>().AttemptUseSkill())
+        {
+            Attack(skill2);
+            skillCount = 2;
+            stateMachine.ChangeState(PlayerEnum.Kick);
+        }
+    }
+    
     private void OnDestroy()
     {
         PlayerInput.OnJumpKeyEvent -= HandleJumpKeyEvent;
+        PlayerInput.OnKickKeyEvent -= HandleKickKeyEvent;
+        PlayerInput.OnKnifeKeyEvent -= HandleKnifeKeyEvent;
+        PlayerInput.OnRunKeyHoldEvent -= HandleRunKeyEvnet;
+        PlayerInput.OnRunKeyReleasedEvent -= HandleCancleRunEvent;
     }
 
-    public void Attack()
+    public void AttackSetting()
     {
         damageData = damageDataList[comboCount];
         
         attackCoolDown = 0;
         
+        Attack(damageData);
+
+        CastDamage();
+        
+        comboCount++;
+    }
+
+    private void Attack(PlayerDamageSO damageSo)
+    {
         DamageCasterCompo.transform.localPosition = damageData.damagePos;
         DamageCasterCompo.damageRadius = damageData.damageRadius;
 
         _damage = damageData.damage;
         _knockPower = damageData.knockPower;
-        DamageCasterCompo.CastDamage(_damage, _knockPower);
+    }
+
+    public void CastDamage()
+    {
+        bool suc = DamageCasterCompo.CastDamage(_damage, _knockPower);
+        SoundSO sound = null;
         
-        comboCount++;
+        if (skillCount == 1)
+        {
+            sound = skill1.AttackSound(suc);
+        }
+        else if (skillCount == 2)
+        {
+            sound = skill2.AttackSound(suc);
+        }
+        else
+        {
+            sound = damageData.AttackSound(suc);
+        }
+        
+        SoundPlayer soundPlayer = PoolManager.Instance.Pop("SoundPlayer") as SoundPlayer;
+        soundPlayer.PlaySound(sound);
+        skillCount = 0;
     }
     private void HandleJumpKeyEvent()
     {
