@@ -10,26 +10,26 @@ public class CSI_well : MonoBehaviour
     private bool isuse;
     private void Awake()
     {
-        _agentMovement = GameObject.FindWithTag("Player").GetComponent<AgentMovement>();
+        _agentMovement = PlayerManager.Instance.Player.GetComponent<AgentMovement>();
         slow_amount = _agentMovement.moveSpeed / 2;
     }
-
-
-
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!isuse)
+        if (other.transform.CompareTag("Player"))
         {
-            isuse = true;
             _agentMovement.moveSpeed -= slow_amount;
-            StartCoroutine("cooltime");
+            
         }
     }
 
-    IEnumerator cooltime()
+    private void OnTriggerExit2D(Collider2D other)
     {
-        yield return new WaitForSeconds(1);
-        _agentMovement.moveSpeed += slow_amount;
-        isuse = false;
+        if (other.transform.CompareTag("Player"))
+        {
+            _agentMovement.moveSpeed += slow_amount;
+
+        }
+
     }
+
 }

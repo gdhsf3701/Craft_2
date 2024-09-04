@@ -13,7 +13,7 @@ public class EnemyBullet : MonoBehaviour, Ipoolable
     private DamageCaster _damageCaster;
     private Rigidbody2D _rigidBody;
 
-    private int _damage;
+    private int _damage=1;
     private float _knockPower;
     private Vector2 _fireDirection;
 

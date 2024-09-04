@@ -17,7 +17,14 @@ public class PlayerIdleState : PlayerGroundState
         base.UpdateState();
         if (_player.PlayerInput.Movement.magnitude > 0)
         {
-            _stateMachine.ChangeState(PlayerEnum.Run);
+            if (_player.isRun)
+            {
+                _stateMachine.ChangeState(PlayerEnum.Run);
+            }
+            else
+            {
+                _stateMachine.ChangeState(PlayerEnum.Walk);
+            }
         }
     }
 }
