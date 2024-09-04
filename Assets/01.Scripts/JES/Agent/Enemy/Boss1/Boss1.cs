@@ -1,55 +1,35 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss1 : Enemy
+public class Boss1 : Boss
 {
-    public EnemyStateMachine stateMachine;
-    public int faseNum=1;
+    public float SpreadAngle=15f;
 
-    [Header("Fase2 Setting")]
-    [SerializeField] private int _coolTime; 
+    public List<Boss1DataSO> gundatas;
+    public Boss1DataSO gunData;
+    
     protected override void Awake()
     {
         base.Awake();
+        stateMachine = new EnemyStateMachine();            
         
-        stateMachine.AddState(EnemyEnum.Chase,new Boss1ChaseState(this,stateMachine,"Chasae"));
+        stateMachine.AddState(EnemyEnum.Chase,new Boss1ChaseState(this,stateMachine,"Chase"));
         stateMachine.AddState(EnemyEnum.Attack1, new Boss1Attack1State(this,stateMachine,"Attack1"));
-    }
-
-    private void Start()
-    {
-        targerTrm = PlayerManager.Instance.PlayerTrm;
-    }
-
-    public void FaseNumSet()
-    {
-        if(faseNum>1) return;
+        stateMachine.AddState(EnemyEnum.Skill1, new Boss1Skill1State(this,stateMachine,"Skill1"));
+        stateMachine.AddState(EnemyEnum.Attack2, new Boss1GunAttack1State(this,stateMachine,"Attack2"));
+        stateMachine.AddState(EnemyEnum.Attack21, new Boss1GunAttack2State(this,stateMachine,"Attack21"));
+        stateMachine.AddState(EnemyEnum.Reload1, new Boss1Reload1State(this,stateMachine,"Reload1"));
+        stateMachine.AddState(EnemyEnum.Reload2, new Boss1Reload2State(this,stateMachine,"Reload2"));
         
-        if (HealthCompo.CurrentHealth <= 600)
-        {
-            faseNum = 2;
-            attackCooldown = _coolTime;
-            
-        }
-    }
-    private void Update()
-    {
-        stateMachine.CurrentState.UpdateState(); // 현재 상태의 업데이트 우선 실행
+        stateMachine.Initalize(EnemyEnum.Chase,this);
 
-        if (targerTrm != null && IsDead == false)
-        {
-            HandleSpriteFlip(targerTrm.position);
-        }
-    }
-    public override void SetDeadState()
-    {
-        stateMachine.ChangeState(EnemyEnum.Dead);
+        gunData = gundatas[0];
     }
 
-    public override void AnimationEndTrigger()
+    public override void FireBullet()
     {
-        stateMachine.CurrentState.AnimationEndTrigger();
+        gunData.gun.ShootGun(muzzleTrm);
+        gunData = gundatas[gunData.nextGunIndex];
+        muzzleTrm.position = gunData.muzzlePos;
     }
 }

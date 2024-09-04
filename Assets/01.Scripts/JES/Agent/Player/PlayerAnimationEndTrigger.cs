@@ -13,6 +13,11 @@ public class PlayerAnimationEndTrigger : MonoBehaviour
  
     private void AnimationAttackTrigger()
     {
-        _player.Attack();
+        _player.AttackSetting();
+    }
+
+    private void AnimationSKillTrigger()
+    {
+        _player.CastDamage();
     }
 }

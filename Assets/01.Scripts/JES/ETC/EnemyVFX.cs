@@ -7,8 +7,8 @@ public class EnemyVFX : MonoBehaviour
     private float _generateTerm;
 
     private float _currentTime;
-    private Enemy _enemy;
-    public void Initalize(Enemy enemy)
+    private Boss _enemy;
+    public void Initalize(Boss enemy)
     {
         _enemy = enemy;
     }
@@ -26,9 +26,10 @@ public class EnemyVFX : MonoBehaviour
         {
             _currentTime = 0;
             AfterImage img =PoolManager.Instance.Pop("AfterImage") as AfterImage;
-            Sprite sprite= _enemy.EnemySpriteRender.sprite;
+            Sprite sprite= _enemy.spriteRen.sprite;
             bool isFlip = !_enemy.IsFacingRight();
-            img.SetAfterImage(sprite,transform.position,0.2f,isFlip);
+            
+            img.SetAfterImage(sprite,transform.position,0.3f,isFlip);
         }
     }
 }
