@@ -123,6 +123,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &166567566
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 166567567}
+  - component: {fileID: 166567568}
+  m_Layer: 8
+  m_Name: Gun2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &166567567
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166567566}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 201274686}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &166567568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166567566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fb7c14019b26eb40b715ec24d55f988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &201274685
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,6 +204,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1826742681}
+  - {fileID: 890403818}
+  - {fileID: 791201364}
+  - {fileID: 166567567}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &201274687
@@ -228,8 +275,7 @@ MonoBehaviour:
       parentIndex: 
       startIndex: 
       variableStartIndex: 
-      JSONSerialization: '{"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"target","IsShared":true,"TransformmValue":0},{"Type":"SharedEnemy","Name":"Boss","IsShared":true,"BossmValue":1},{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"FazeNum","IsShared":true,"Int32mValue":1},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"normalAtkTime","IsShared":true,"Tooltip":"\ud3c9\ud0c0
-        \uacf5\uaca9\uc2dc\uac04","SinglemValue":0},{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"animTrigger","IsShared":true,"BooleanmValue":false},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"skillAtkTime","IsShared":true,"SinglemValue":0}]}'
+      JSONSerialization: '{"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"target","IsShared":true,"TransformmValue":0},{"Type":"SharedEnemy","Name":"Boss","IsShared":true,"BossmValue":1},{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"FazeNum","IsShared":true,"Int32mValue":1},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"normalAtkTime","IsShared":true,"SinglemValue":0},{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"animTrigger","IsShared":true,"BooleanmValue":false},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"skillAtkTime","IsShared":true,"SinglemValue":0},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"LeftGunAtkTime","IsShared":true,"SinglemValue":0},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"RightGunAtkTime","IsShared":true,"SinglemValue":0},{"Type":"SharedGun","Name":"LeftGun","IsShared":true,"SawedOffmValue":2},{"Type":"SharedGun","Name":"RightGun","IsShared":true,"SawedOffmValue":3}]}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
@@ -238,6 +284,8 @@ MonoBehaviour:
         unityObjects:
         - {fileID: 2327216931821976867}
         - {fileID: 201274687}
+        - {fileID: 791201365}
+        - {fileID: 166567568}
         byteData: 
         byteDataArray: 
       Version: 1.7.10
@@ -412,6 +460,124 @@ MonoBehaviour:
   m_MaximumFOV: 60
   m_MinimumOrthoSize: 1
   m_MaximumOrthoSize: 5000
+--- !u!1 &791201363
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 791201364}
+  - component: {fileID: 791201365}
+  m_Layer: 8
+  m_Name: Gun1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &791201364
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791201363}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 201274686}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &791201365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791201363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fb7c14019b26eb40b715ec24d55f988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &890403817
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 201274686}
+    m_Modifications:
+    - target: {fileID: 3106585680629980634, guid: 580fc0bc25e6df5428f7016b92ccaecd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 3106585680629980634, guid: 580fc0bc25e6df5428f7016b92ccaecd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 3106585680629980634, guid: 580fc0bc25e6df5428f7016b92ccaecd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3106585680629980634, guid: 580fc0bc25e6df5428f7016b92ccaecd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3106585680629980634, guid: 580fc0bc25e6df5428f7016b92ccaecd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3106585680629980634, guid: 580fc0bc25e6df5428f7016b92ccaecd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3106585680629980634, guid: 580fc0bc25e6df5428f7016b92ccaecd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3106585680629980634, guid: 580fc0bc25e6df5428f7016b92ccaecd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3106585680629980634, guid: 580fc0bc25e6df5428f7016b92ccaecd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3106585680629980634, guid: 580fc0bc25e6df5428f7016b92ccaecd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798058504378649488, guid: 580fc0bc25e6df5428f7016b92ccaecd, type: 3}
+      propertyPath: damageRadius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798058504378649488, guid: 580fc0bc25e6df5428f7016b92ccaecd, type: 3}
+      propertyPath: filter.useDepth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798058504378649488, guid: 580fc0bc25e6df5428f7016b92ccaecd, type: 3}
+      propertyPath: filter.layerMask.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 6210541080066157097, guid: 580fc0bc25e6df5428f7016b92ccaecd, type: 3}
+      propertyPath: m_Name
+      value: DamageCaster
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 580fc0bc25e6df5428f7016b92ccaecd, type: 3}
+--- !u!4 &890403818 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3106585680629980634, guid: 580fc0bc25e6df5428f7016b92ccaecd, type: 3}
+  m_PrefabInstance: {fileID: 890403817}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1100335506 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7278245421033466592, guid: eb9ed1de37f5e3b4c977f5c26df7d72b, type: 3}

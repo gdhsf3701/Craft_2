@@ -8,7 +8,7 @@ using UnityEngine.Serialization;
 public class BossDataSO : ScriptableObject
 {
     public float range;
-    public float damage;
+    public float damage,knockbackPower;
     public float walkSpeed;
     public float runSpeed;
 }

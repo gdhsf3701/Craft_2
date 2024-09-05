@@ -1,17 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using BehaviorDesigner.Runtime;
 using UnityEngine;
 
-public class SawedOff
+public class SawedOff : MonoBehaviour
 {
     private float SpreadAngle = 15f;
-    private float attackCooldown=1.3f;
-    private float lastAttackTime=0;
 
     private int bulletCount=3;
     
     
-    public void ShootGun(Transform muzzleTrm)
+    public void ShootGun()
     {
         for (int i = 0; i < Random.Range(5, 8); i++)
         {
@@ -21,10 +20,9 @@ public class SawedOff
 
             EnemyBullet bullet = PoolManager.Instance.Pop("Enemybullet") as EnemyBullet;
         
-            bullet.transform.position = muzzleTrm.position;
-            bullet.transform.rotation = rotation * muzzleTrm.rotation;
+            bullet.transform.position = transform.position;
+            bullet.transform.rotation = rotation * transform.rotation;
         }
-        lastAttackTime = Time.time;
         bulletCount--;
     }
 
@@ -32,14 +30,17 @@ public class SawedOff
     {
         bulletCount = 3;
     }
+    
 
-    public bool TryShot()
-    {
-        return (attackCooldown + lastAttackTime < Time.time);
-    }
-
-    public bool ReloadCheck()
+    public bool ReloadCheck()//장전을 해야되면 true, 아니면 false
     {
         return bulletCount < 1;
+    }
+}
+public class SharedGun : SharedVariable<SawedOff>
+{
+    public static implicit operator SharedGun(SawedOff value)
+    {
+        return new SharedGun {Value = value};
     }
 }

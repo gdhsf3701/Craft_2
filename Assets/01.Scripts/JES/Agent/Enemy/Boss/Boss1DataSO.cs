@@ -6,10 +6,7 @@ using UnityEngine;
 public class Boss1DataSO : ScriptableObject
 {
     public SawedOff gun = new SawedOff();
-
-    public EnemyEnum reloadEnum;
-    public EnemyEnum attackEnum;
-
+    
     public int nextGunIndex;
 
     public Vector2 muzzlePos;

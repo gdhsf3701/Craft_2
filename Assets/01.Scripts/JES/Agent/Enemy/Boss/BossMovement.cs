@@ -6,7 +6,6 @@ using UnityEngine.EventSystems;
 
 public class BossMovement : MonoBehaviour, IBossComponent
 {
-    public event Action<Vector2> VelocityChangeEvnet;
     
     private Boss _enemy;
     private Rigidbody2D _rbCompo;
@@ -21,11 +20,14 @@ public class BossMovement : MonoBehaviour, IBossComponent
     public void SetVelocity(Vector2 velocity)
     {
         _velocity = new Vector2(velocity.x,_rbCompo.velocity.y);
-        VelocityChangeEvnet?.Invoke(_velocity);
 
         FlipCheck();
     }
 
+    public void MoveAddForce(Vector2 dir,float force)
+    {
+        _rbCompo.AddForce(dir*force,ForceMode2D.Impulse);
+    }
     private void FlipCheck()
     {
         bool isFlipToLeft = _velocity.x > 0&& _enemy.IsFacingRight==false;
