@@ -47,6 +47,10 @@ public class Boss : MonoBehaviour
 
     public void Faze2Set()
     {
+        if(_fazeNum==2) return;
+        
+        if(healthCompo.CurrentHealth>625) return;
+        
        var num = _bt.GetVariable("FazeNum") as SharedInt;
        num.Value = 2;
        _fazeNum = 2;

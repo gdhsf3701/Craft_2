@@ -8,17 +8,20 @@ public class SawedOff : MonoBehaviour
     private float SpreadAngle = 15f;
 
     private int bulletCount=3;
-    
+
+    public float knockPower;
     
     public void ShootGun()
     {
-        for (int i = 0; i < Random.Range(5, 8); i++)
+        for (int i = 0; i <Random.Range(5,8); i++)
         {
             float spreadAngle = Random.Range(-SpreadAngle, SpreadAngle);
 
             Quaternion rotation = Quaternion.Euler(new Vector3(0, 0, spreadAngle));
 
             EnemyBullet bullet = PoolManager.Instance.Pop("Enemybullet") as EnemyBullet;
+            
+            bullet.InitAndFire(transform,transform.right.x,1,knockPower);
         
             bullet.transform.position = transform.position;
             bullet.transform.rotation = rotation * transform.rotation;
