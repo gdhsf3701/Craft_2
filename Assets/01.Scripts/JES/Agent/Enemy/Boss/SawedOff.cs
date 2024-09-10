@@ -21,10 +21,9 @@ public class SawedOff : MonoBehaviour
 
             EnemyBullet bullet = PoolManager.Instance.Pop("Enemybullet") as EnemyBullet;
             
+            bullet.transform.rotation = rotation * transform.rotation;
             bullet.InitAndFire(transform,transform.right.x,1,knockPower);
         
-            bullet.transform.position = transform.position;
-            bullet.transform.rotation = rotation * transform.rotation;
         }
         bulletCount--;
     }
