@@ -55,9 +55,9 @@ public abstract class Enemy : Agent
 
     public virtual void FireBullet()
     {
-        float x = targerTrm.position.x-transform.position.x;
+        
         EnemyBullet bullet = PoolManager.Instance.Pop("Enemybullet") as EnemyBullet;
-        bullet.InitAndFire(muzzleTrm,x,bulletDamage, bulletKnockBack);
+        bullet.InitAndFire(muzzleTrm,transform.rotation,bulletDamage, bulletKnockBack);
     }
 
 #if UNITY_EDITOR

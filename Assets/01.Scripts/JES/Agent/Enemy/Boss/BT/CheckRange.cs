@@ -32,7 +32,7 @@ public class CheckRange : Conditional
 
    public override void OnDrawGizmos()
    {
-      Gizmos.color = Color.red;
+      Gizmos.color = Color.green;
       Gizmos.DrawWireSphere(transform.position,range);
       Gizmos.color = Color.white;
    }

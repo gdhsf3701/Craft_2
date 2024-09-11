@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SawedOff : MonoBehaviour
 {
-    private float SpreadAngle = 15f;
+    private float SpreadAngle = 7.5f;
 
     private int bulletCount=3;
 
@@ -21,12 +21,13 @@ public class SawedOff : MonoBehaviour
 
             EnemyBullet bullet = PoolManager.Instance.Pop("Enemybullet") as EnemyBullet;
             
-            bullet.transform.rotation = rotation * transform.rotation;
-            bullet.InitAndFire(transform,transform.right.x,1,knockPower);
+            rotation *= transform.rotation;
+            bullet.InitAndFire(transform,rotation,1,knockPower);
         
         }
         bulletCount--;
     }
+
 
     public void Reload()
     {
