@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: NormalEnemy
   m_EditorClassIdentifier: 
   poolName: NormalEnemy
-  prefab: {fileID: 133542206842732905, guid: f9ad786457eba8847b6b735868d149b0, type: 3}
+  prefab: {fileID: 0}
   count: 20

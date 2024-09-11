@@ -75,7 +75,7 @@ public class AgentMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if(_isDash) return;
+        if(!_canMove) return;
         CheckGrounded();
         ApplyXMovement();
         ApllyExtraGravity();
