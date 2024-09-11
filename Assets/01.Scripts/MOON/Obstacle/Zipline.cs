@@ -11,7 +11,7 @@ public class Zipline : MonoBehaviour
     //[SerializeField] private TextMeshProUGUI text;
     // text는 상호작용 안 텍스트 (월드스페이스 캔버스)
     private bool _isPlayer = false;
-    public bool isMove= false;
+    public static bool isMove= false;
     [SerializeField] SoundSO sound, exitSound;
 
     SoundPlayer soundPlayer;
