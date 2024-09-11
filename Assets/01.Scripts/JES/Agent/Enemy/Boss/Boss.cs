@@ -1,60 +1,81 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
+using BehaviorDesigner.Runtime;
 using UnityEngine;
+using System.Linq;
 
-public class Boss : Enemy
+public class Boss : MonoBehaviour
 {
-    public EnemyStateMachine stateMachine;
-    public int faseNum=1;
-    public int fase2Hp;
-    public SpriteRenderer spriteRen;
-    public EnemyVFX VFXCompo;
+    public BossDataSO enemyData;
     
-        
-    [Header("Fase2 Setting")]
-    [SerializeField] private int _coolTime; 
-    private void Start()
-    {
-        targerTrm = PlayerManager.Instance.PlayerTrm;
-    }
-
-    protected override void Awake()
-    {
-        base.Awake();
-
-        spriteRen = transform.Find("Visual").GetComponent<SpriteRenderer>();
-        VFXCompo = transform.Find("EnemyVFX").GetComponent<EnemyVFX>();
-        VFXCompo.Initalize(this);
-    }
-
-    public void FaseNumSet()
-    {
-        if(faseNum>1) return;
-        
-        if (HealthCompo.CurrentHealth <= fase2Hp)
-        {
-            faseNum = 2;
-            attackCooldown = _coolTime;
-        }
-    }
-    public virtual void Update()
-    {
-        stateMachine.CurrentState.UpdateState(); // 현재 상태의 업데이트 우선 실행
-
-        if (targerTrm != null && IsDead == false)
-        {
-            HandleSpriteFlip(targerTrm.position);
-        }
-    }
-    public override void SetDeadState()
-    {
-        stateMachine.ChangeState(EnemyEnum.Dead);
-    }
-
-    public override void AnimationEndTrigger()
-    {
-        stateMachine.CurrentState.AnimationEndTrigger();
-    }
     
+    [field: SerializeField] public bool IsFacingRight { get; private set; } = true;
+    private Dictionary<Type,IBossComponent> _components;
+
+    private int _fazeNum = 1;
+    public event Action<int> FazeNumChangeEvent;
+    
+    private BehaviorTree _bt;
+    private SharedBool _animTrigger;
+    public Health healthCompo { get; private set; }
+    public DamageCaster damageCaster { get; private set; }
+    private void Awake()
+    {
+        _components = new Dictionary<Type, IBossComponent>();
+        
+        GetComponentsInChildren<IBossComponent>().ToList().ForEach(compo => _components.Add(compo.GetType(), compo));
+        
+        _components.Values.ToList().ForEach(compo => compo.Initialize(this));
+
+        healthCompo = GetComponent<Health>();
+        damageCaster = GetComponentInChildren<DamageCaster>();
+        
+        _bt = GetComponent<BehaviorTree>();
+        _animTrigger = _bt.GetVariable("animTrigger") as SharedBool;
+        
+    }
+
+    public T GetCompo<T>() where T : class
+    {
+        if(_components.TryGetValue(typeof(T),out IBossComponent compo))
+        {
+            return compo as T;
+        }
+        
+        return default;
+    }
+
+    public void Faze2Set()
+    {
+        if(_fazeNum==2) return;
+        
+        if(healthCompo.CurrentHealth>625) return;
+        
+       var num = _bt.GetVariable("FazeNum") as SharedInt;
+       num.Value = 2;
+       _fazeNum = 2;
+       FazeNumChangeEvent?.Invoke(_fazeNum);
+    }
+
+    public void Flip()
+    {
+        if(IsFacingRight)
+            transform.rotation = Quaternion.Euler(0,180f,0);
+        else
+            transform.rotation = Quaternion.identity;
+        IsFacingRight = !IsFacingRight;
+    }
+
+    public void AnimationTrigger()
+    {
+        _animTrigger.Value = true;
+    }
+}
+
+public class SharedEnemy : SharedVariable<Boss>
+{
+    public static implicit operator SharedEnemy(Boss value)
+    {
+        return new SharedEnemy {Value = value};
+    }
 }
