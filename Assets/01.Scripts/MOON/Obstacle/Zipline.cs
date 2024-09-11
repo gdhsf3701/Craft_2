@@ -54,7 +54,7 @@ public class Zipline : MonoBehaviour
                 exitSoundPlayer.PlaySound(exitSound);
             }
         }
-        if(!_isPlayer&&_player != null)
+        if(!_isPlayer&&_player != null&&!isMove)
         {
             _player = null;
         }
