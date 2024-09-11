@@ -15,10 +15,6 @@ public class EnemySpawner : MonoBehaviour
 
     int enemyCount = 40;
 
-    private void Awake()
-    {
-        gameObject.SetActive(false);
-    }
     private void OnEnable()
     {
         StartCoroutine(SpawnCoroutine());

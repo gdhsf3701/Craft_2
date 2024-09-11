@@ -3,22 +3,30 @@ using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
+using DG.Tweening;
 
 public class Cliff : MonoBehaviour
 {
     [SerializeField]Transform[] cliffReturn;
     [SerializeField]GameObject Player;
-    public Player player;
+    [SerializeField] Player player;
     [SerializeField] float delayTime=0.25f;
     int childIndex;
     [SerializeField] float darkTime = 0.5f;
-    [SerializeField] GameObject dark;
+    [SerializeField] RawImage dark;
+    float saveSpeed = 0;
+    float saveJump = 0;
 
     [SerializeField] SoundSO clothesLineSound, cutOffSound;
     private void Awake()
     {
         player = Player.GetComponent<Player>();
-        dark.SetActive(false);
+    }
+    private void Start()
+    {
+        saveSpeed = player.MovementCompo.moveSpeed;
+        saveJump = player.MovementCompo.jumpPower;
     }
 
     public void OnChildTrigger(CliffCollison child, Collider2D other)
@@ -52,10 +60,14 @@ public class Cliff : MonoBehaviour
     }
     private IEnumerator DownTimeDelay()
     {
+        player.MovementCompo.moveSpeed = 0;
+        player.MovementCompo.jumpPower = 0;
+        dark.DOFade(1, delayTime);
         yield return new WaitForSeconds(delayTime);
-        dark.SetActive(true);
-        yield return new WaitForSeconds(darkTime);
-        dark.SetActive(false);
         Player.transform.position = cliffReturn[childIndex].position;
+        dark.DOFade(0, darkTime);
+        yield return new WaitForSeconds(darkTime);
+        player.MovementCompo.moveSpeed = saveSpeed;
+        player.MovementCompo.jumpPower = saveJump;
     }
 }
