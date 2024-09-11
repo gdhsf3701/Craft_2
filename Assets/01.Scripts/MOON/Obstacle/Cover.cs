@@ -17,6 +17,7 @@ public class Cover : MonoBehaviour
     CinemachineVirtualCamera camera;
 
     SpriteRenderer renderer;
+
     bool hide = false;
     float maxCameraSize = 5f;
     float minCameraSize = 2.5f;
@@ -54,6 +55,7 @@ public class Cover : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.F))
             {
+                text.gameObject.SetActive(false);
                 player.gameObject.layer = LayerMask.NameToLayer("HidePlayer");
                 renderer.color = Color.clear;
 
@@ -77,6 +79,7 @@ public class Cover : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.F))
             {
+                text.gameObject.SetActive(false);
                 player.gameObject.layer = LayerMask.NameToLayer("Player");
                 renderer.color = Color.white;
                 renderer.enabled = true;
@@ -94,12 +97,12 @@ public class Cover : MonoBehaviour
     }
     IEnumerator Zoom()
     {
-        while(camera.m_Lens.OrthographicSize >= minCameraSize)
+        while (camera.m_Lens.OrthographicSize >= minCameraSize)
         {
             camera.m_Lens.OrthographicSize -= 0.1f;
             yield return null;
         }
-            }
+    }
     IEnumerator Out()
     {
         while (camera.m_Lens.OrthographicSize <= maxCameraSize)
@@ -107,5 +110,11 @@ public class Cover : MonoBehaviour
             camera.m_Lens.OrthographicSize += 0.1f;
             yield return null;
         }
+        text.text = "<b>[ F ] </b>키를 눌러 숨기";
+    }
+    public void ChangeString()
+    {
+        text.text = "<b>[ F ] </b>키를 눌러 나가기";
+        text.gameObject.SetActive(true);
     }
 }
