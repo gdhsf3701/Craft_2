@@ -11,7 +11,7 @@ public class Zipline : MonoBehaviour
     //[SerializeField] private TextMeshProUGUI text;
     // text는 상호작용 안 텍스트 (월드스페이스 캔버스)
     private bool _isPlayer = false;
-    public bool isMove= false;
+    public static bool isMove= false;
     [SerializeField] SoundSO sound, exitSound;
 
     SoundPlayer soundPlayer;
@@ -28,6 +28,10 @@ public class Zipline : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         //text.gameObject.SetActive(false);
+        if (!isMove)
+        {
+            _player = null;
+        }
         _isPlayer = false;
     }
     private void Update()
@@ -42,7 +46,7 @@ public class Zipline : MonoBehaviour
                 _player.stateMachine.ChangeState(PlayerEnum.Wire);
             }
         }
-        if (isMove)
+        if (isMove&&_player != null)
         {
             _player.transform.position += (LineEnd.transform.position- _player.transform.position).normalized * Speed * Time.deltaTime;
             if(Mathf.Abs(Vector3.Distance(_player.transform.position, LineEnd.transform.position)) < 0.1f)
