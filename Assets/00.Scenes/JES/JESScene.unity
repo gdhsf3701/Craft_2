@@ -1467,10 +1467,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8534986539374140950, guid: 9343a14680aa9774a84dd12ae38dd9ef, type: 3}
-      propertyPath: _moveSound
-      value: 
-      objectReference: {fileID: 11400000, guid: fcda750f375197141b017a09bb33b8ab, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
