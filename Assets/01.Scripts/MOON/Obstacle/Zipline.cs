@@ -28,17 +28,13 @@ public class Zipline : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         //text.gameObject.SetActive(false);
-        if (!isMove)
-        {
-            _player = null;
-        }
-        _isPlayer = false;
+        _isPlayer = false;  
     }
     private void Update()
     {
         if (_isPlayer)
         {
-            if (Input.GetKeyDown(KeyCode.F)&&!isMove)
+            if (Input.GetKeyDown(KeyCode.F) && !isMove)
             {
                 isMove = true;
                 soundPlayer = PoolManager.Instance.Pop("SoundPlayer") as SoundPlayer;
@@ -46,16 +42,20 @@ public class Zipline : MonoBehaviour
                 _player.stateMachine.ChangeState(PlayerEnum.Wire);
             }
         }
-        if (isMove&&_player != null)
+        if (isMove&& _player != null)
         {
-            _player.transform.position += (LineEnd.transform.position- _player.transform.position).normalized * Speed * Time.deltaTime;
-            if(Mathf.Abs(Vector3.Distance(_player.transform.position, LineEnd.transform.position)) < 0.1f)
+            _player.transform.position += (LineEnd.transform.position - _player.transform.position).normalized * Speed * Time.deltaTime;
+            if (Mathf.Abs(Vector3.Distance(_player.transform.position, LineEnd.transform.position)) < 0.1f)
             {
                 isMove = false;
                 soundPlayer.StopAndGoToPool();
                 SoundPlayer exitSoundPlayer = PoolManager.Instance.Pop("SoundPlayer") as SoundPlayer;
                 exitSoundPlayer.PlaySound(exitSound);
             }
+        }
+        if(!_isPlayer&&_player != null&&!isMove)
+        {
+            _player = null;
         }
     }
 }
