@@ -18,6 +18,10 @@ public class Stage4_EnemyQuest : MonoBehaviour
     {
         if (collision.gameObject == Player)
         {
+            if (enemySpawner == null)
+            {
+                print("enemySpawner{IsNull}");
+            }
             enemySpawner.SetActive(true);
             Wall[0].SetActive(true);
             Wall[1].SetActive(true);

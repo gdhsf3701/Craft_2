@@ -11,6 +11,7 @@ public class Teleporter : MonoBehaviour
     [SerializeField] GameObject Player;
     [SerializeField]Player player;
     [SerializeField] private RawImage fade;
+    [SerializeField] private GameObject[] destroyGameobject;
     bool done = false;
     float saveSpeed = 0;
     float saveJump = 0;
@@ -30,6 +31,13 @@ public class Teleporter : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.F))
             {
                 done = true;
+                if (destroyGameobject != null)
+                {
+                    foreach(GameObject gameObject in destroyGameobject)
+                    {
+                        Destroy(gameObject);
+                    }
+                }
                 StartCoroutine(WaitFade());
             }
         }

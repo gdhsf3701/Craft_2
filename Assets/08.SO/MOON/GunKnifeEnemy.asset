@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dcbf29d706103404e985e966fd40482b, type: 3}
-  m_Name: NormalEnemy
+  m_Name: GunKnifeEnemy
   m_EditorClassIdentifier: 
-  poolName: NormalEnemy
-  prefab: {fileID: 0}
+  poolName: GunKnifeEnemy
+  prefab: {fileID: 8269590021381735120, guid: a4f6635e1ae665c4bb5f7a8be776baf8, type: 3}
   count: 20
