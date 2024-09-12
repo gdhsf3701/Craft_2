@@ -22,9 +22,14 @@ public class Player : Agent
     [field: SerializeField] public InputReader PlayerInput { get; private set; }
     public float attackCoolDown;
 
-    public PlayerDamageSO skill1, skill2;
+    [SerializeField]
+    private PlayerDamageSO _skill1;
+    [SerializeField]
+    private PlayerDamageSO _skill2;
+
     public int comboCount= 0;
-    public int skillCount=0;
+    private int _skillCount=0;
+
     protected override void Awake()
     {
         base.Awake();
@@ -68,9 +73,9 @@ public class Player : Agent
     {
         if (SkillManager.Instance.GetSkill<KnifeSkill>().AttemptUseSkill())
         {
-            damageData = skill1;
+            damageData = _skill1;
             Attack();
-            skillCount = 1;
+            _skillCount = 1;
             stateMachine.ChangeState(PlayerEnum.Knife);
         }
     }
@@ -79,9 +84,9 @@ public class Player : Agent
     {
         if (SkillManager.Instance.GetSkill<KickSkill>().AttemptUseSkill())
         {
-            damageData = skill2;
+            damageData = _skill2;
             Attack();
-            skillCount = 2;
+            _skillCount = 2;
             stateMachine.ChangeState(PlayerEnum.Kick);
         }
     }
@@ -126,8 +131,9 @@ public class Player : Agent
         
         SoundPlayer soundPlayer = PoolManager.Instance.Pop("SoundPlayer") as SoundPlayer;
         soundPlayer.PlaySound(sound);
-        skillCount = 0;
+        _skillCount = 0;
     }
+    
     private void HandleJumpKeyEvent()
     {
         if (MovementCompo.isGround.Value)
