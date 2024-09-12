@@ -147,6 +147,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1779981042756133244, guid: 2f288e7dde651c2408b926e4a0c66136, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2100714354469946413, guid: 2f288e7dde651c2408b926e4a0c66136, type: 3}
       propertyPath: m_Name
       value: Cliffs
@@ -226,7 +230,7 @@ PrefabInstance:
     - target: {fileID: 8508004468132481606, guid: 2f288e7dde651c2408b926e4a0c66136, type: 3}
       propertyPath: dark
       value: 
-      objectReference: {fileID: 2037625572}
+      objectReference: {fileID: 2037625576}
     - target: {fileID: 8508004468132481606, guid: 2f288e7dde651c2408b926e4a0c66136, type: 3}
       propertyPath: Player
       value: 
@@ -77824,6 +77828,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6008485667110649455, guid: bdf1e0eb886dfdf478b40d9cae518e0e, type: 3}
   m_PrefabInstance: {fileID: 1300316923}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2037625576 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7929104597626981010, guid: bdf1e0eb886dfdf478b40d9cae518e0e, type: 3}
+  m_PrefabInstance: {fileID: 1300316923}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037625572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2042779924
 PrefabInstance:
   m_ObjectHideFlags: 0
