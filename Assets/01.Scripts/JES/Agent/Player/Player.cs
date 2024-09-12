@@ -68,7 +68,8 @@ public class Player : Agent
     {
         if (SkillManager.Instance.GetSkill<KnifeSkill>().AttemptUseSkill())
         {
-            Attack(skill1);
+            damageData = skill1;
+            Attack();
             skillCount = 1;
             stateMachine.ChangeState(PlayerEnum.Knife);
         }
@@ -78,11 +79,13 @@ public class Player : Agent
     {
         if (SkillManager.Instance.GetSkill<KickSkill>().AttemptUseSkill())
         {
-            Attack(skill2);
+            damageData = skill2;
+            Attack();
             skillCount = 2;
             stateMachine.ChangeState(PlayerEnum.Kick);
         }
     }
+    
     
     private void OnDestroy()
     {
@@ -99,14 +102,14 @@ public class Player : Agent
         
         attackCoolDown = 0;
         
-        Attack(damageData);
+        Attack();
 
         CastDamage();
         
         comboCount++;
     }
 
-    private void Attack(PlayerDamageSO damageSo)
+    private void Attack()
     {
         DamageCasterCompo.transform.localPosition = damageData.damagePos;
         DamageCasterCompo.damageRadius = damageData.damageRadius;
@@ -118,20 +121,8 @@ public class Player : Agent
     public void CastDamage()
     {
         bool suc = DamageCasterCompo.CastDamage(_damage, _knockPower);
-        SoundSO sound = null;
         
-        if (skillCount == 1)
-        {
-            sound = skill1.AttackSound(suc);
-        }
-        else if (skillCount == 2)
-        {
-            sound = skill2.AttackSound(suc);
-        }
-        else
-        {
-            sound = damageData.AttackSound(suc);
-        }
+        SoundSO sound = damageData.AttackSound(suc);
         
         SoundPlayer soundPlayer = PoolManager.Instance.Pop("SoundPlayer") as SoundPlayer;
         soundPlayer.PlaySound(sound);
@@ -155,11 +146,6 @@ public class Player : Agent
         float x = PlayerInput.Movement.x;
         SpriteFlip(x);
         MovementCompo.SetMoveMent(x);
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            HealthCompo.TakeDamage(1,Vector2.zero, Vector2.zero, 1);
-        }
     }
 
     public void SpriteFlip(float x)
