@@ -801,7 +801,7 @@ PlayableDirector:
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 0167359ff77689241853236f3c4c63b3, type: 2}
   m_InitialState: 1
-  m_WrapMode: 2
+  m_WrapMode: 0
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
@@ -23052,7 +23052,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1565265945
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23069,8 +23069,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -853.15, y: -547.05}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -853.3583, y: -547.05}
+  m_SizeDelta: {x: 192.687, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1565265946
 MonoBehaviour:
@@ -24006,8 +24006,8 @@ Transform:
   m_GameObject: {fileID: 2104638523}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.6709524, y: 0, z: 0}
-  m_LocalScale: {x: 4.341807, y: 1, z: 1}
+  m_LocalPosition: {x: -1.5679, y: 0, z: 0}
+  m_LocalScale: {x: 4.135537, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1953779256}
@@ -24114,7 +24114,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.047058824}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -24194,7 +24194,7 @@ Animator:
   m_GameObject: {fileID: 399602199063891484}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b56680a148fda274e93c7b5e6b788e4c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8c0b13df94b8bb54b8dbb08aa2ccb990, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
