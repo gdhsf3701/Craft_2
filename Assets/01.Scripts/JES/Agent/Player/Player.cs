@@ -22,9 +22,14 @@ public class Player : Agent
     [field: SerializeField] public InputReader PlayerInput { get; private set; }
     public float attackCoolDown;
 
-    public PlayerDamageSO skill1, skill2;
+    [SerializeField]
+    private PlayerDamageSO _skill1;
+    [SerializeField]
+    private PlayerDamageSO _skill2;
+
     public int comboCount= 0;
-    public int skillCount=0;
+    private int _skillCount=0;
+
     protected override void Awake()
     {
         base.Awake();
@@ -68,8 +73,9 @@ public class Player : Agent
     {
         if (SkillManager.Instance.GetSkill<KnifeSkill>().AttemptUseSkill())
         {
-            Attack(skill1);
-            skillCount = 1;
+            damageData = _skill1;
+            Attack();
+            _skillCount = 1;
             stateMachine.ChangeState(PlayerEnum.Knife);
         }
     }
@@ -78,11 +84,13 @@ public class Player : Agent
     {
         if (SkillManager.Instance.GetSkill<KickSkill>().AttemptUseSkill())
         {
-            Attack(skill2);
-            skillCount = 2;
+            damageData = _skill2;
+            Attack();
+            _skillCount = 2;
             stateMachine.ChangeState(PlayerEnum.Kick);
         }
     }
+    
     
     private void OnDestroy()
     {
@@ -99,14 +107,14 @@ public class Player : Agent
         
         attackCoolDown = 0;
         
-        Attack(damageData);
+        Attack();
 
         CastDamage();
         
         comboCount++;
     }
 
-    private void Attack(PlayerDamageSO damageSo)
+    private void Attack()
     {
         DamageCasterCompo.transform.localPosition = damageData.damagePos;
         DamageCasterCompo.damageRadius = damageData.damageRadius;
@@ -118,25 +126,14 @@ public class Player : Agent
     public void CastDamage()
     {
         bool suc = DamageCasterCompo.CastDamage(_damage, _knockPower);
-        SoundSO sound = null;
         
-        if (skillCount == 1)
-        {
-            sound = skill1.AttackSound(suc);
-        }
-        else if (skillCount == 2)
-        {
-            sound = skill2.AttackSound(suc);
-        }
-        else
-        {
-            sound = damageData.AttackSound(suc);
-        }
+        SoundSO sound = damageData.AttackSound(suc);
         
         SoundPlayer soundPlayer = PoolManager.Instance.Pop("SoundPlayer") as SoundPlayer;
         soundPlayer.PlaySound(sound);
-        skillCount = 0;
+        _skillCount = 0;
     }
+    
     private void HandleJumpKeyEvent()
     {
         if (MovementCompo.isGround.Value)
@@ -155,11 +152,6 @@ public class Player : Agent
         float x = PlayerInput.Movement.x;
         SpriteFlip(x);
         MovementCompo.SetMoveMent(x);
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            HealthCompo.TakeDamage(1,Vector2.zero, Vector2.zero, 1);
-        }
     }
 
     public void SpriteFlip(float x)
