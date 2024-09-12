@@ -120,6 +120,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 4503942969248558047}
+  _moveRightSound: {fileID: 11400000, guid: fcda750f375197141b017a09bb33b8ab, type: 2}
+  _moveLeftSound: {fileID: 11400000, guid: fcda750f375197141b017a09bb33b8ab, type: 2}
 --- !u!1 &1646687887588138710
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,10 +393,9 @@ MonoBehaviour:
   damageData: {fileID: 0}
   <PlayerInput>k__BackingField: {fileID: 11400000, guid: eb449ca5b0f1c484688841204694a5c2, type: 2}
   attackCoolDown: 0
-  skill1: {fileID: 0}
-  skill2: {fileID: 0}
+  _skill1: {fileID: 0}
+  _skill2: {fileID: 0}
   comboCount: 0
-  skillCount: 0
 --- !u!114 &4115931028923605270
 MonoBehaviour:
   m_ObjectHideFlags: 0

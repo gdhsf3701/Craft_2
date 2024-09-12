@@ -2,22 +2,25 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using System;
+using System.Collections;
 
 public class Door : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI text;
-    [SerializeField] private RawImage fade;
+    [SerializeField] private TextMeshProUGUI _text;
+    [SerializeField] private RawImage _fadeImage;
+    [SerializeField] private Transform _target;
     private bool _isPlayer = false;
     private Transform _playerTrm;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        text.gameObject.SetActive(true);
+        _text.gameObject.SetActive(true);
         _isPlayer = true;
         _playerTrm = collision.transform;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        text.gameObject.SetActive(false);
+        _text.gameObject.SetActive(false);
         _isPlayer = false;
     }
 
@@ -27,17 +30,20 @@ public class Door : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.F))
             {
-                fade.DOFade(1, 1.5f);
+                _fadeImage.DOFade(1, 1.5f);
                 _isPlayer = false;
-                _playerTrm.DOMove( new Vector3(86.3f, 2.5f, 0),1).SetDelay(1);
-                fade.DOFade(0, 1f).SetDelay(2);
-                
+                StartCoroutine(Delay());
                 
             }
         }
     }
 
+    IEnumerator Delay()
+    {
 
-
-
+        yield return new WaitForSeconds(1);
+        _playerTrm.position = _target.position;
+        yield return new WaitForSeconds(1);
+        _fadeImage.DOFade(0, 1.5f);
+    }
 }
