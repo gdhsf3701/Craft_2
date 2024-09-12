@@ -17,10 +17,6 @@ public class EnemySpawner : MonoBehaviour
 
     private void OnEnable()
     {
-        if(SpawnCoroutine() == null)
-        {
-            print("SpawnCoroutine{IsNull}");
-        }
         StartCoroutine(SpawnCoroutine());
     }
     IEnumerator SpawnCoroutine()
@@ -31,15 +27,7 @@ public class EnemySpawner : MonoBehaviour
             enemyCount--;
             int randomIndex = Random.Range(0, spawnPoints.Count);
             Vector3 spawnPoint = spawnPoints[randomIndex].position;
-            Moon_Enemy enemy = PoolManager.Instance.Pop("GunKnifeEnemy") as Moon_Enemy;
-            if (enemy == null)
-            {
-                print("enemy{IsNull}");
-            }
-            if(spawnPoint == null)
-            {
-                print("spawnPoint{IsNull}");
-            }
+            GunKnifeEnemy enemy = PoolManager.Instance.Pop("GunKnifeEnemy") as GunKnifeEnemy;
             enemy.transform.position = spawnPoint;
 
             yield return new WaitForSeconds(Random.Range(minTime, maxTime));

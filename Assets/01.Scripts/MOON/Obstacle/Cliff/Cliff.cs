@@ -66,7 +66,7 @@ public class Cliff : MonoBehaviour
         yield return new WaitForSeconds(delayTime);
         Player.transform.position = cliffReturn[childIndex].position;
         dark.DOFade(0, darkTime);
-        yield return new WaitForSeconds(darkTime);
+        yield return new WaitForSeconds(darkTime/2);
         player.MovementCompo.moveSpeed = saveSpeed;
         player.MovementCompo.jumpPower = saveJump;
     }

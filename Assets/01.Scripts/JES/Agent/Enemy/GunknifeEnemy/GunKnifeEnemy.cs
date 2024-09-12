@@ -67,6 +67,11 @@ public class GunKnifeEnemy : Enemy, Ipoolable
         stateMachine.ChangeState(EnemyEnum.Dead);
     }
 
+    public void SetFindPlayerAll()
+    {
+        stateMachine.ChangeState(EnemyEnum.AllCheck);
+    }
+
     public void ResetItem() //죽은 후 다시 소환될때
     {
         CanStateChangeable = true; // 상태를 변경 할 수 있는지, 아닌지
