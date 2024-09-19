@@ -548,6 +548,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zipline
       objectReference: {fileID: 0}
+    - target: {fileID: 168137396657769886, guid: 9bcc312bd3067f24c802b87271c3696c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2123579474489028322, guid: 9bcc312bd3067f24c802b87271c3696c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -659.9
@@ -597,12 +601,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7840779494058438097, guid: 9bcc312bd3067f24c802b87271c3696c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.6024
+      objectReference: {fileID: 0}
+    - target: {fileID: 7840779494058438097, guid: 9bcc312bd3067f24c802b87271c3696c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -672.81
       objectReference: {fileID: 0}
     - target: {fileID: 7840779494058438097, guid: 9bcc312bd3067f24c802b87271c3696c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -863.19
+      value: -862.3889
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -857,7 +865,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1102886967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2174,11 +2182,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8240498157004714946, guid: 9495cab86d349f64897b2723b671774c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.86
+      value: -8.59
       objectReference: {fileID: 0}
     - target: {fileID: 8240498157004714946, guid: 9495cab86d349f64897b2723b671774c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.08
+      value: 9.43
       objectReference: {fileID: 0}
     - target: {fileID: 8240498157004714946, guid: 9495cab86d349f64897b2723b671774c, type: 3}
       propertyPath: m_LocalPosition.z

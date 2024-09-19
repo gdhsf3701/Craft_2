@@ -18,16 +18,20 @@ public enum EnemyEnum
     Reload1,
     Reload2,
     Attack21,
+    SpotPlayer,
+    KnifeSpot
 }
 public class GunKnifeEnemy : Enemy, Ipoolable
 {
     public EnemyStateMachine stateMachine;
     [SerializeField] private string _poolName = "GunKnifeEnemy";
 
+    public Action<GunKnifeEnemy> OnDeathEvent;
     public string PoolName => _poolName;
 
     public GameObject ObjectPrefab => gameObject;
 
+    public bool SpotPlayer = false;
     
     protected override void Awake()
     {
@@ -41,10 +45,17 @@ public class GunKnifeEnemy : Enemy, Ipoolable
         stateMachine.AddState(EnemyEnum.Dead,new GunDeadState(this, stateMachine, "Dead"));
         stateMachine.AddState(EnemyEnum.KnifeChase,new GunKnifeChaseState(this, stateMachine, "KnifeChase"));
         stateMachine.AddState(EnemyEnum.Attack1,new GunAttackState(this, stateMachine, "Attack"));
+        stateMachine.AddState(EnemyEnum.SpotPlayer,new GunSpotPlayerState(this, stateMachine, "Chase"));
+        stateMachine.AddState(EnemyEnum.KnifeSpot,new KnifeSpotPlayerState(this, stateMachine, "KnifeChase"));
 
         stateMachine.Initalize(EnemyEnum.Idle,this);
     }
 
+    public void SetSpotPlayer(Player player)
+    {
+        targerTrm =player.transform;
+        SpotPlayer = true;
+    }
     private void Update()
     {
         stateMachine.CurrentState.UpdateState(); // 현재 상태의 업데이트 우선 실행
