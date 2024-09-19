@@ -34,7 +34,7 @@ public abstract class Enemy : Agent
         _colliders = new Collider2D[1];
     }
 
-    public Collider2D GetPlayerInRange()
+    public virtual Collider2D GetPlayerInRange()
     {
         int count = Physics2D.OverlapCircle(transform.position,detectRadius,contactFilter,_colliders);
         return count >0? _colliders[0]: null;
