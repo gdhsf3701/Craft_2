@@ -3,31 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public enum EnemyEnum
-{
-    Idle,
-    Chase,
-    Fire,
-    KnifeChase,
-    Attack1,
-    Attack2,
-    Dead,
-    Skill1,
-    Skill2,
-    Reload1,
-    Reload2,
-    Attack21,
-}
-public class GunKnifeEnemy : Enemy, Ipoolable
+public class Stage3Enemy : Enemy, Ipoolable
 {
     public EnemyStateMachine stateMachine;
-    [SerializeField] private string _poolName = "GunKnifeEnemy";
+    [SerializeField] private string _poolName = "Stage3Enemy";
 
     public string PoolName => _poolName;
 
     public GameObject ObjectPrefab => gameObject;
-
     
     protected override void Awake()
     {
@@ -63,6 +46,7 @@ public class GunKnifeEnemy : Enemy, Ipoolable
     {
         stateMachine.ChangeState(EnemyEnum.Dead);
     }
+
     public void ResetItem() //죽은 후 다시 소환될때
     {
         CanStateChangeable = true; // 상태를 변경 할 수 있는지, 아닌지
