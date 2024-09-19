@@ -8,12 +8,12 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] List<Transform> spawnPoints = new List<Transform>();
     //[SerializeField] Transform Spawner;
-    float minTime = 0.7f;
-    float maxTime = 1.7f;
+    float minTime = 5f;
+    float maxTime = 7f;
 
 
 
-    int enemyCount = 40;
+    int enemyCount = 16;
 
     private void OnEnable()
     {
