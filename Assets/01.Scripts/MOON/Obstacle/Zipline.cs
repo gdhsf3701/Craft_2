@@ -71,7 +71,7 @@ public class Zipline : MonoBehaviour
     }
     IEnumerator MoveToTarget()
     {
-        while (Mathf.Abs(_player.transform.position.y - targetY) > 0.05f)
+        while (Mathf.Abs(_player.transform.position.y - targetY) > 0.1f)
         {
             Vector3 currentPosition = _player.transform.position;
             Vector3 targetPosition = new Vector3(currentPosition.x, targetY, currentPosition.z);
