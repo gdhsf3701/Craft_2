@@ -19,7 +19,7 @@ public class Zipline : MonoBehaviour
 
     SoundPlayer soundPlayer;
 
-    Player _player;
+    [SerializeField]Player _player;
 
     [SerializeField] float Speed = 10;
     private void Awake()
