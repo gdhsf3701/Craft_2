@@ -41,11 +41,7 @@ public class GunKnifeEnemy : Enemy, Ipoolable
         stateMachine.AddState(EnemyEnum.Dead,new GunDeadState(this, stateMachine, "Dead"));
         stateMachine.AddState(EnemyEnum.KnifeChase,new GunKnifeChaseState(this, stateMachine, "KnifeChase"));
         stateMachine.AddState(EnemyEnum.Attack1,new GunAttackState(this, stateMachine, "Attack"));
-<<<<<<< HEAD
 
-=======
-            
->>>>>>> Base
         stateMachine.Initalize(EnemyEnum.Idle,this);
     }
 
@@ -67,10 +63,6 @@ public class GunKnifeEnemy : Enemy, Ipoolable
     {
         stateMachine.ChangeState(EnemyEnum.Dead);
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> Base
     public void ResetItem() //죽은 후 다시 소환될때
     {
         CanStateChangeable = true; // 상태를 변경 할 수 있는지, 아닌지
