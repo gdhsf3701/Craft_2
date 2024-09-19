@@ -2,23 +2,21 @@ using BehaviorDesigner.Runtime.Tasks.Unity.UnityTransform;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class ChangeEnemyState : MonoBehaviour
 {
-    GunKnifeEnemy[] childScr;
-    Stage3_Door Door;
+    [SerializeField]GunKnifeEnemy[] childScr;
+    [SerializeField]Stage3_Door Door;
 
     private void Awake()
     {
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            childScr[i] = transform.GetChild(i).GetComponent<GunKnifeEnemy>();
-        }
+        childScr = GetComponentsInChildren<GunKnifeEnemy>();
     }
     public void Update()
     {
-        if(childScr != null)
+        if (childScr != null)
         {
             if (Door.done)
             {
@@ -37,7 +35,7 @@ public class ChangeEnemyState : MonoBehaviour
     {
         for (int i = 0; i < childScr.Length; i++)
         {
-            childScr[i].SetFindPlayerAll();
+           childScr[i].SetFindPlayerAll();
         }
     }
 }
