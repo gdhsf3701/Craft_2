@@ -26,8 +26,8 @@ public class EnemySpawner : MonoBehaviour
         {
             enemyCount--;
             int randomIndex = Random.Range(0, spawnPoints.Count);
-            Vector2 spawnPoint = spawnPoints[randomIndex].position;
-            Moon_Enemy enemy = PoolManager.Instance.Pop("NormalEnemy") as Moon_Enemy;
+            Vector3 spawnPoint = spawnPoints[randomIndex].position;
+            GunKnifeEnemy enemy = PoolManager.Instance.Pop("GunKnifeEnemy") as GunKnifeEnemy;
             enemy.transform.position = spawnPoint;
 
             yield return new WaitForSeconds(Random.Range(minTime, maxTime));

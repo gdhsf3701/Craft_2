@@ -17,7 +17,8 @@ public enum EnemyEnum
     Skill2,
     Reload1,
     Reload2,
-    Attack21
+    Attack21,
+    AllCheck
 }
 public class GunKnifeEnemy : Enemy, Ipoolable
 {
@@ -41,6 +42,7 @@ public class GunKnifeEnemy : Enemy, Ipoolable
         stateMachine.AddState(EnemyEnum.Dead,new GunDeadState(this, stateMachine, "Dead"));
         stateMachine.AddState(EnemyEnum.KnifeChase,new GunKnifeChaseState(this, stateMachine, "KnifeChase"));
         stateMachine.AddState(EnemyEnum.Attack1,new GunAttackState(this, stateMachine, "Attack"));
+        stateMachine.AddState(EnemyEnum.AllCheck, new EnemyAllCheckState(this, stateMachine, "Idle"));
 
         stateMachine.Initalize(EnemyEnum.Idle,this);
 
@@ -63,6 +65,11 @@ public class GunKnifeEnemy : Enemy, Ipoolable
     public override void SetDeadState()
     {
         stateMachine.ChangeState(EnemyEnum.Dead);
+    }
+
+    public void SetFindPlayerAll()
+    {
+        stateMachine.ChangeState(EnemyEnum.AllCheck);
     }
 
     public void ResetItem() //죽은 후 다시 소환될때

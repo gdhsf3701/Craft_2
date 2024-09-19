@@ -18,20 +18,19 @@ public class NevObject : MonoBehaviour
 
     void Update()
     {
-        if (target == null)
+        if (target == null||pointer == null)
         {
-            pointer.SetActive(false);
-            return;
+            Destroy(pointer);
+            enabled = false;
         }
 
         Vector3 screenPos = mainCamera.WorldToScreenPoint(target.position);
 
         if (screenPos.z > 0 && screenPos.x > 0 && screenPos.x < Screen.width && screenPos.y > 0 && screenPos.y < Screen.height)
         {
-            pointer.SetActive(false);
+            Destroy(pointer);
+            enabled = false;
         }
-        else
-        {
             Vector3 clampedPosition = target.position;
 
             Vector3 viewportPos = mainCamera.WorldToViewportPoint(target.position);
@@ -56,6 +55,5 @@ public class NevObject : MonoBehaviour
             Vector3 direction = target.position - pointer.transform.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             pointer.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
-        }
     }
 }

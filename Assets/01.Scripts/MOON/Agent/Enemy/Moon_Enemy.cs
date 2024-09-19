@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Moon_Enemy : MonoBehaviour, Ipoolable
 {
-    [SerializeField] private string _poolname = "NormalEnemy";
+    [SerializeField] private string _poolname = "GunKnifeEnemy";
     public string PoolName => _poolname;
 
     public GameObject ObjectPrefab => gameObject;

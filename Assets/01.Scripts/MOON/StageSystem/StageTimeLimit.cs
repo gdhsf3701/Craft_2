@@ -9,8 +9,6 @@ public class StageTimeLimit : MonoBehaviour
 {
     [SerializeField]int timeLimit;
     int nowTime = 0;
-    public bool nowCheck = true;
-
     public bool done = false;
 
     public Action<int> OnNowTimeChanged;
@@ -44,12 +42,16 @@ public class StageTimeLimit : MonoBehaviour
 
     IEnumerator TimeCheck()
     {
-        while (nowTime <= timeLimit&& nowCheck)
+        while (nowTime <= timeLimit)
         {
             yield return new WaitForSeconds(1);
             if (!done)
             {
                 NowTime += 1;
+            }
+            else
+            {
+                Destroy(gameObject);
             }
         }
         //게임오버 스크립트
