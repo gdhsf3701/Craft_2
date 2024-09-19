@@ -17,3 +17,5 @@ MonoBehaviour:
   damagePos: {x: 1.18, y: 0.02}
   damageRadius: 0.9
   attackCooldown: 0.6
+  sucSound: {fileID: 11400000, guid: 046de3feda790fa46a3722b5a3f1d535, type: 2}
+  failSound: {fileID: 11400000, guid: 27f73c673493d874eb708babc2a7f581, type: 2}

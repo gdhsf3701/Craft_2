@@ -16,12 +16,11 @@ public abstract class Enemy : Agent
 
     protected int _enemyLayer;
 
-
     private Collider2D[] _colliders;
 
     [Header("Gun Settings")]
     [SerializeField]
-    private Transform muzzleTrm;
+    protected Transform muzzleTrm;
     [SerializeField]
     private int bulletDamage;
     [SerializeField]
@@ -30,6 +29,7 @@ public abstract class Enemy : Agent
     protected override void Awake()
     {
         base.Awake();
+        
         _enemyLayer = LayerMask.NameToLayer("Enemy");
         _colliders = new Collider2D[1];
     }
@@ -55,9 +55,9 @@ public abstract class Enemy : Agent
 
     public virtual void FireBullet()
     {
-        float x = targerTrm.position.x-transform.position.x;
+        
         EnemyBullet bullet = PoolManager.Instance.Pop("Enemybullet") as EnemyBullet;
-        bullet.InitAndFire(muzzleTrm,x,bulletDamage, bulletKnockBack);
+        bullet.InitAndFire(muzzleTrm,transform.rotation,bulletDamage, bulletKnockBack);
     }
 
 #if UNITY_EDITOR
@@ -67,10 +67,7 @@ public abstract class Enemy : Agent
         Gizmos.DrawWireSphere(transform.position, detectRadius);
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRadius);
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, attackRadius-5);
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackRadius-8);
+        Gizmos.color = Color.white;
     }
 #endif
 

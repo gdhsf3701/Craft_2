@@ -36,7 +36,7 @@ public class Health : MonoBehaviour
 
     public void ResetHealth()
     {
-        if (_owner.TryGetComponent<Player>(out Player player))
+        if (_owner!=null&&_owner.TryGetComponent<Player>(out Player player))
         {
             
             _currentHealth = SaveManager.Instance.saveData.playerHp;
@@ -50,14 +50,16 @@ public class Health : MonoBehaviour
     public void TakeDamage(int amount, Vector2 normal, Vector2 point, float knockbackPower)
     {
         _currentHealth -= amount;
-        OnHitEvent?.Invoke();
-
-        if(knockbackPower > 0)
-            _owner.MovementCompo.GetKnockback(normal * -1, knockbackPower);
-
         if(_currentHealth <= 0)
         {
             OnDeadEvent?.Invoke();
+            return;
         }
+        OnHitEvent?.Invoke();
+
+        if(knockbackPower > 0&&_owner!=null)
+            _owner.MovementCompo.GetKnockback(normal * -1, knockbackPower);
+
+        
     }
 }

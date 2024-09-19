@@ -75,12 +75,12 @@ SpriteRenderer:
   m_SortingLayerID: -662909301
   m_SortingLayer: 1
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: b0a625289cea1244ba25bb1878597aa5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 37a7d92875acfc443b755f72c126a316, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -120,6 +120,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 4503942969248558047}
+  _moveRightSound: {fileID: 11400000, guid: fcda750f375197141b017a09bb33b8ab, type: 2}
+  _moveLeftSound: {fileID: 11400000, guid: fcda750f375197141b017a09bb33b8ab, type: 2}
 --- !u!1 &1646687887588138710
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,7 +147,7 @@ Transform:
   m_GameObject: {fileID: 1646687887588138710}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.992, z: 0}
+  m_LocalPosition: {x: 0.33, y: -1.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -337,8 +339,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.018610775, y: 0.006203592}
-  m_Size: {x: 0.93425095, y: 1.9801663}
+  m_Offset: {x: 0.3107984, y: -0.7872125}
+  m_Size: {x: 0.50212336, y: 2.1076796}
   m_Direction: 0
 --- !u!114 &5107006070455371126
 MonoBehaviour:
@@ -353,7 +355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _groundCheckerTrm: {fileID: 2873166539569312061}
-  moveSpeed: 10
+  moveSpeed: 5
   jumpPower: 12
   extraGravity: 30
   gravityDelay: 0.15
@@ -361,7 +363,7 @@ MonoBehaviour:
   _whatIsGround:
     serializedVersion: 2
     m_Bits: 64
-  _groundCheckerSize: {x: 0.5, y: 0.3}
+  _groundCheckerSize: {x: 0.36, y: 0.3}
   isGround:
     _value: 0
   _xMove: 0
@@ -380,6 +382,7 @@ MonoBehaviour:
   lastAttackTime: 0
   _damage: 0
   _knockPower: 0
+  isRun: 0
   damageDataList:
   - {fileID: 11400000, guid: 07255da0222461944a235ce755b39591, type: 2}
   - {fileID: 11400000, guid: 52dc673fb5ff4fb41b6c11d566977c47, type: 2}
@@ -390,6 +393,8 @@ MonoBehaviour:
   damageData: {fileID: 0}
   <PlayerInput>k__BackingField: {fileID: 11400000, guid: eb449ca5b0f1c484688841204694a5c2, type: 2}
   attackCoolDown: 0
+  _skill1: {fileID: 0}
+  _skill2: {fileID: 0}
   comboCount: 0
 --- !u!114 &4115931028923605270
 MonoBehaviour:
@@ -418,10 +423,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: HpbarUi, Assembly-CSharp
+        m_MethodName: HitEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4503942969248558047}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: HitStateChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnDeadEvent:
     m_PersistentCalls:
       m_Calls: []
-  _maxHealth: 150
+  _maxHealth: 6
 --- !u!1001 &1166629986054839975
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -8,9 +8,9 @@ public class PlayerAttack2State : PlayerAttackState
     {
     }
 
-    public override void Enter()
+    public override void Exit()
     {
-        base.Enter();
+        base.Exit();
         SkillCoolUI.Instance.NormalAttackSprite(2);
     }
 }

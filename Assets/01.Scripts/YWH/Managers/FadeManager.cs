@@ -23,6 +23,8 @@ public class FadeManager : MonoBehaviour
         { 
             Destroy(this.gameObject);
         }
+        fade.DOFade(0, 1);
+
     }
 
     private void Start()

@@ -13,9 +13,8 @@ public class EnemyBullet : MonoBehaviour, Ipoolable
     private DamageCaster _damageCaster;
     private Rigidbody2D _rigidBody;
 
-    private int _damage;
+    private int _damage=1;
     private float _knockPower;
-    private Vector2 _fireDirection;
 
     private bool _isDead = false;
     private float _timer = 0;
@@ -25,17 +24,17 @@ public class EnemyBullet : MonoBehaviour, Ipoolable
         _rigidBody = GetComponent<Rigidbody2D>();
     }
 
-    public void InitAndFire(Transform firePosTrm,float x, int damage, float knockBackPower)
+    public void InitAndFire(Transform firePosTrm,Quaternion rotation, int damage, float knockBackPower)
     {
         _damage = damage;
         _knockPower = knockBackPower;
         transform.position = firePosTrm.position;
-        _fireDirection = new Vector2(x, 0).normalized;
+        transform.rotation = rotation;
     }
 
     private void FixedUpdate()
     {
-        _rigidBody.velocity = _fireDirection* _moveSpeed;
+        _rigidBody.velocity = transform.right* _moveSpeed;
         _timer += Time.fixedDeltaTime;
 
         if (_timer >= _lifeTime)
