@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GunIdleState : EnemyState
@@ -17,6 +18,11 @@ public class GunIdleState : EnemyState
     {
         base.UpdateState();
 
+        if ((_enemy as GunKnifeEnemy).SpotPlayer)
+        {
+            _stateMachine.ChangeState(EnemyEnum.SpotPlayer);
+        }
+        
         Collider2D player = _enemy.GetPlayerInRange();
         if (player != null)
         {
