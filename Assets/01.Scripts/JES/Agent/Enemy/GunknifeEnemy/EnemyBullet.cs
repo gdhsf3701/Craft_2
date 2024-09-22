@@ -46,6 +46,8 @@ public class EnemyBullet : MonoBehaviour, Ipoolable
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (_isDead) return;
+        
+        Debug.Log(collision.gameObject.name);
         _damageCaster.CastDamage(_damage, _knockPower);
         DestroyBullet();
     }

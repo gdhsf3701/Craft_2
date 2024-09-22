@@ -19,7 +19,8 @@ public enum EnemyEnum
     Reload2,
     Attack21,
     SpotPlayer,
-    KnifeSpot
+    KnifeSpot,
+    Hit
 }
 public class GunKnifeEnemy : Enemy, Ipoolable
 {
@@ -43,7 +44,6 @@ public class GunKnifeEnemy : Enemy, Ipoolable
         stateMachine.AddState(EnemyEnum.Chase,new GunChaseState(this, stateMachine, "Chase"));
         stateMachine.AddState(EnemyEnum.Fire,new GunFireState(this, stateMachine, "Fire"));
         stateMachine.AddState(EnemyEnum.Dead,new GunDeadState(this, stateMachine, "Dead"));
-        stateMachine.AddState(EnemyEnum.KnifeChase,new GunKnifeChaseState(this, stateMachine, "KnifeChase"));
         stateMachine.AddState(EnemyEnum.Attack1,new GunAttackState(this, stateMachine, "Attack"));
         stateMachine.AddState(EnemyEnum.SpotPlayer,new GunSpotPlayerState(this, stateMachine, "Chase"));
         stateMachine.AddState(EnemyEnum.KnifeSpot,new KnifeSpotPlayerState(this, stateMachine, "KnifeChase"));

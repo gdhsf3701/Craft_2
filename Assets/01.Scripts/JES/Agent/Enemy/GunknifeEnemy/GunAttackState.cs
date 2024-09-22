@@ -23,7 +23,6 @@ public class GunAttackState : EnemyState
     {
         base.UpdateState();
         if (_endTriggerCalled)
-            _stateMachine.ChangeState(EnemyEnum.KnifeChase);
-
+            _stateMachine.ChangeState(EnemyEnum.Chase);
     }
 }

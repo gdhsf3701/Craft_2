@@ -36,15 +36,7 @@ public class Health : MonoBehaviour
 
     public void ResetHealth()
     {
-        if (_owner!=null&&_owner.TryGetComponent<Player>(out Player player))
-        {
-            
-            _currentHealth = SaveManager.Instance.saveData.playerHp;
-        }
-        else
-        {
-            _currentHealth = _maxHealth;
-        }
+        _currentHealth = _maxHealth;
     }
 
     public void TakeDamage(int amount, Vector2 normal, Vector2 point, float knockbackPower)
@@ -59,7 +51,5 @@ public class Health : MonoBehaviour
 
         if(knockbackPower > 0&&_owner!=null)
             _owner.MovementCompo.GetKnockback(normal * -1, knockbackPower);
-
-        
     }
 }

@@ -55,7 +55,6 @@ public abstract class Enemy : Agent
 
     public virtual void FireBullet()
     {
-        
         EnemyBullet bullet = PoolManager.Instance.Pop("Enemybullet") as EnemyBullet;
         bullet.InitAndFire(muzzleTrm,transform.rotation,bulletDamage, bulletKnockBack);
     }
