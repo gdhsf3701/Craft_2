@@ -6,18 +6,19 @@ using UnityEngine;
 public class CSI_well : MonoBehaviour
 {
     private AgentMovement _agentMovement;
-    private float slow_amount;
+    float slow_amount;
     private bool isuse;
     private void Awake()
     {
         _agentMovement = PlayerManager.Instance.Player.GetComponent<AgentMovement>();
-        slow_amount = _agentMovement.moveSpeed / 2;
+        slow_amount = 3;
     }
-    private void OnTriggerEnter2D(Collider2D other)
+
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (other.transform.CompareTag("Player"))
         {
-            _agentMovement.moveSpeed -= slow_amount;
+            _agentMovement.moveSpeed = slow_amount;
             
         }
     }
@@ -26,7 +27,7 @@ public class CSI_well : MonoBehaviour
     {
         if (other.transform.CompareTag("Player"))
         {
-            _agentMovement.moveSpeed += slow_amount;
+            _agentMovement.moveSpeed = 7;
 
         }
 

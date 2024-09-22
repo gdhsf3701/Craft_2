@@ -71,7 +71,7 @@ public class Ditch : MonoBehaviour
             _player = collision.GetComponent<Player>();
             isIn = true;
             ditchOut = 20;
-            gameOverTime = 5;
+            gameOverTime = 100;
             saveSpeed = _player.MovementCompo.moveSpeed;
             saveJump = _player.MovementCompo.jumpPower;
             _player.MovementCompo.moveSpeed = 0;
