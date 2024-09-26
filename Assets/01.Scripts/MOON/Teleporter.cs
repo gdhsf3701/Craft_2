@@ -14,6 +14,9 @@ public class Teleporter : MonoBehaviour
     [SerializeField] private RawImage fade;
     [SerializeField] private GameObject[] destroyGameobject;
     [SerializeField] private TextMeshProUGUI _text;
+    [SerializeField] private EnemySpawner enemyspawn;
+
+
     bool done = false;
     float saveSpeed = 0;
     float saveJump = 0;
@@ -45,6 +48,11 @@ public class Teleporter : MonoBehaviour
         }
     }
 
+    public void Died()
+    {
+        StartCoroutine(WaitFade());
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -67,6 +75,7 @@ public class Teleporter : MonoBehaviour
         yield return new WaitUntil(() => ChatSystem.Instance.endText == true);
         
         yield return new WaitForSeconds(1.5f);
+
         ChatSystem.Instance.StopTyp();
         Player.transform.position = target.position;
 
@@ -77,6 +86,8 @@ public class Teleporter : MonoBehaviour
         ChatSystem.Instance.StopTyp();
         player.MovementCompo.moveSpeed = saveSpeed;
         player.MovementCompo.jumpPower = saveJump;
+        enemyspawn.Spawn();
+
 
       
     }

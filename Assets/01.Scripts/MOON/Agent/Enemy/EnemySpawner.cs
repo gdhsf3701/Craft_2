@@ -15,7 +15,7 @@ public class EnemySpawner : MonoBehaviour
 
     int enemyCount = 16;
 
-    private void OnEnable()
+    public void Spawn()
     {
         StartCoroutine(SpawnCoroutine());
     }
