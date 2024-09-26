@@ -14,7 +14,7 @@ public class EnemySpawner : MonoBehaviour
 
 
     int enemyCount = 16;
-
+    int deadCount = 0;
     public void Spawn()
     {
         StartCoroutine(SpawnCoroutine());
@@ -27,12 +27,22 @@ public class EnemySpawner : MonoBehaviour
             enemyCount--;
             int randomIndex = Random.Range(0, spawnPoints.Count);
             Vector3 spawnPoint = spawnPoints[randomIndex].position;
-            GunKnifeEnemy enemy = PoolManager.Instance.Pop("GunKnifeEnemy") as GunKnifeEnemy;
+            Stage4Enemy enemy = PoolManager.Instance.Pop("Stage4Enemy") as Stage4Enemy;
+            enemy.Inialize(PlayerManager.Instance.transform,DeadCountUP);
             enemy.transform.position = spawnPoint;
 
             yield return new WaitForSeconds(Random.Range(minTime, maxTime));
         }
         gameObject.SetActive(false);
+    }
+
+    public void DeadCountUP()
+    {
+        deadCount++;
+        if (deadCount == enemyCount)
+        {
+            //다 죽은거 클리어 실행
+        }
     }
     //private void SetSpawnPoint()
     //{

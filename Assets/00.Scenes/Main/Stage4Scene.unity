@@ -1043,6 +1043,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 191410728}
+  - component: {fileID: 191410729}
   m_Layer: 0
   m_Name: Died2TimeLine
   m_TagString: Untagged
@@ -1065,6 +1066,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1824130601}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!320 &191410729
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191410727}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: caea81282c1cb184e81aae1f0e6324a3, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings: []
+  m_ExposedReferences:
+    m_References: []
 --- !u!1001 &205341778
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1559,7 +1577,10 @@ PrefabInstance:
     - {fileID: 1993370164361693969, guid: acf4066c8c22e77428038bd4834db328, type: 3}
     - {fileID: 4587867304229180119, guid: acf4066c8c22e77428038bd4834db328, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1470682454017571206, guid: acf4066c8c22e77428038bd4834db328, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1601839055}
   m_SourcePrefab: {fileID: 100100000, guid: acf4066c8c22e77428038bd4834db328, type: 3}
 --- !u!1 &649473187
 GameObject:
@@ -7667,6 +7688,34 @@ Transform:
   - {fileID: 83846767}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1601839052 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1470682454017571206, guid: acf4066c8c22e77428038bd4834db328, type: 3}
+  m_PrefabInstance: {fileID: 576922596}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1601839053 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1468135600050509675, guid: acf4066c8c22e77428038bd4834db328, type: 3}
+  m_PrefabInstance: {fileID: 576922596}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601839052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3352f7713b151ae469f4278758eb4fe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1601839055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601839052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07003c97528a4cd4cabd434e92f0c711, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1643987974
 GameObject:
   m_ObjectHideFlags: 0
@@ -7802,6 +7851,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 894198538}
+    - target: {fileID: 2270210431884517438, guid: 315e7d1df4a7f94438394ffef268906c, type: 3}
+      propertyPath: enemyspawn
+      value: 
+      objectReference: {fileID: 1601839053}
     - target: {fileID: 2270210431884517438, guid: 315e7d1df4a7f94438394ffef268906c, type: 3}
       propertyPath: destroyGameobject.Array.size
       value: 3
@@ -8565,6 +8618,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2069746771}
+  - component: {fileID: 2069746772}
   m_Layer: 0
   m_Name: SucTimeLine
   m_TagString: Untagged
@@ -8587,6 +8641,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1824130601}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!320 &2069746772
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069746770}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 1e32e623f21697342bc45bbcc066f369, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings: []
+  m_ExposedReferences:
+    m_References: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
