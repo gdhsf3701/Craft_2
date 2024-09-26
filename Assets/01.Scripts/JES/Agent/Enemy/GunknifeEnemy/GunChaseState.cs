@@ -17,13 +17,13 @@ public class GunChaseState : EnemyState
             return;
         }
         _enemy.MovementCompo.SetMoveMent(Mathf.Sign(dir.x));
-        if(_enemy.attackRadius - 5 > dis)
+        if (_enemy.attackRadius - 5 > dis&&_enemy.attackRadius - 8 < dis)
         {
-            _stateMachine.ChangeState(EnemyEnum.KnifeChase);
+            return;
         }
-        if (_enemy.attackRadius > dis && _enemy.lastAttackTime + _enemy.attackCooldown < Time.time)
+        if (_enemy.attackRadius > dis)
         {
-            _stateMachine.ChangeState(EnemyEnum.Fire);
+            _stateMachine.ChangeState(EnemyEnum.Idle);
         }
     }
 }

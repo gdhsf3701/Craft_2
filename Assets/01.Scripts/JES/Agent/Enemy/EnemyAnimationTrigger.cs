@@ -12,4 +12,8 @@ public class EnemyAnimationTrigger : MonoBehaviour
     {
         _enemy.Attack();
     }
+    private void AnimaionFireTrigger()
+    {
+        _enemy.FireBullet();
+    }
 }
