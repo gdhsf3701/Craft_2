@@ -58,7 +58,7 @@ public class Ditch : MonoBehaviour
             gameOverTime -= 0.1f;
             if (gameOverTime <= 0)
             {
-                //게임오버 스크립트
+                //??????? ??????
                 break;
             }
         }
