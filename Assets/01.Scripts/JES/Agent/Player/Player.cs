@@ -6,7 +6,8 @@ using UnityEngine.Serialization;
 
 public class Player : Agent
 {
-    
+
+    public UnityAction FinalDeadEvent;
     public PlayerStateMachine stateMachine;
 
     [Header("Normal Attack")] 
@@ -47,6 +48,7 @@ public class Player : Agent
         stateMachine.AddState(PlayerEnum.Wire,new PlayerWireState(this,stateMachine,"Wire"));
         stateMachine.AddState(PlayerEnum.Kick,new PlayerKickState(this,stateMachine,"Kick"));
         stateMachine.AddState(PlayerEnum.Knife,new PlayerKnifeState(this,stateMachine,"Knife"));
+        stateMachine.AddState(PlayerEnum.Dead,new PlayerDeadState(this,stateMachine,"Dead"));
         stateMachine.Initialize(PlayerEnum.Fall, this);
         
         
