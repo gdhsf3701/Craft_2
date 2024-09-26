@@ -69719,7 +69719,7 @@ Transform:
   m_GameObject: {fileID: 443348208}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.4, y: 5.3, z: -10}
+  m_LocalPosition: {x: 95.2, y: 17.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -69894,7 +69894,7 @@ Transform:
   m_GameObject: {fileID: 524174712}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.994227, y: 5.31272, z: -10}
+  m_LocalPosition: {x: 93.27545, y: 17.49955, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -71232,11 +71232,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3620365721806292588, guid: 9343a14680aa9774a84dd12ae38dd9ef, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.4
+      value: 95.2
       objectReference: {fileID: 0}
     - target: {fileID: 3620365721806292588, guid: 9343a14680aa9774a84dd12ae38dd9ef, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.3
+      value: 17.5
       objectReference: {fileID: 0}
     - target: {fileID: 3620365721806292588, guid: 9343a14680aa9774a84dd12ae38dd9ef, type: 3}
       propertyPath: m_LocalPosition.z
@@ -72431,12 +72431,16 @@ PrefabInstance:
       value: Zipline
       objectReference: {fileID: 0}
     - target: {fileID: 2123579474489028322, guid: 9bcc312bd3067f24c802b87271c3696c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2123579474489028322, guid: 9bcc312bd3067f24c802b87271c3696c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -31.62
       objectReference: {fileID: 0}
     - target: {fileID: 2123579474489028322, guid: 9bcc312bd3067f24c802b87271c3696c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.79
+      value: -3.67
       objectReference: {fileID: 0}
     - target: {fileID: 3318096309950623048, guid: 9bcc312bd3067f24c802b87271c3696c, type: 3}
       propertyPath: m_Enabled

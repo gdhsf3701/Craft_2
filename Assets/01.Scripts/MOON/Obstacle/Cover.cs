@@ -8,7 +8,7 @@ using UnityEngine;
 public class Cover : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI text;
-    // text´Â »óÈ£ÀÛ¿ë ¾È ÅØ½ºÆ® (¿ùµå½ºÆäÀÌ½º Äµ¹ö½º)
+    // textëŠ” ìƒí˜¸ì‘ìš© ì•ˆ í…ìŠ¤íŠ¸ (ì›”ë“œìŠ¤í˜ì´ìŠ¤ ìº”ë²„ìŠ¤)
     private bool _isPlayer = false;
 
     Player _player;
@@ -110,11 +110,11 @@ public class Cover : MonoBehaviour
             camera.m_Lens.OrthographicSize += 0.1f;
             yield return null;
         }
-        text.text = "<b>[ F ] </b>Å°¸¦ ´­·¯ ¼û±â";
+        text.text = "<b>[ F ] </b>í‚¤ë¥¼ ëˆŒëŸ¬ ìˆ¨ê¸°";
     }
     public void ChangeString()
     {
-        text.text = "<b>[ F ] </b>Å°¸¦ ´­·¯ ³ª°¡±â";
+        text.text = "<b>[ F ] </b>í‚¤ë¥¼ ëˆŒëŸ¬ ë‚˜ê°€ê¸°";
         text.gameObject.SetActive(true);
     }
 }
