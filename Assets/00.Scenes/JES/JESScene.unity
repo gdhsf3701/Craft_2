@@ -1344,6 +1344,10 @@ PrefabInstance:
       propertyPath: OnDeadEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1100335506}
+    - target: {fileID: 4503942969248558047, guid: 9343a14680aa9774a84dd12ae38dd9ef, type: 3}
+      propertyPath: _fallSound
+      value: 
+      objectReference: {fileID: 11400000, guid: 87cf7233f02bf444fb7e876bce1a7a54, type: 2}
     - target: {fileID: 6845731709564122931, guid: 9343a14680aa9774a84dd12ae38dd9ef, type: 3}
       propertyPath: m_Name
       value: Player

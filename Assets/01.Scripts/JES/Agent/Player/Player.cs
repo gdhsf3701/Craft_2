@@ -28,6 +28,8 @@ public class Player : Agent
     [SerializeField]
     private PlayerDamageSO _skill2;
 
+    public SoundSO _fallSound;
+    
     public int comboCount= 0;
     private int _skillCount=0;
 
