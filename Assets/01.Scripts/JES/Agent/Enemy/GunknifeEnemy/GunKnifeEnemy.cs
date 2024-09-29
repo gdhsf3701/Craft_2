@@ -64,9 +64,19 @@ public class GunKnifeEnemy : Enemy, Ipoolable
             return base.GetPlayerInRange();
         }
         RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, detectRadius, contactFilter.layerMask);
-
+        if(hit.collider != null&&_stage3Bool)
+            _manager.SpotEvent();
         // 충돌한 콜라이더가 있으면 리턴, 없으면 null 리턴
         return hit.collider != null ? hit.collider : null;  
+    }
+
+    private Stage3EnemyManager _manager;
+    private bool _stage3Bool;
+
+    public void Initalize(Stage3EnemyManager manager)
+    {
+        _stage3Bool = true;
+        _manager = manager;
     }
 
     private void Update()
