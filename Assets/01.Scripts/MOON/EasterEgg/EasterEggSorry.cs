@@ -14,18 +14,22 @@ public class EasterEggSorry : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
-        video = GetComponent<VideoPlayer>();
+        video = GetComponentInChildren<VideoPlayer>();
         videoPlayer.SetActive(false);
         string nowScene = SceneManager.GetActiveScene().name;
         if (nowScene == "StartScene"|| nowScene != lastStage)
         {
             deathCount = 0;
         }
+        else
+        {
+            deathCount++;
+        }
         lastStage = SceneManager.GetActiveScene().name;
     }
     private void Update()
     {
-        if (deathCount == 50) 
+        if (deathCount == 15) 
         {
             deathCount = 0;
             videoPlayer.SetActive(true);

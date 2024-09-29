@@ -272,6 +272,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1600202007}
     m_Modifications:
+    - target: {fileID: 4479236484456692567, guid: a4f6635e1ae665c4bb5f7a8be776baf8, type: 3}
+      propertyPath: Is3Stage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5349986151655438130, guid: a4f6635e1ae665c4bb5f7a8be776baf8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 17.417526
@@ -5894,6 +5898,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1600202007}
     m_Modifications:
+    - target: {fileID: 4479236484456692567, guid: a4f6635e1ae665c4bb5f7a8be776baf8, type: 3}
+      propertyPath: Is3Stage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5349986151655438130, guid: a4f6635e1ae665c4bb5f7a8be776baf8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.6424732
@@ -6347,7 +6355,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -6477,6 +6485,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1600202007}
     m_Modifications:
+    - target: {fileID: 4479236484456692567, guid: a4f6635e1ae665c4bb5f7a8be776baf8, type: 3}
+      propertyPath: Is3Stage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5349986151655438130, guid: a4f6635e1ae665c4bb5f7a8be776baf8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.722473
@@ -6831,6 +6843,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1600202007}
     m_Modifications:
+    - target: {fileID: 4479236484456692567, guid: a4f6635e1ae665c4bb5f7a8be776baf8, type: 3}
+      propertyPath: Is3Stage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5349986151655438130, guid: a4f6635e1ae665c4bb5f7a8be776baf8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.247526
@@ -6947,8 +6963,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad993b063cac3924d84f5c206c8e9ed8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  childScr: []
-  Door: {fileID: 1972720622}
 --- !u!4 &1600202007
 Transform:
   m_ObjectHideFlags: 0
@@ -7256,6 +7270,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1600202007}
     m_Modifications:
+    - target: {fileID: 4479236484456692567, guid: a4f6635e1ae665c4bb5f7a8be776baf8, type: 3}
+      propertyPath: Is3Stage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5349986151655438130, guid: a4f6635e1ae665c4bb5f7a8be776baf8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 21.287525
@@ -7349,7 +7367,7 @@ MonoBehaviour:
   m_Follow: {fileID: 293973030}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 10
+    OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -7742,6 +7760,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1600202007}
     m_Modifications:
+    - target: {fileID: 4479236484456692567, guid: a4f6635e1ae665c4bb5f7a8be776baf8, type: 3}
+      propertyPath: Is3Stage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5349986151655438130, guid: a4f6635e1ae665c4bb5f7a8be776baf8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 14.397528
