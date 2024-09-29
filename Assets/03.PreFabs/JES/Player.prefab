@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: -662909301
   m_SortingLayer: 1
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 37a7d92875acfc443b755f72c126a316, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6bc3a6c7f2deb3845b4b9499b1928fe3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -147,7 +147,7 @@ Transform:
   m_GameObject: {fileID: 1646687887588138710}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.33, y: -1.75, z: 0}
+  m_LocalPosition: {x: -0.01, y: 0.081, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -339,8 +339,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.3107984, y: -0.7872125}
-  m_Size: {x: 0.50212336, y: 2.1076796}
+  m_Offset: {x: -0.02, y: 1.21}
+  m_Size: {x: 0.50212336, y: 2.43}
   m_Direction: 0
 --- !u!114 &5107006070455371126
 MonoBehaviour:
@@ -393,8 +393,8 @@ MonoBehaviour:
   damageData: {fileID: 0}
   <PlayerInput>k__BackingField: {fileID: 11400000, guid: eb449ca5b0f1c484688841204694a5c2, type: 2}
   attackCoolDown: 0
-  _skill1: {fileID: 0}
-  _skill2: {fileID: 0}
+  _skill1: {fileID: 11400000, guid: b3b6fce22386ba84db48f8b02eb6708c, type: 2}
+  _skill2: {fileID: 11400000, guid: 3c4c3a2703a8fb44f820fc85374c16b7, type: 2}
   comboCount: 0
 --- !u!114 &4115931028923605270
 MonoBehaviour:
@@ -449,7 +449,31 @@ MonoBehaviour:
         m_CallState: 2
   OnDeadEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4503942969248558047}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: SetDeadState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: HpbarUi, Assembly-CSharp
+        m_MethodName: HitEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _maxHealth: 6
 --- !u!1001 &1166629986054839975
 PrefabInstance:
@@ -461,11 +485,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3106585680629980634, guid: 580fc0bc25e6df5428f7016b92ccaecd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.18
+      value: 0.528
       objectReference: {fileID: 0}
     - target: {fileID: 3106585680629980634, guid: 580fc0bc25e6df5428f7016b92ccaecd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.02
+      value: 1.344
       objectReference: {fileID: 0}
     - target: {fileID: 3106585680629980634, guid: 580fc0bc25e6df5428f7016b92ccaecd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -501,7 +525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4798058504378649488, guid: 580fc0bc25e6df5428f7016b92ccaecd, type: 3}
       propertyPath: damageRadius
-      value: 0.81
+      value: 0.91
       objectReference: {fileID: 0}
     - target: {fileID: 4798058504378649488, guid: 580fc0bc25e6df5428f7016b92ccaecd, type: 3}
       propertyPath: filter.useDepth
