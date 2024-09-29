@@ -1,13 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class PlayerAttackState : PlayerState
+public class PlayerSkillState : PlayerState
 {
-    public PlayerAttackState(Player player, PlayerStateMachine stateMachine, string animBoolName) : base(player, stateMachine, animBoolName)
+    public PlayerSkillState(Player player, PlayerStateMachine stateMachine, string animBoolName) : base(player, stateMachine, animBoolName)
     {
     }
-    
     public override void UpdateState()
     {
         base.UpdateState();
@@ -23,14 +18,12 @@ public class PlayerAttackState : PlayerState
         base.Enter();
         _player.PlayerInput._controls.Disable();
         _player.MovementCompo.StopImmediately(false);
-        SkillCoolUI.Instance.ComboImageSetUp();
     }
-
+    
     public override void Exit()
     {
-        SkillCoolUI.Instance.ComboCooldown();
         _player.PlayerInput._controls.Enable();
-        _player.lastAttackTime = Time.time;
         base.Exit();
     }
+    
 }
