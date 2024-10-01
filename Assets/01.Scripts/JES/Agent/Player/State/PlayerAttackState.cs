@@ -26,8 +26,6 @@ public class PlayerAttackState : PlayerState
         SkillCoolUI.Instance.ComboImageSetUp();
     }
 
-
-
     public override void Exit()
     {
         SkillCoolUI.Instance.ComboCooldown();

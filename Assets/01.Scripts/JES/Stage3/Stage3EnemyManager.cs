@@ -11,10 +11,11 @@ public class Stage3EnemyManager : MonoSingleton<Stage3EnemyManager>
     private int count;
     private void Start()
     {
-        foreach (var enemy in FindObjectsOfType<GunKnifeEnemy>())
+        foreach (var enemy in GetComponentsInChildren<GunKnifeEnemy>())
         {
             enemyList.Add(enemy);
             enemy.OnDeathEvent += HandleDeadEvent;
+            enemy.Initalize(this);
         }
         count = enemyList.Count;
     }

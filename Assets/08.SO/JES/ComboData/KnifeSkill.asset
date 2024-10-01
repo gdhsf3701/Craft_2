@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd05b765b1a5fc74fbdf8192db91b98d, type: 3}
   m_Name: KnifeSkill
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 150
   knockPower: 0
-  damagePos: {x: 0, y: 0}
-  damageRadius: 0
-  attackCooldown: 0
-  sucSound: {fileID: 0}
-  failSound: {fileID: 0}
+  damagePos: {x: 0.528, y: 1.344}
+  damageRadius: 0.91
+  attackCooldown: 18
+  sucSound: {fileID: 11400000, guid: cc2d25312ad86104bb6e909fb83f2e73, type: 2}
+  failSound: {fileID: 11400000, guid: f916c63499e8368489a15099258d8ac3, type: 2}
