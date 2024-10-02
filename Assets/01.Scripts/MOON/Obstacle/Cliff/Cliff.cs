@@ -47,7 +47,7 @@ public class Cliff : MonoBehaviour
             child.count--;
             if (child.count <= 0)
             {
-                //끊어진 줄 그림으로 바뀌는 코드
+                child.GetComponent<SpriteRenderer>().enabled = false;
                 soundPlayer.PlaySound(cutOffSound);
                 child.gameObject.layer = LayerMask.NameToLayer("UITrigger");
                 child.transform.GetComponent<Collider2D>().isTrigger = true;
