@@ -28,6 +28,8 @@ public class Player : Agent
     [SerializeField]
     private PlayerDamageSO _skill2;
 
+    public SoundSO _fallSound;
+    
     public int comboCount= 0;
     private int _skillCount=0;
 
@@ -46,8 +48,8 @@ public class Player : Agent
         stateMachine.AddState(PlayerEnum.Attack3,new PlayerAttack3State(this,stateMachine,"Attack3"));
         stateMachine.AddState(PlayerEnum.Hit,new PlayerHitState(this,stateMachine,"Hit"));
         stateMachine.AddState(PlayerEnum.Wire,new PlayerWireState(this,stateMachine,"Wire"));
-        stateMachine.AddState(PlayerEnum.Kick,new PlayerKickState(this,stateMachine,"Kick"));
-        stateMachine.AddState(PlayerEnum.Knife,new PlayerKnifeState(this,stateMachine,"Knife"));
+        stateMachine.AddState(PlayerEnum.Kick,new PlayerSkillState(this,stateMachine,"Kick"));
+        stateMachine.AddState(PlayerEnum.Knife,new PlayerSkillState(this,stateMachine,"Knife"));
         stateMachine.AddState(PlayerEnum.Dead,new PlayerDeadState(this,stateMachine,"Dead"));
         stateMachine.Initialize(PlayerEnum.Fall, this);
         

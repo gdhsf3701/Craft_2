@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd05b765b1a5fc74fbdf8192db91b98d, type: 3}
   m_Name: KickSkill
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 70
   knockPower: 0
-  damagePos: {x: 0, y: 0}
-  damageRadius: 0
-  attackCooldown: 0
-  sucSound: {fileID: 0}
-  failSound: {fileID: 0}
+  damagePos: {x: 0.334, y: 1.373}
+  damageRadius: 0.91
+  attackCooldown: 4
+  sucSound: {fileID: 11400000, guid: 21e0cc8ccbe5ccc4a80a41cabae9e342, type: 2}
+  failSound: {fileID: 11400000, guid: 0643090d350b8a146a43235f3aa00ccd, type: 2}
