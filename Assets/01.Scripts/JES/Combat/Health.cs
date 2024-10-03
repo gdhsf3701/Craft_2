@@ -52,4 +52,14 @@ public class Health : MonoBehaviour
         if(knockbackPower > 0&&_owner!=null)
             _owner.MovementCompo.GetKnockback(normal * -1, knockbackPower);
     }
+
+    public void NoEventHit(int damage)
+    {
+        _currentHealth -= damage;
+        
+        if(_currentHealth <= 0)
+        {
+            OnDeadEvent?.Invoke();
+        }
+    }
 }
