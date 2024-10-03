@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using EasySave.Json;
 using UnityEngine;
 
 public class StartBtnSort : MonoBehaviour
@@ -12,8 +13,7 @@ public class StartBtnSort : MonoBehaviour
     {
         for(int i = 1; i < 6;i++)
         {
-            string path = SaveManager.Instance.GetFilePath("SaveData"+i);
-            if (File.Exists(path))
+            if (EasyToJson.IsExistJson("SaveData" + i))
             {
                 _isFirst = false;
                 break;

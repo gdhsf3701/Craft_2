@@ -19,7 +19,7 @@ public class SceneName
 }
 public class SaveManager : MonoBehaviour
 {
-    public SaveData saveData;
+    private SaveData _saveData;
     public static SaveManager Instance;
     private Transform _playerTrm;
     
@@ -37,62 +37,23 @@ public class SaveManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        saveData = new SaveData();
-
-        SceneManager.sceneLoaded += HandleSceneChaneEvent;
+        _saveData = new SaveData();
     }
- 
-    private void HandleSceneChaneEvent(Scene arg0, LoadSceneMode arg1)
+    public void SetDataPath(string path,SaveData saveData)
     {
-        if (arg0.name!=SceneName.Start&&arg0.name!=SceneName.End)
-        {
-            _playerTrm = PlayerManager.Instance.PlayerTrm;
-            if (saveData.currentScene!=null&&arg0.name == saveData.currentScene)
-            {
-                _playerTrm.position= SaveManager.Instance.saveData.spawnPos;
-                //saveData.savePoint
-            }
-            else
-            {
-                _playerTrm.position = new Vector3(0, 0, 0);
-            }
-        }
+        dataPath = path;
+        _saveData = saveData;
     }
-
-    public void SaveDataToJson()
+    public void SetStageNumber(int stageNumber)
     {
-        EasyToJson.ToJson(saveData,dataPath,true);
-    } 
-    public SaveData JsonToData(string jsonFileName)
+        _saveData.stageNumber = stageNumber;
+    }//스테이지 넘어갈때마다 실행
+    public void SetTime(float time)
     {
-        string path = GetFilePath(jsonFileName);
-        if (!File.Exists(path))
-        {
-            Debug.Log("파일이 존재하지 않습니다.");
-            Debug.Log("파일을 생성합니다.");
-            SaveData defaultObj = new SaveData();
-            EasyToJson.ToJson(defaultObj, jsonFileName, true);
-            return defaultObj;
-        }
-        string json = File.ReadAllText(path);
-        SaveData obj = JsonUtility.FromJson<SaveData>(json);
-        return obj;
+        _saveData.playTime += time;
     }
-    public string GetFilePath(string fileName)
+    private void SaveData()
     {
-        return Path.Combine(LocalPath, $"{fileName}.json");
-    }
-
-
-    public void SavingData()
-    {
-        saveData.playTime = GameManager.Instance.PlayTime;
-        saveData.playDate = DateTime.Now.ToString("yyyy - MM - dd - HH");
-        saveData.playerHp = PlayerManager.Instance.Player.HealthCompo.CurrentHealth;
-        saveData.spawnPos = PlayerManager.Instance.PlayerTrm.position;
-        saveData.currentScene = SceneManager.GetActiveScene().name;
-        //세이브 포인트, 스테이지 숫자 구현해야함
-
-        SaveDataToJson();
+        EasyToJson.ToJson(_saveData,dataPath);
     }
 }

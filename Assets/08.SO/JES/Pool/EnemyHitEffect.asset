@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dcbf29d706103404e985e966fd40482b, type: 3}
-  m_Name: AfterImage
+  m_Name: EnemyHitEffect
   m_EditorClassIdentifier: 
-  poolName: AfterImage
-  prefab: {fileID: 1718876517166490759, guid: b59ecf342c88b714c80329b10941913d, type: 3}
-  count: 5
+  poolName: Blood
+  prefab: {fileID: 4532717606340549695, guid: 153e8d774fc9ada4dba101a560a139ba, type: 3}
+  count: 2

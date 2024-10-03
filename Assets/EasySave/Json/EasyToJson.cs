@@ -49,14 +49,14 @@ namespace EasySave.Json
          * <param name="jsonFileName">Json 파일 이름</param>
          * <returns>Json 파일을 읽어서 만든 객체</returns>
          */
-        public static T FromJson<T>(string jsonFileName)
+        public static T FromJson<T>(string jsonFileName) where T : new()
         {
             string path = GetFilePath(jsonFileName);
             if (!File.Exists(path))
             {
                 Debug.Log("파일이 존재하지 않습니다.");
                 Debug.Log("파일을 생성합니다.");
-                T defaultObj = default(T);
+                T defaultObj = new T();
                 Debug.Log(defaultObj);
                 ToJson(defaultObj, jsonFileName, true);
                 return defaultObj;
@@ -64,6 +64,12 @@ namespace EasySave.Json
             string json = File.ReadAllText(path);
             T obj = JsonUtility.FromJson<T>(json);
             return obj;
+        }
+
+        public static bool IsExistJson(string fileName)
+        {
+            string path = GetFilePath(fileName);
+            return File.Exists(path);
         }
         
         /**
