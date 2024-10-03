@@ -1,17 +1,13 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
+using EasySave.Json;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 public class SaveBtn : MonoBehaviour
 {
     [Header("UI")] 
     [SerializeField] private TextMeshProUGUI _mainTex;
-    [SerializeField] private TextMeshProUGUI _dateTex;
     [SerializeField] private TextMeshProUGUI _timeTex;
 
     private SaveData _saveData;
@@ -20,26 +16,21 @@ public class SaveBtn : MonoBehaviour
 
     private void Start()
     {
-        string path = SaveManager.Instance.GetFilePath(SaveSlot);
-        if (!File.Exists(path))
+        if (!EasyToJson.IsExistJson(SaveSlot))
         {
             _mainTex.text = "Empty Slot";
-            _dateTex.text = "";
             _timeTex.text = "";
             return;
         }
-        _saveData = SaveManager.Instance.JsonToData(SaveSlot);
-        _mainTex.text = $"{_saveData.StageNumber} / 5";
-        _dateTex.text = _saveData.playDate;
+        _saveData = EasyToJson.FromJson<SaveData>(SaveSlot);
+        _mainTex.text = $"{_saveData.stageNumber} / 5";
         TimeSpan timeSpan = TimeSpan.FromSeconds(_saveData.playTime);
-        _timeTex.text = string.Format("{0:D2} : {1:D2} : {2:D2}",timeSpan.Hours,timeSpan.Minutes,timeSpan.Seconds);
+        _timeTex.text = $"{timeSpan.Hours:D2}:{timeSpan.Minutes:D2}:{timeSpan.Seconds:D2}";
     }
 
     public void BtnClick()
     {
-        SaveManager.Instance.dataPath = SaveSlot;
-        SaveManager.Instance.saveData = _saveData;
-        //SceneManager.LoadScene(_saveData.currentScene); 나중에 씬 다 만들어지면 쓸거
-        SceneManager.LoadScene(0);
+        SaveManager.Instance.SetDataPath(SaveSlot,_saveData);
+        SceneManager.LoadScene(_saveData.currentScene);
     }
 }

@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 8757159958476786673}
   - component: {fileID: 4153963590862527163}
   - component: {fileID: 6337617183838221132}
+  - component: {fileID: 3179453612641006914}
   m_Layer: 7
   m_Name: HitFeedback
   m_TagString: Untagged
@@ -90,6 +91,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _targetRenderer: {fileID: 7844898886526884971}
   _flashTime: 0.1
+--- !u!114 &3179453612641006914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477707498049151294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a6ae6eb380b1a742a7559d8f8d8207a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _effectName: B
 --- !u!1 &6734803770239085115
 GameObject:
   m_ObjectHideFlags: 0

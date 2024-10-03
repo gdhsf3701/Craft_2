@@ -5,19 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoSingleton<GameManager>
 {
-    public float PlayTime { get; private set; }
-
-    private void Start()
-    {
-        PlayTime = SaveManager.Instance.saveData.playTime;
-    }
-
+    [SerializeField] private float _saveCoolTime=30f;
+    private float _curTime = 0;
     private void Update()
     {
-        PlayTime += Time.deltaTime;
-        if (Input.GetKeyDown(KeyCode.B))
+        _curTime += Time.deltaTime;
+        if (_curTime >= _saveCoolTime)
         {
-            SaveManager.Instance.SavingData();
+            SaveManager.Instance.SetTime(_curTime);
+            _curTime = 0;
         }
     }
 }

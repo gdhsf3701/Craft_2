@@ -360,6 +360,7 @@ GameObject:
   - component: {fileID: 6790625927364875225}
   - component: {fileID: 3235872040995657426}
   - component: {fileID: 2383060699282878516}
+  - component: {fileID: 6292140045022333333}
   m_Layer: 7
   m_Name: HitFeedback
   m_TagString: Untagged
@@ -408,6 +409,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _targetRenderer: {fileID: 2412207225387388540}
   _flashTime: 0.5
+--- !u!114 &6292140045022333333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8512973041400228718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a6ae6eb380b1a742a7559d8f8d8207a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _effectName: Blood
 --- !u!1001 &1726326580167257162
 PrefabInstance:
   m_ObjectHideFlags: 0

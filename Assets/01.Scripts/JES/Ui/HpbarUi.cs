@@ -21,15 +21,6 @@ public class HpbarUi : MonoBehaviour
             onCandleList.Push(image);
         }
     }
-
-    private void Start()
-    {
-        for (int i = 4; i > SaveManager.Instance.saveData.playerHp; i--)
-        {
-            HitEvent();
-        } 
-    }
-
     public void HitEvent()
     {
         Image candle = onCandleList.Pop();
