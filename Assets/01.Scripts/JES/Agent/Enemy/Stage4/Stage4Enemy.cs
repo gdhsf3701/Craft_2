@@ -11,6 +11,7 @@ public class Stage4Enemy : Enemy, Ipoolable
     
     public EnemyStateMachine stateMachine;
 
+    private Action deadEvent;
     protected override void Awake()
     {
         base.Awake();
@@ -20,18 +21,28 @@ public class Stage4Enemy : Enemy, Ipoolable
         stateMachine.AddState(EnemyEnum.Chase,new Enemy4ChaseState(this,stateMachine,"Chase"));
         stateMachine.AddState(EnemyEnum.Attack1,new GunAttackState(this,stateMachine,"Attack"));
         stateMachine.AddState(EnemyEnum.Dead,new GunDeadState(this,stateMachine,"Dead"));
-
-        stateMachine.Initalize(EnemyEnum.Chase, this);
+        stateMachine.Initalize(EnemyEnum.Chase,this);
     }
 
     public void Inialize(Transform targetTrm, Action action)
     {
         targerTrm = targetTrm;
-        stateMachine.ChangeState(EnemyEnum.Chase);
+        deadEvent = action;
+    }
+
+    private void Update()
+    {
+        stateMachine.CurrentState.UpdateState();
+        
+        if (targerTrm != null && IsDead == false)
+        {
+            HandleSpriteFlip(targerTrm.position);
+        }
     }
 
     public override void SetDeadState()
     {
+        deadEvent?.Invoke();
         stateMachine.ChangeState(EnemyEnum.Dead);
     }
     public override void AnimationEndTrigger()
