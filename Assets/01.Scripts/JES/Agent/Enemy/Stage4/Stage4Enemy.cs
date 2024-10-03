@@ -11,6 +11,7 @@ public class Stage4Enemy : Enemy, Ipoolable
     
     public EnemyStateMachine stateMachine;
 
+    private Action deadEvent;
     protected override void Awake()
     {
         base.Awake();
@@ -28,10 +29,12 @@ public class Stage4Enemy : Enemy, Ipoolable
     {
         targerTrm = targetTrm;
         stateMachine.ChangeState(EnemyEnum.Chase);
+        deadEvent = action;
     }
 
     public override void SetDeadState()
     {
+        deadEvent?.Invoke();
         stateMachine.ChangeState(EnemyEnum.Dead);
     }
     public override void AnimationEndTrigger()
