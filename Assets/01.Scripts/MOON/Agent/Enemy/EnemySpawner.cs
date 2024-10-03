@@ -28,7 +28,7 @@ public class EnemySpawner : MonoBehaviour
             int randomIndex = Random.Range(0, spawnPoints.Count);
             Vector3 spawnPoint = spawnPoints[randomIndex].position;
             Stage4Enemy enemy = PoolManager.Instance.Pop("Stage4Enemy") as Stage4Enemy;
-            enemy.Inialize(PlayerManager.Instance.transform,DeadCountUP);
+            enemy.Inialize(PlayerManager.Instance.PlayerTrm.transform,DeadCountUP);
             enemy.transform.position = spawnPoint;
 
             yield return new WaitForSeconds(Random.Range(minTime, maxTime));
