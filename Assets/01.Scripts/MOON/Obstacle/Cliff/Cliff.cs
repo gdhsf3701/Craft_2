@@ -34,7 +34,7 @@ public class Cliff : MonoBehaviour
         if(other.gameObject == Player)
         {
             childIndex = child.transform.GetSiblingIndex();
-            //플레이어 HP를 깍는 코드
+            PlayerManager.Instance.Player.HealthCompo.NoEventHit(1);
             StartCoroutine(DownTimeDelay());
         }
     }
