@@ -12,7 +12,7 @@ public abstract class Enemy : Agent
     public int attackDamage;
     public ContactFilter2D contactFilter;
 
-    [HideInInspector] public Transform targerTrm = null;
+    public Transform targerTrm = null;
 
     protected int _enemyLayer;
 

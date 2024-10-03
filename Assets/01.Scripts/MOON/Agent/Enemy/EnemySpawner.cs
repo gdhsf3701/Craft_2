@@ -39,9 +39,10 @@ public class EnemySpawner : MonoBehaviour
     public void DeadCountUP()
     {
         deadCount++;
+        Debug.Log(deadCount);
         if (deadCount == enemyCount)
         {
-            //´Ù Á×Àº°Å Å¬¸®¾î ½ÇÇà
+            //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         }
     }
     //private void SetSpawnPoint()

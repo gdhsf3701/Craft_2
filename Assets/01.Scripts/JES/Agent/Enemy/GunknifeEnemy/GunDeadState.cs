@@ -31,7 +31,10 @@ public class GunDeadState : EnemyState
             //PlayExpolsion();
             
             GunKnifeEnemy enemy = _enemy as GunKnifeEnemy;
-            enemy.OnDeathEvent?.Invoke(enemy);
+            if (enemy != null)
+            {
+                enemy.OnDeathEvent?.Invoke(enemy);
+            }
             
             GameObject.Destroy(_enemy.gameObject);
         }

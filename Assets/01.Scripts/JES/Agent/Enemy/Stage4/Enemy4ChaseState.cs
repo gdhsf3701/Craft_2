@@ -14,7 +14,7 @@ public class Enemy4ChaseState : EnemyState
         float dis = dir.magnitude;
         if (dis <= _enemy.attackRadius)
         {
-            if(_enemy.lastAttackTime+_enemy.attackCooldown<Time.time){}
+            if(_enemy.lastAttackTime+_enemy.attackCooldown<Time.time)
                 _stateMachine.ChangeState(EnemyEnum.Attack1);
         }
         _enemy.MovementCompo.SetMoveMent(Mathf.Sign(dir.x));
