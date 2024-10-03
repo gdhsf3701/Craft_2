@@ -177,9 +177,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   detectRadius: 0
-  attackRadius: 0
-  attackCooldown: 0
-  KnockbackPower: 0
+  attackRadius: 2.34
+  attackCooldown: 2.5
+  KnockbackPower: 3
   attackDamage: 0
   contactFilter:
     useTriggers: 0
@@ -243,7 +243,7 @@ MonoBehaviour:
   OnDeadEvent:
     m_PersistentCalls:
       m_Calls: []
-  _maxHealth: 150
+  _maxHealth: 120
 --- !u!50 &6827933499378946446
 Rigidbody2D:
   serializedVersion: 4
@@ -270,7 +270,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &2405252183117010803
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

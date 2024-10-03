@@ -33,7 +33,7 @@ public class Door : MonoBehaviour
                 _fadeImage.DOFade(1, 1.5f);
                 _isPlayer = false;
                 StartCoroutine(Delay());
-                
+
             }
         }
     }
