@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Attack1Fail
   m_EditorClassIdentifier: 
   audioType: 0
-  clip: {fileID: 8300000, guid: 32f927cf2a769b548880a456218b8b1a, type: 3}
+  clip: {fileID: 0}
   loop: 0
   randomizePitch: 0
   randomPicthModifier: 0.1

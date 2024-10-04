@@ -13,19 +13,4 @@ public class PlayerDamageSO : ScriptableObject
    public float damageRadius;
 
    public float attackCooldown;
-
-   public SoundSO sucSound;
-   public SoundSO failSound;
-
-   public SoundSO AttackSound(bool value)
-   {
-      if (value)
-      {
-         return sucSound;
-      }
-      else
-      {
-         return failSound;
-      }
-   }
 }

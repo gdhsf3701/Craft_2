@@ -20,9 +20,9 @@ public class GunKnifeChaseState : EnemyState
             return;
         }
         _enemy.MovementCompo.SetMoveMent(Mathf.Sign(dir.x));
-        if (_enemy.attackRadius - 8 > dis )
+        if (_enemy.attackRadius - 8 > dis && _enemy.lastAttackTime + _enemy.attackCooldown < Time.time)
         {
-            _stateMachine.ChangeState(EnemyEnum.Idle);
+            _stateMachine.ChangeState(EnemyEnum.Attack1);
         }
     }
 }

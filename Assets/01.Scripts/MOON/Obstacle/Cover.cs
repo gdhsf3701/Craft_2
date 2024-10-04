@@ -8,7 +8,7 @@ using UnityEngine;
 public class Cover : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI text;
-    // textëŠ” ìƒí˜¸ìž‘ìš© ì•ˆ í…ìŠ¤íŠ¸ (ì›”ë“œìŠ¤íŽ˜ì´ìŠ¤ ìº”ë²„ìŠ¤)
+    // text´Â »óÈ£ÀÛ¿ë ¾È ÅØ½ºÆ® (¿ùµå½ºÆäÀÌ½º Äµ¹ö½º)
     private bool _isPlayer = false;
 
     Player _player;
@@ -17,7 +17,6 @@ public class Cover : MonoBehaviour
     CinemachineVirtualCamera camera;
 
     SpriteRenderer renderer;
-
     bool hide = false;
     float maxCameraSize = 5f;
     float minCameraSize = 2.5f;
@@ -55,7 +54,6 @@ public class Cover : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.F))
             {
-                text.gameObject.SetActive(false);
                 player.gameObject.layer = LayerMask.NameToLayer("HidePlayer");
                 renderer.color = Color.clear;
 
@@ -79,7 +77,6 @@ public class Cover : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.F))
             {
-                text.gameObject.SetActive(false);
                 player.gameObject.layer = LayerMask.NameToLayer("Player");
                 renderer.color = Color.white;
                 renderer.enabled = true;
@@ -97,12 +94,12 @@ public class Cover : MonoBehaviour
     }
     IEnumerator Zoom()
     {
-        while (camera.m_Lens.OrthographicSize >= minCameraSize)
+        while(camera.m_Lens.OrthographicSize >= minCameraSize)
         {
             camera.m_Lens.OrthographicSize -= 0.1f;
             yield return null;
         }
-    }
+            }
     IEnumerator Out()
     {
         while (camera.m_Lens.OrthographicSize <= maxCameraSize)
@@ -110,11 +107,5 @@ public class Cover : MonoBehaviour
             camera.m_Lens.OrthographicSize += 0.1f;
             yield return null;
         }
-        text.text = "<b>[ F ] </b>í‚¤ë¥¼ ëˆŒëŸ¬ ìˆ¨ê¸°";
-    }
-    public void ChangeString()
-    {
-        text.text = "<b>[ F ] </b>í‚¤ë¥¼ ëˆŒëŸ¬ ë‚˜ê°€ê¸°";
-        text.gameObject.SetActive(true);
     }
 }

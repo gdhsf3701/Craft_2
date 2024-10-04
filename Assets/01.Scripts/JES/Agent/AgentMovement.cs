@@ -75,7 +75,7 @@ public class AgentMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if(!_canMove) return;
+        if(_isDash) return;
         CheckGrounded();
         ApplyXMovement();
         ApllyExtraGravity();
@@ -125,14 +125,4 @@ public class AgentMovement : MonoBehaviour
         _canMove = true;
     }
     #endregion
-#if UNITY_EDITOR
-    private void OnDrawGizmosSelected()
-    {
-        if (_groundCheckerTrm == null) return;
-
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(_groundCheckerTrm.position, _groundCheckerSize);
-        Gizmos.color = Color.white;
-    }
-#endif
 }

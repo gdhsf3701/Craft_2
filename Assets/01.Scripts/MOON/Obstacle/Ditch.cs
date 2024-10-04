@@ -58,7 +58,7 @@ public class Ditch : MonoBehaviour
             gameOverTime -= 0.1f;
             if (gameOverTime <= 0)
             {
-                //??????? ??????
+                //게임오버 스크립트
                 break;
             }
         }
@@ -71,7 +71,7 @@ public class Ditch : MonoBehaviour
             _player = collision.GetComponent<Player>();
             isIn = true;
             ditchOut = 20;
-            gameOverTime = 100;
+            gameOverTime = 5;
             saveSpeed = _player.MovementCompo.moveSpeed;
             saveJump = _player.MovementCompo.jumpPower;
             _player.MovementCompo.moveSpeed = 0;

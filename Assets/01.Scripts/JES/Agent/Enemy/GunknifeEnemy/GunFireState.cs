@@ -13,6 +13,7 @@ public class GunFireState : EnemyState
         base.Enter();
         _enemy.MovementCompo.StopImmediately(false);
         timer = 0;
+        _enemy.FireBullet();
     }
 
     public override void Exit()

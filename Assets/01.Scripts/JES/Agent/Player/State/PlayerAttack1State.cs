@@ -6,11 +6,11 @@ public class PlayerAttack1State : PlayerAttackState
 {
     public PlayerAttack1State(Player player, PlayerStateMachine stateMachine, string animBoolName) : base(player, stateMachine, animBoolName)
     {
-        
     }
-    public override void Exit()
+
+    public override void Enter()
     {
-        base.Exit();
+        base.Enter();
         SkillCoolUI.Instance.NormalAttackSprite(1);
     }
 }

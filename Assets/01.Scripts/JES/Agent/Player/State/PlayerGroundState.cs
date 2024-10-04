@@ -27,15 +27,7 @@ public class PlayerGroundState : PlayerDefaultState
     {
         if (_player.lastAttackTime + _player.attackCoolDown < Time.time)
         {
-            if (_player.comboCount == 2)
-            {
-                _player.AttackSetting();
-                _stateMachine.ChangeState(PlayerEnum.Attack3);
-            }
-            else
-            {
-                _stateMachine.ChangeState((PlayerEnum)_player.comboCount);
-            }
+            _stateMachine.ChangeState((PlayerEnum)_player.comboCount);
         }
     }
     public override void Exit()

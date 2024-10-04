@@ -29,13 +29,6 @@ public class GunDeadState : EnemyState
         {
             _onExplosion = true;
             //PlayExpolsion();
-            
-            GunKnifeEnemy enemy = _enemy as GunKnifeEnemy;
-            if (enemy != null)
-            {
-                enemy.OnDeathEvent?.Invoke(enemy);
-            }
-            
             GameObject.Destroy(_enemy.gameObject);
         }
     }
@@ -43,6 +36,7 @@ public class GunDeadState : EnemyState
     private void PlayExpolsion()
     {
         _enemy.FinalDeadEvent?.Invoke();
+
 
         Ipoolable ipoolable = _enemy.GetComponent<Ipoolable>();
         if (ipoolable != null)

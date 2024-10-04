@@ -12,15 +12,18 @@ public abstract class Enemy : Agent
     public int attackDamage;
     public ContactFilter2D contactFilter;
 
-    public Transform targerTrm = null;
+    [HideInInspector] public Transform targerTrm = null;
 
     protected int _enemyLayer;
+
+    public SpriteRenderer EnemySpriteRender { get; private set; }
+    public EnemyVFX EnemyVFXCompo { get; private set; }
 
     private Collider2D[] _colliders;
 
     [Header("Gun Settings")]
     [SerializeField]
-    protected Transform muzzleTrm;
+    private Transform muzzleTrm;
     [SerializeField]
     private int bulletDamage;
     [SerializeField]
@@ -29,12 +32,13 @@ public abstract class Enemy : Agent
     protected override void Awake()
     {
         base.Awake();
-        
+        EnemySpriteRender = transform.Find("Visual").GetComponent<SpriteRenderer>();
+        EnemyVFXCompo = transform.Find("AgentVFX").GetComponent<EnemyVFX>();
         _enemyLayer = LayerMask.NameToLayer("Enemy");
         _colliders = new Collider2D[1];
     }
 
-    public virtual Collider2D GetPlayerInRange()
+    public Collider2D GetPlayerInRange()
     {
         int count = Physics2D.OverlapCircle(transform.position,detectRadius,contactFilter,_colliders);
         return count >0? _colliders[0]: null;
@@ -55,8 +59,9 @@ public abstract class Enemy : Agent
 
     public virtual void FireBullet()
     {
+        float x = targerTrm.position.x-transform.position.x;
         EnemyBullet bullet = PoolManager.Instance.Pop("Enemybullet") as EnemyBullet;
-        bullet.InitAndFire(muzzleTrm,transform.rotation,bulletDamage, bulletKnockBack);
+        bullet.InitAndFire(muzzleTrm,x,bulletDamage, bulletKnockBack);
     }
 
 #if UNITY_EDITOR
@@ -66,7 +71,6 @@ public abstract class Enemy : Agent
         Gizmos.DrawWireSphere(transform.position, detectRadius);
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRadius);
-        Gizmos.color = Color.white;
     }
 #endif
 

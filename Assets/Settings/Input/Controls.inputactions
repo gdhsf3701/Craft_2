@@ -2,7 +2,7 @@
     "name": "Controls",
     "maps": [
         {
-            "name": "Player",
+            "name": "LeftPlayer",
             "id": "c95343cf-245a-44e0-964b-25f6c068a27f",
             "actions": [
                 {
@@ -45,15 +45,6 @@
                     "name": "Knife",
                     "type": "Button",
                     "id": "a1891814-db30-45b6-9c01-cb99138b3ee7",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Run",
-                    "type": "Button",
-                    "id": "516477c8-7a31-488c-ba55-1d5a9d7cf8bd",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -159,15 +150,156 @@
                     "action": "Knife",
                     "isComposite": false,
                     "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "RightPlayer",
+            "id": "56ca53f1-e235-4ee5-b995-ec4333785f63",
+            "actions": [
+                {
+                    "name": "Movement",
+                    "type": "Value",
+                    "id": "e276edef-504d-4509-a5f6-ae31864606b4",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 },
                 {
-                    "name": "",
-                    "id": "0162a8cc-c5a8-446a-ac58-31e3d6c8befb",
-                    "path": "<Keyboard>/leftShift",
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "9684775f-ed2e-40a6-9998-8731fda83f4a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Attack",
+                    "type": "Button",
+                    "id": "68647b3a-da38-40e8-88ea-72a06acb0cca",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Kick",
+                    "type": "Button",
+                    "id": "8bd62b90-e829-45e9-a228-6ad120b9d9bb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Knife",
+                    "type": "Button",
+                    "id": "df2076cb-0ca3-4f6c-9746-a09912bb4954",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "WASD",
+                    "id": "660d5d01-f7f3-41e6-af1c-8954eb9fb387",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "ee47dd42-f5e0-4059-9207-97384be4cfb5",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "0e47e8de-9aa4-4b8c-af9c-777961149e63",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "fd5d04f2-38c1-4a37-a2da-b40135d916d0",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyMouse",
-                    "action": "Run",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "6fa484d5-9d8a-4c91-8b51-3a3c7a6ef4a0",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyMouse",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "19a4c8f5-bdde-41e1-a7cb-98c6d25f89e1",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyMouse",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "aca7b5e6-3e1c-4fff-a71c-0b14f8562426",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "809684b3-ff1a-40dd-9b59-d59b88e55c01",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Kick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fd84042b-ebdc-4b80-9e2b-df8726f31f6b",
+                    "path": "<Keyboard>/v",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyMouse",
+                    "action": "Knife",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

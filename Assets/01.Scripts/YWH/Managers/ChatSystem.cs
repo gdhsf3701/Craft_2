@@ -10,9 +10,6 @@ public class ChatSystem : MonoSingleton<ChatSystem>
     [SerializeField] private TextMeshProUGUI desc;
 
     [SerializeField] private CanvasGroup canvasGroup;
-    [SerializeField] private CanvasGroup zawalMini;
-    [SerializeField] private CanvasGroup enemyMini;
-    [SerializeField] private CanvasGroup enemy2Mini;
 
     public bool endText;
     public bool isTexting;
@@ -30,7 +27,7 @@ public class ChatSystem : MonoSingleton<ChatSystem>
     {
        
         endText = false;
-        StartCoroutine(Typing(text, rate,desc));
+        StartCoroutine(Typing(text, rate));
         chatName.text = name;
         canvasGroup.DOFade(1, 1);
     }
@@ -41,45 +38,20 @@ public class ChatSystem : MonoSingleton<ChatSystem>
       
     }
 
-    public void Boss1(CanvasGroup canvasGroup,string name, string text, float rate)
-    {
-        TMP_Text targettext = enemyMini.transform.GetComponentInChildren<TMP_Text>();
 
-        canvasGroup.DOFade(1, 0.2f).OnComplete(() =>
-        {
-            StartCoroutine(Typing(text, rate,targettext));
-            StartCoroutine(waitforEnemy(targettext, canvasGroup));
-        });
-
-       
-
-    }
-
-    IEnumerator waitforEnemy(TMP_Text text,CanvasGroup canvasGroup)
-    {
-        yield return new WaitUntil(() => endText == true);
-        yield return new WaitForSeconds(1);
-        canvasGroup.DOFade(0, 0.2f);
-   
-        text.text = "";
-    }
-
-
-
-
-    private IEnumerator Typing(string text, float rate, TMP_Text descText)
+    private IEnumerator Typing(string text, float rate)
     {
 
         for (int i = 0; i <= text.Length; i++)
         {
-            descText.text = text.Substring(0, i);
+            desc.text = text.Substring(0, i);
             
             yield return new WaitForSecondsRealtime(rate);
 
             if (endText == true)
             {
                 i = text.Length;
-                descText.text = text;                   
+                desc.text = text;                   
             }
         }
         yield return new WaitForSeconds(1.5f);

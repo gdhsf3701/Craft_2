@@ -10,28 +10,26 @@ public class EasterEggSorry : MonoBehaviour
     static string lastStage;
     [SerializeField] GameObject videoPlayer;
     VideoPlayer video;
-    
+    bool played = false;
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
-        video = GetComponentInChildren<VideoPlayer>();
+        video = GetComponent<VideoPlayer>();
         videoPlayer.SetActive(false);
         string nowScene = SceneManager.GetActiveScene().name;
-        if (nowScene == "StartScene"|| nowScene != lastStage)
+        if (nowScene != "StartScene")
         {
-            deathCount = 0;
-        }
-        else
-        {
-            deathCount++;
+            if(nowScene != lastStage)
+            {
+                deathCount = 0;
+            }
         }
         lastStage = SceneManager.GetActiveScene().name;
     }
     private void Update()
     {
-        if (deathCount == 15) 
+        if (deathCount == 50 && !played) 
         {
-            deathCount = 0;
+            played = true;
             videoPlayer.SetActive(true);
             video.Play();
             StartCoroutine(VideoWaitCoroutine(video));

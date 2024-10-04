@@ -11,7 +11,7 @@ public class Stage1 : MonoBehaviour
 
     void Start()
     {
-        PlayerManager.Instance.Player.PlayerInput._controls.Player.Disable();
+        PlayerManager.Instance.Player.PlayerInput._controls.LeftPlayer.Disable();
         StartCoroutine(MasterSay());
     }
 
@@ -44,7 +44,7 @@ public class Stage1 : MonoBehaviour
 
         yield return new WaitForSeconds(1);
 
-        PlayerManager.Instance.Player.PlayerInput._controls.Player.Enable();
+        PlayerManager.Instance.Player.PlayerInput._controls.LeftPlayer.Enable();
 
         yield return new WaitUntil(() => PlayerManager.Instance.Player.PlayerInput.Movement.magnitude > 0);
 

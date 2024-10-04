@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 255181157891611465}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.58, y: 0.16, z: 0}
+  m_LocalPosition: {x: 1.31, y: 0.23, z: 0}
   m_LocalScale: {x: 0.76, y: 0.76, z: 0.76}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -90,6 +90,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _targetRenderer: {fileID: 7844898886526884971}
   _flashTime: 0.1
+--- !u!1 &4310434448389086713
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1440589784582332009}
+  - component: {fileID: 9159153845842848426}
+  m_Layer: 0
+  m_Name: AgentVFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1440589784582332009
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4310434448389086713}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5349986151655438130}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9159153845842848426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4310434448389086713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c88d99bbc1af4ae3b27b044a3c39dad1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _canGenerateAfterImage: 0
+  _generateTerm: 0.05
 --- !u!1 &6734803770239085115
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,7 +211,7 @@ SpriteRenderer:
   m_SortingLayerID: -662909301
   m_SortingLayer: 1
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 74d5b11943661a846b876ec23efd22e6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cb1235ec6f7fd0640a8351a259c7608d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -275,6 +321,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1440589784582332009}
   - {fileID: 4093198288140987721}
   - {fileID: 3616649550058005374}
   - {fileID: 601735605421070974}
@@ -363,8 +410,8 @@ MonoBehaviour:
   detectRadius: 14
   attackRadius: 10
   attackCooldown: 0.7
-  KnockbackPower: 3
-  attackDamage: 1
+  KnockbackPower: 90.2
+  attackDamage: 10
   contactFilter:
     useTriggers: 0
     useLayerMask: 1
@@ -381,11 +428,9 @@ MonoBehaviour:
     maxNormalAngle: 0
   targerTrm: {fileID: 0}
   muzzleTrm: {fileID: 601735605421070974}
-  bulletDamage: 1
-  bulletKnockBack: 3
+  bulletDamage: 10
+  bulletKnockBack: 78.06
   _poolName: GunKnifeEnemy
-  SpotPlayer: 0
-  Is3Stage: 0
 --- !u!114 &1770874851476827241
 MonoBehaviour:
   m_ObjectHideFlags: 0

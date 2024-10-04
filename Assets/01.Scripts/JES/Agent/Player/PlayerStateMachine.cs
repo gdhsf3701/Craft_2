@@ -15,8 +15,7 @@ public enum PlayerEnum
     Fall,
     Dead,
     Hit,
-    Wire,
-    Walk
+    Wire
 }
 public class PlayerStateMachine
 {

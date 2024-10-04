@@ -7,26 +7,18 @@ using UnityEngine;
 
 public class Zipline : MonoBehaviour
 {
-    [SerializeField] GameObject LineEnd;
-    private float targetY;
+    [SerializeField]GameObject LineEnd;
     //[SerializeField] private TextMeshProUGUI text;
     // text는 상호작용 안 텍스트 (월드스페이스 캔버스)
     private bool _isPlayer = false;
-    public static bool isMove = false;
+    public static bool isMove= false;
     [SerializeField] SoundSO sound, exitSound;
-
-    bool can = true;
 
     SoundPlayer soundPlayer;
 
-    [SerializeField]Player _player;
+    Player _player;
 
-    [SerializeField] float Speed = 10;
-    private void Awake()
-    {
-        Collider2D collider = GetComponent<Collider2D>();
-        targetY = collider.bounds.max.y;
-    }
+    [SerializeField] float Speed=10;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //text.gameObject.SetActive(true);
@@ -42,21 +34,18 @@ public class Zipline : MonoBehaviour
     {
         if (_isPlayer)
         {
-            if (Input.GetKeyDown(KeyCode.F) && !isMove && can)
+            if (Input.GetKeyDown(KeyCode.F)&&!isMove)
             {
-                can = false;
-                _player.MovementCompo.rbCompo.bodyType = RigidbodyType2D.Kinematic;
-                _player.PlayerInput._controls.Disable();
-                StartCoroutine(MoveToTarget());
+                isMove = true;
                 soundPlayer = PoolManager.Instance.Pop("SoundPlayer") as SoundPlayer;
                 soundPlayer.PlaySound(sound);
-                
+                _player.stateMachine.ChangeState(PlayerEnum.Wire);
             }
         }
-        if (isMove && _player != null)
+        if (isMove)
         {
-            _player.transform.position += (LineEnd.transform.position - _player.transform.position).normalized * Speed * Time.deltaTime;
-            if (Mathf.Abs(Vector3.Distance(_player.transform.position, LineEnd.transform.position)) < 0.1f)
+            _player.transform.position += (LineEnd.transform.position- _player.transform.position).normalized * Speed * Time.deltaTime;
+            if(Mathf.Abs(Vector3.Distance(_player.transform.position, LineEnd.transform.position)) < 0.1f)
             {
                 isMove = false;
                 soundPlayer.StopAndGoToPool();
@@ -64,26 +53,5 @@ public class Zipline : MonoBehaviour
                 exitSoundPlayer.PlaySound(exitSound);
             }
         }
-        if (!_isPlayer && _player != null && !isMove)
-        {
-            _player = null;
-        }
-    }
-    IEnumerator MoveToTarget()
-    {
-        _player.stateMachine.ChangeState(PlayerEnum.Idle);
-        while (Mathf.Abs(_player.transform.position.y - targetY) > 0.1f)
-        {
-            Vector3 currentPosition = _player.transform.position;
-            Vector3 targetPosition = new Vector3(currentPosition.x, targetY, currentPosition.z);
-
-            _player.transform.position = Vector3.Lerp(currentPosition, targetPosition, 5 * Time.deltaTime);
-
-            yield return null;
-        }
-        _player.MovementCompo.rbCompo.bodyType = RigidbodyType2D.Dynamic;
-        _player.stateMachine.ChangeState(PlayerEnum.Wire);
-        isMove = true;
-        can = true;
     }
 }

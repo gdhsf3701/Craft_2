@@ -33,7 +33,7 @@ public class FailScene : MonoBehaviour
     {
         if (director == aDirector)
         {
-            PlayerManager.Instance.Player.PlayerInput._controls.Player.Enable();
+            PlayerManager.Instance.Player.PlayerInput._controls.LeftPlayer.Enable();
             Debug.Log("Enable");
 
         }

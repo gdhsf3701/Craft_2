@@ -17,9 +17,6 @@ public class PlayerAirState : PlayerDefaultState
     {
         if(next)
         {
-            SoundPlayer sP = PoolManager.Instance.Pop("SoundPlayer") as SoundPlayer;
-            sP.PlaySound(_player._fallSound);
-            
             _stateMachine.ChangeState(PlayerEnum.Idle);
         }
     }
