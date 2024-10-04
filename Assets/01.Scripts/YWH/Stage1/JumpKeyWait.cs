@@ -48,7 +48,7 @@ public class JumpKeyWait : MonoBehaviour
 
     IEnumerator Musul()
     {
-        PlayerManager.Instance.Player.PlayerInput._controls.LeftPlayer.Disable();
+        PlayerManager.Instance.Player.PlayerInput._controls.Player.Disable();
         ChatSystem.Instance.TypCoStart("스승님", "이제 익숙해진 것 같아 보이니..", 0.2f);
 
         yield return new WaitUntil(() => ChatSystem.Instance.endText == true);
@@ -62,13 +62,13 @@ public class JumpKeyWait : MonoBehaviour
        
         keyUI.DOFade(1, 1);
         Debug.Log("Enable");
-        PlayerManager.Instance.Player.PlayerInput._controls.LeftPlayer.Enable();
+        PlayerManager.Instance.Player.PlayerInput._controls.Player.Enable();
         yield return new WaitUntil(() => _isAttack == true);
 
         keyUI.DOFade(0, 1).SetDelay(0.5f);
 
         yield return new WaitUntil(() => _isDead == true);
-        PlayerManager.Instance.Player.PlayerInput._controls.LeftPlayer.Disable();
+        PlayerManager.Instance.Player.PlayerInput._controls.Player.Disable();
         ChatSystem.Instance.TypCoStart("스승님", "이제 충분히 적응을 한 것 같아 보이니", 0.2f);
         yield return new WaitUntil(() => ChatSystem.Instance.endText == true);
         ChatSystem.Instance.StopTyp();
@@ -95,7 +95,7 @@ public class JumpKeyWait : MonoBehaviour
     {
         if (playableDirector == aDirector)
         {
-            PlayerManager.Instance.Player.PlayerInput._controls.LeftPlayer.Enable();
+            PlayerManager.Instance.Player.PlayerInput._controls.Player.Enable();
             Debug.Log("Enable");
 
         }

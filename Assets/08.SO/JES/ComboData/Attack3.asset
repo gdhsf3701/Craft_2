@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd05b765b1a5fc74fbdf8192db91b98d, type: 3}
   m_Name: Attack3
   m_EditorClassIdentifier: 
-  damage: 82
+  damage: 15
   knockPower: 1
-  damagePos: {x: 1.77, y: 0.02}
-  damageRadius: 3
+  damagePos: {x: 0.703, y: 1.626}
+  damageRadius: 0.49
   attackCooldown: 1.5
+  sucSound: {fileID: 11400000, guid: 987ccae2cefafc94ba42cc4b0f858821, type: 2}
+  failSound: {fileID: 11400000, guid: 568e7d17f200fbd469e6d5df923721b2, type: 2}

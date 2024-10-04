@@ -21,7 +21,7 @@ public class MasterMeet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        PlayerManager.Instance.Player.PlayerInput._controls.LeftPlayer.Disable();
+        PlayerManager.Instance.Player.PlayerInput._controls.Player.Disable();
         collider2d.enabled = false;
         StartCoroutine(Jump());
     }
@@ -40,7 +40,7 @@ public class MasterMeet : MonoBehaviour
         ChatSystem.Instance.StopTyp();
         Debug.Log("Enable");
         yield return new WaitForSeconds(3.5f);
-        PlayerManager.Instance.Player.PlayerInput._controls.LeftPlayer.Enable();
+        PlayerManager.Instance.Player.PlayerInput._controls.Player.Enable();
         keyUI.DOFade(1, 1);
         yield return new WaitUntil(() => PlayerManager.Instance.Player.MovementCompo.rbCompo.velocity.y>0);
    

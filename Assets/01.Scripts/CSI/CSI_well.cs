@@ -6,30 +6,31 @@ using UnityEngine;
 public class CSI_well : MonoBehaviour
 {
     private AgentMovement _agentMovement;
-    private float slow_amount;
+    float slow_amount;
     private bool isuse;
     private void Awake()
     {
-        _agentMovement = GameObject.FindWithTag("Player").GetComponent<AgentMovement>();
-        slow_amount = _agentMovement.moveSpeed / 2;
+        _agentMovement = PlayerManager.Instance.Player.GetComponent<AgentMovement>();
+        slow_amount = 3;
     }
-
-
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (!isuse)
+        if (other.transform.CompareTag("Player"))
         {
-            isuse = true;
-            _agentMovement.moveSpeed -= slow_amount;
-            StartCoroutine("cooltime");
+            _agentMovement.moveSpeed = slow_amount;
+            
         }
     }
 
-    IEnumerator cooltime()
+    private void OnTriggerExit2D(Collider2D other)
     {
-        yield return new WaitForSeconds(1);
-        _agentMovement.moveSpeed += slow_amount;
-        isuse = false;
+        if (other.transform.CompareTag("Player"))
+        {
+            _agentMovement.moveSpeed = 7;
+
+        }
+
     }
+
 }

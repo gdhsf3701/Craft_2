@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 59
   knockPower: 1
-  damagePos: {x: 1.18, y: 0.02}
-  damageRadius: 2
+  damagePos: {x: 0.703, y: 1.626}
+  damageRadius: 0.49
   attackCooldown: 1
+  sucSound: {fileID: 11400000, guid: 967f495c58863d64f999e22dd7501573, type: 2}
+  failSound: {fileID: 11400000, guid: 568e7d17f200fbd469e6d5df923721b2, type: 2}
