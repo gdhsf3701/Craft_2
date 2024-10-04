@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77c833ce10a2a2c4783ef4c60e688377, type: 3}
-  m_Name: SoilSound
+  m_Name: SideLieft
   m_EditorClassIdentifier: 
   audioType: 0
-  clip: {fileID: 8300000, guid: 104a016cdb102fb4d94372139eadf7fc, type: 3}
+  clip: {fileID: 8300000, guid: 5d98ee2b1513c764dad9dd04f0412c2b, type: 3}
   loop: 0
   randomizePitch: 1
   randomPicthModifier: 0.04
