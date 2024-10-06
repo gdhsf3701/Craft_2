@@ -155,7 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PanelSettings: {fileID: 11400000, guid: 3bf2f9018d6febd4a930c13897783a5a, type: 2}
   m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 9197481963319205126, guid: 3ae5238e0ad37d9438be91183f044474, type: 3}
+  sourceAsset: {fileID: 9197481963319205126, guid: a1a2abd2221a7f043b7475c51ce761b9, type: 3}
   m_SortingOrder: 0
 --- !u!4 &1268215754
 Transform:
@@ -184,7 +184,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8781124b9c283ff49bc1e275e30e4b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cutsceneTemplate: {fileID: 9197481963319205126, guid: 3ae5238e0ad37d9438be91183f044474, type: 3}
 --- !u!1 &1742397036
 GameObject:
   m_ObjectHideFlags: 0
