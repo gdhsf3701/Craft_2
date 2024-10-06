@@ -121,7 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 4503942969248558047}
   _moveRightSound: {fileID: 11400000, guid: fcda750f375197141b017a09bb33b8ab, type: 2}
-  _moveLeftSound: {fileID: 11400000, guid: fcda750f375197141b017a09bb33b8ab, type: 2}
+  _moveLeftSound: {fileID: 11400000, guid: 7eb024bfef176a641b078612966beb0a, type: 2}
 --- !u!1 &1646687887588138710
 GameObject:
   m_ObjectHideFlags: 0
