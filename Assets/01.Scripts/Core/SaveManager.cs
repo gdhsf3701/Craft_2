@@ -44,6 +44,15 @@ public class SaveManager : MonoBehaviour
         dataPath = path;
         _saveData = saveData;
     }
+
+    public int ReturnSFXVolume()
+    {
+        return _saveData.sfxVol;
+    }
+    public int ReturnBGMVol()
+    {
+        return _saveData.bgmVol;
+    }
     public void SetStageNumber(int stageNumber)
     {
         _saveData.stageNumber = stageNumber;
@@ -54,6 +63,6 @@ public class SaveManager : MonoBehaviour
     }
     private void SaveData()
     {
-        EasyToJson.ToJson(_saveData,dataPath);
+        EasyToJson.ToJson(_saveData,dataPath,true);
     }
 }
