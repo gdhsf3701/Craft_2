@@ -489,6 +489,14 @@ MonoBehaviour:
   chatName: {fileID: 3804991466095555396}
   desc: {fileID: 7409569815408551053}
   canvasGroup: {fileID: 4560341012586346077}
+  zawalMini: {fileID: 0}
+  enemyMini: {fileID: 0}
+  enemy2Mini: {fileID: 0}
+  icon: {fileID: 3032015552500866315}
+  sprites:
+  - {fileID: 21300000, guid: 8b14208793a9dba49bd4c36ed0768d84, type: 3}
+  - {fileID: 21300000, guid: 983fffaff8ea44d42ba6f3b06f3d9803, type: 3}
+  - {fileID: 21300000, guid: d338e49ab80a5954da761655ed377d3b, type: 3}
   endText: 0
   isTexting: 0
 --- !u!1 &5382409963816968133

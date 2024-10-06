@@ -4086,9 +4086,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1460570613}
   Player: {fileID: 876742176}
-  player: {fileID: 0}
+  player: {fileID: 1144188126}
   fade: {fileID: 189929916}
   destroyGameobject: []
+  _text: {fileID: 0}
+  enemyspawn: {fileID: 0}
 --- !u!1 &771903329
 GameObject:
   m_ObjectHideFlags: 0
@@ -4461,6 +4463,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3620365721806292588, guid: 9343a14680aa9774a84dd12ae38dd9ef, type: 3}
   m_PrefabInstance: {fileID: 1343407153}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1144188126 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4503942969248558047, guid: 9343a14680aa9774a84dd12ae38dd9ef, type: 3}
+  m_PrefabInstance: {fileID: 1343407153}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876742176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 889e19d3d120e274980a6322dfe69128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1343407153
 PrefabInstance:
   m_ObjectHideFlags: 0
