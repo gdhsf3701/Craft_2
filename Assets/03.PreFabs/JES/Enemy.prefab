@@ -58,8 +58,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 477707498049151294}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.130001, y: -0.00999999, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a6ae6eb380b1a742a7559d8f8d8207a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _effectName: B
+  _effectName: Blood
 --- !u!1 &6734803770239085115
 GameObject:
   m_ObjectHideFlags: 0
