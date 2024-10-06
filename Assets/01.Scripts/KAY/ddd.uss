@@ -1,16 +1,2 @@
-.Default {
-    -unity-font: url("project://database/Assets/10.Font/YWH/Galmuri14.ttf?fileID=12800000&guid=a29281a1405ce5f44bedd377a14e3ceb&type=3#Galmuri14");
-    -unity-text-align: upper-center;
-    color: rgb(255, 255, 255);
-    font-size: 63px;
-    -unity-font-definition: initial;
-    top: 445px;
-    align-items: auto;
-    white-space: nowrap;
-    transition-duration: 0s;
-}
-
-.Seek {
-    opacity: 0;
-    transition-duration: 1s;
+.Clear {
 }
