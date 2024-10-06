@@ -837,7 +837,7 @@ MonoBehaviour:
   SettingBack: {fileID: 2190128152056608050}
   scrollDown: {fileID: 11400000, guid: a22220f64f5b6f4429e256dd11777097, type: 2}
   scrollOpen: {fileID: 11400000, guid: 4be80ac961fa2e949a86ba9823d59e4b, type: 2}
-  SettingBGM: {fileID: 0}
+  SettingBGM: {fileID: 11400000, guid: b2c26e86402e6cb49ae97c4bbcf606cb, type: 2}
 --- !u!1 &7742607718775388575
 GameObject:
   m_ObjectHideFlags: 0
