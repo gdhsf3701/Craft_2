@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using TMPro;
+using Cinemachine;
 
 public class Teleporter : MonoBehaviour
 {
@@ -15,7 +16,8 @@ public class Teleporter : MonoBehaviour
     [SerializeField] private GameObject[] destroyGameobject;
     [SerializeField] private TextMeshProUGUI _text;
     [SerializeField] private EnemySpawner enemyspawn;
-
+    [SerializeField] CinemachineVirtualCamera cam;
+    [SerializeField] CinemachineConfiner2D setting;
 
     bool done = false;
     float saveSpeed = 0;
@@ -36,6 +38,8 @@ public class Teleporter : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.F))
             {
                 done = true;
+                cam.m_Lens.OrthographicSize = 5;
+                setting.InvalidateCache();
                 if (destroyGameobject != null)
                 {
                     foreach (GameObject gameObject in destroyGameobject)
