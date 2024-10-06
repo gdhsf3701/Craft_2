@@ -11,7 +11,7 @@ public class PlayerAttack3State : PlayerAttackState
     public override void Enter()
     {
         base.Enter();
-        Time.timeScale = 0.3f;
+        Time.timeScale = 0.7f;
     }
 
     public override void Exit()
