@@ -82,8 +82,6 @@ public class SettingMove : MonoBehaviour
         seq.AppendCallback(()=> SettingPanel.SetActive(true));
         seq.Join(SettingBorderLeft.DOAnchorPosX(openBorderLeftX, 0.75f)).SetEase(Ease.Linear);
         seq.Join(SettingBorderRight.DOAnchorPosX(openBorderRightX, 0.75f)).SetEase(Ease.Linear);
-        seq.Join(SettingBorderLeft.DOAnchorPosX(openBorderRightX, 0.75f)).SetEase(Ease.Linear);
-        seq.Join(SettingBorderRight.DOAnchorPosX(openBorderRightX, 0.75f)).SetEase(Ease.Linear);
         seq.Join(SettingBack.DOScaleX(15, 0.75f)).SetEase(Ease.Linear);
         soundPlayer.PlaySound(scrollOpen);
 
