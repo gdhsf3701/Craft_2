@@ -3,11 +3,14 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.Timeline;
 using UnityEngine.Playables;
+using DG.Tweening;
+using UnityEngine.UI;
 
 public class Stage1 : MonoBehaviour
 {
     [SerializeField] private CanvasGroup keyUI;
     [SerializeField] private PlayableDirector playableDirector;
+    [SerializeField] private RawImage fade;
 
     void Start()
     {
@@ -23,6 +26,7 @@ public class Stage1 : MonoBehaviour
         yield return new WaitUntil(() => ChatSystem.Instance.endText == true);
 
         FadeManager.instance.FadeOut(1);
+        fade.DOFade(0, 1f);
         yield return new WaitForSeconds(2);
 
         ChatSystem.Instance.StopTyp();
