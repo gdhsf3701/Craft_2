@@ -31,43 +31,23 @@ public class Teleporter : MonoBehaviour
         saveSpeed = player.MovementCompo.moveSpeed;
         saveJump = player.MovementCompo.jumpPower;
     }
-    private void Update()
-    {
-        if (_isPlayer && !done)
-        {
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                done = true;
-                cam.m_Lens.OrthographicSize = 5;
-                setting.InvalidateCache();
-                if (destroyGameobject != null)
-                {
-                    foreach (GameObject gameObject in destroyGameobject)
-                    {
-                        Destroy(gameObject);
-                    }
-                }
-                StartCoroutine(WaitFade());
-            }
-        }
-    }
-
     public void Died()
     {
         StartCoroutine(WaitFade());
     }
-
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        _isPlayer = true;
-        _text.enabled = true;
+        cam.m_Lens.OrthographicSize = 5;
+        setting.InvalidateCache();
+        if (destroyGameobject != null)
+        {
+            foreach (GameObject gameObject in destroyGameobject)
+            {
+                Destroy(gameObject);
+            }
+        }
+        StartCoroutine(WaitFade());
 
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        _isPlayer = false;
-        _text.enabled = false;
     }
     IEnumerator WaitFade()
     {
