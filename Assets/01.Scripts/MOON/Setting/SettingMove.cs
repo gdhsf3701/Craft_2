@@ -103,6 +103,7 @@ public class SettingMove : MonoBehaviour
     }
     public void GoStart()
     {
-        SceneManager.LoadScene("StartScene");
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneName.Start);
     }
 }
