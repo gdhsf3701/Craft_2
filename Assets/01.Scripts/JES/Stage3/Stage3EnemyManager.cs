@@ -9,6 +9,7 @@ public class Stage3EnemyManager : MonoSingleton<Stage3EnemyManager>
 {
     private List<GunKnifeEnemy> enemyList= new List<GunKnifeEnemy>();
     private int count;
+    private bool findPlayer = false;
     private void Start()
     {
         foreach (var enemy in GetComponentsInChildren<GunKnifeEnemy>())
@@ -22,6 +23,8 @@ public class Stage3EnemyManager : MonoSingleton<Stage3EnemyManager>
 
     public void SpotEvent() //플레이어가 발각됐을때 실행하면 됨
     {
+        PlayerManager.Instance.Player.HealthCompo.OnDeadEvent.AddListener(Scene5Play);
+        findPlayer = true;
         Player player = PlayerManager.Instance.Player;
         foreach (var enemy in enemyList)
         {
@@ -32,9 +35,26 @@ public class Stage3EnemyManager : MonoSingleton<Stage3EnemyManager>
     {
         enemyList.Remove(enemy);
         count--;
-        if (count <= 0)
+        if(count <= 0&& findPlayer)
         {
-            //다죽인거
+            Scene5Play();
         }
+    }
+    public bool AllDeadCheck()
+    {
+        if(count > 0)
+        {
+            //다 못죽임
+            SpotEvent();
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+    private void Scene5Play()
+    {
+        //씬 5 재생
     }
 }

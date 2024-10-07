@@ -7,6 +7,7 @@ using DG.Tweening;
 public class Stage3_Door : MonoBehaviour
 {
     [SerializeField] Transform target;
+    [SerializeField] Stage3EnemyManager enemyManager;
     private bool _isPlayer;
     [SerializeField] GameObject Player;
     [SerializeField] Player player;
@@ -30,6 +31,10 @@ public class Stage3_Door : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.F))
             {
                 done = true;
+                if (enemyManager.AllDeadCheck())
+                {
+                    StartCoroutine(WaitFade());
+                }
             }
         }
     }
