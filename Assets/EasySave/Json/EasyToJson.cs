@@ -66,6 +66,11 @@ namespace EasySave.Json
             return obj;
         }
 
+        /// <summary>
+        /// 존재하면 트루, 존재하지 않으면 폴스
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <returns></returns>
         public static bool IsExistJson(string fileName)
         {
             string path = GetFilePath(fileName);

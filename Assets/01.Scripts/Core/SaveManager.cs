@@ -24,8 +24,6 @@ public class SaveManager : MonoBehaviour
     private Transform _playerTrm;
     
     public string dataPath = "SaveData1";
-    
-    private static readonly string LocalPath = Application.dataPath + "/SaveFolder/";
     private void Awake()
     {
         if (Instance == null)
@@ -39,6 +37,15 @@ public class SaveManager : MonoBehaviour
         }
         _saveData = new SaveData();
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SaveData();
+        }
+    }
+
     public void SetDataPath(string path,SaveData saveData)
     {
         dataPath = path;
