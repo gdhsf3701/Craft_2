@@ -8378,7 +8378,7 @@ GameObject:
   - component: {fileID: 1712835634}
   - component: {fileID: 1712835633}
   m_Layer: 0
-  m_Name: DiedTimeLine
+  m_Name: Stage4-2Failed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9243,7 +9243,7 @@ GameObject:
   - component: {fileID: 2069746771}
   - component: {fileID: 2069746772}
   m_Layer: 0
-  m_Name: SucTimeLine
+  m_Name: Stage4-2Sucess
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
