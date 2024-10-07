@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 15
-  _lifeTime: 2
+  _lifeTime: 1
   _poolName: Enemybullet
 --- !u!50 &7310955197571638139
 Rigidbody2D:
