@@ -9,6 +9,8 @@ using UnityEngine.SceneManagement;
 public class SceneName
 {
     public const string Start = "StartScene";
+    public const string Select = "SelectScene";
+    public const string Delete = "DeleteScene";
     public const string Stage0 = "Stage0Scene";
     public const string Stage1 = "Stage1Scene";
     public const string Stage2 = "Stage2Scene";
