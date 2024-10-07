@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using DG.Tweening;
-
+using UnityEngine.UI;
 public class ChatSystem : MonoSingleton<ChatSystem>
 {
     [SerializeField] private TextMeshProUGUI chatName;
@@ -13,6 +13,8 @@ public class ChatSystem : MonoSingleton<ChatSystem>
     [SerializeField] private CanvasGroup zawalMini;
     [SerializeField] private CanvasGroup enemyMini;
     [SerializeField] private CanvasGroup enemy2Mini;
+    [SerializeField] private Image icon;
+    [SerializeField] private List<Sprite> sprites;
 
     public bool endText;
     public bool isTexting;
@@ -28,8 +30,28 @@ public class ChatSystem : MonoSingleton<ChatSystem>
 
     public void TypCoStart(string name, string text, float rate)
     {
-       
+        switch (name)
+        {
+
+            case "±ÝÀÚ¿ù":
+                icon.sprite = sprites[0];
+
+                break;
+            case "½º½Â´Ô":
+                icon.sprite = sprites[1];
+
+                break;
+            case "¸í¼ºÈ²ÈÄ":
+                icon.sprite = sprites[2];
+
+                break;
+
+        }
+
+
+
         endText = false;
+        
         StartCoroutine(Typing(text, rate,desc));
         chatName.text = name;
         canvasGroup.DOFade(1, 1);
