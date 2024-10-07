@@ -27,7 +27,25 @@ public class SaveBtn : MonoBehaviour
         TimeSpan timeSpan = TimeSpan.FromSeconds(_saveData.playTime);
         _timeTex.text = $"{timeSpan.Hours:D2}:{timeSpan.Minutes:D2}:{timeSpan.Seconds:D2}";
     }
+
     public void BtnClick()
+    {
+        if (SceneManager.GetActiveScene().name == SceneName.Select)
+        {
+            NextScene();
+        }
+        else if (SceneManager.GetActiveScene().name == SceneName.Delete)
+        {
+            SaveScene.Instance.PanelOn(this);
+        }
+    }
+
+    public void DeleteBtnClick()
+    {
+        _saveData = new SaveData();
+        NextScene();
+    }
+    private void NextScene()
     {
         SaveManager.Instance.SetDataPath(SaveSlot,_saveData);
         SceneManager.LoadScene(_saveData.currentScene);

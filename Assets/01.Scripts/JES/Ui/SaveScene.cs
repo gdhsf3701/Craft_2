@@ -4,14 +4,17 @@ using System.Collections.Generic;
 using EasySave.Json;
 using UnityEngine;
 
-public class SaveScene : MonoBehaviour
+public class SaveScene : MonoSingleton<SaveScene>
 {
     [SerializeField] private SaveBtn _btnPrefab;
 
     [SerializeField] private List<Sprite> _bgSprites;
+    
+    [SerializeField] private GameObject _deletePanel;
 
     private string _saveData = "SaveData";
     
+    private SaveBtn deleteBtn;
     
     private void Start()
     {
@@ -30,5 +33,20 @@ public class SaveScene : MonoBehaviour
                 break;
             }
         }
+    }
+
+    public void PanelOn(SaveBtn saveBtn)
+    {
+        deleteBtn = saveBtn;
+        _deletePanel.SetActive(true);
+    }
+    public void PanelOff()
+    {
+        _deletePanel.SetActive(false);
+        deleteBtn = null;
+    }
+    public void DeletePanelClick()
+    {
+        deleteBtn.DeleteBtnClick();
     }
 }
