@@ -69,8 +69,8 @@ public class SettingMove : MonoBehaviour
         SoundPlayer soundPlayer = PoolManager.Instance.Pop("SoundPlayer") as SoundPlayer;
         BGMPlayer = PoolManager.Instance.Pop("SoundPlayer") as SoundPlayer;
         scrollPlayer.PlaySound(scrollDown);
-        seq.Append(transform.DOLocalMoveY(-970, 1.5f)).SetEase(Ease.OutSine);
-        seq.AppendInterval(1f);
+        seq.Append(transform.DOLocalMoveY(-970, 1.5f)).SetEase(Ease.Linear);
+        seq.AppendInterval(0.3f);
 
         seq.Append(transform.DOLocalMoveY(-950, 0.15f)).SetEase(Ease.OutExpo);
         seq.Append(transform.DOLocalMoveY(-990, 0.175f)).SetEase(Ease.OutExpo);

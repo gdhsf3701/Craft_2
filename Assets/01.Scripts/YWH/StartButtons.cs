@@ -7,10 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class StartButtons : MonoBehaviour
 {
-
     [SerializeField] private GameObject ga;
     private bool _isNotFull = false;
-
     private void Start()
     {
         FadeManager.instance.FadeOut(1f);  
