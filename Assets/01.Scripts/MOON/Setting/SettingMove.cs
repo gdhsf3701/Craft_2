@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class SettingMove : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class SettingMove : MonoBehaviour
     [SerializeField] SoundSO scrollDown, scrollOpen, SettingBGM;
 
     SoundPlayer BGMPlayer;
+
+    [SerializeField]TextMeshProUGUI BGM,SFX;
 
     private void Awake()
     {
@@ -78,6 +81,8 @@ public class SettingMove : MonoBehaviour
 
         seq.AppendCallback(()=> SettingPanel.SetActive(true));
         seq.Join(SettingBorderLeft.DOAnchorPosX(openBorderLeftX, 0.75f)).SetEase(Ease.Linear);
+        seq.Join(SettingBorderRight.DOAnchorPosX(openBorderRightX, 0.75f)).SetEase(Ease.Linear);
+        seq.Join(SettingBorderLeft.DOAnchorPosX(openBorderRightX, 0.75f)).SetEase(Ease.Linear);
         seq.Join(SettingBorderRight.DOAnchorPosX(openBorderRightX, 0.75f)).SetEase(Ease.Linear);
         seq.Join(SettingBack.DOScaleX(15, 0.75f)).SetEase(Ease.Linear);
         soundPlayer.PlaySound(scrollOpen);
