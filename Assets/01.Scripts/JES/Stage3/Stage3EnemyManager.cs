@@ -37,4 +37,11 @@ public class Stage3EnemyManager : MonoSingleton<Stage3EnemyManager>
             //다죽인거
         }
     }
+    public void AllDeadCheck()
+    {
+        if(count > 0)
+        {
+            //다 못죽임
+        }
+    }
 }
