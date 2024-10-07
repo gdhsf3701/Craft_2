@@ -15,9 +15,11 @@ public class SettingUI : MonoBehaviour
     public void SetMusicVolume(float volume)
     {
         _audioMixer.SetFloat("Music", Mathf.Log10(volume) * 20);
+        SaveManager.Instance.SaveBgmSound(volume);
     }
     public void SetSFXVolume(float volume)
     {
         _audioMixer.SetFloat("SFX", Mathf.Log10(volume) * 20);
+        SaveManager.Instance.SaveSfxSound(volume);
     }
 }

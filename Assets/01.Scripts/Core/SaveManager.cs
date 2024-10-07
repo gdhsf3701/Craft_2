@@ -6,6 +6,16 @@ using UnityEngine;
 using EasySave.Json;
 using UnityEngine.SceneManagement;
 
+public class SoundData
+{
+    public float sfxVol, bgmVol;
+
+    public SoundData()
+    {
+        sfxVol = 1;
+        bgmVol = 1;
+    }
+}
 public class SceneName
 {
     public const string Start = "StartScene";
@@ -22,10 +32,12 @@ public class SceneName
 public class SaveManager : MonoBehaviour
 {
     private SaveData _saveData;
+    private SoundData _soundData;
     public static SaveManager Instance;
     private Transform _playerTrm;
     
     public string dataPath = "SaveData1";
+    private string _soundPath = "Sound";
     private void Awake()
     {
         if (Instance == null)
@@ -38,6 +50,7 @@ public class SaveManager : MonoBehaviour
             Destroy(gameObject);
         }
         _saveData = new SaveData();
+        _soundData = EasyToJson.FromJson<SoundData>(_soundPath);
     }
 
     private void Update()
@@ -54,13 +67,13 @@ public class SaveManager : MonoBehaviour
         _saveData = saveData;
     }
 
-    public int ReturnSFXVolume()
+    public float ReturnSFXVolume()
     {
-        return _saveData.sfxVol;
+        return _soundData.sfxVol;
     }
-    public int ReturnBGMVol()
+    public float ReturnBGMVol()
     {
-        return _saveData.bgmVol;
+        return _soundData.bgmVol;
     }
     public void SetStageNumber(int stageNumber)
     {
@@ -73,5 +86,16 @@ public class SaveManager : MonoBehaviour
     private void SaveData()
     {
         EasyToJson.ToJson(_saveData,dataPath,true);
+    }
+
+    public void SaveSfxSound(float sfx)
+    {
+        _soundData.sfxVol = sfx;
+        EasyToJson.ToJson(_soundData,_soundPath,true);
+    }
+    public void SaveBgmSound(float bgm)
+    {
+        _soundData.bgmVol = bgm;
+        EasyToJson.ToJson(_soundData,_soundPath,true);
     }
 }
