@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SawedOff : MonoBehaviour
 {
-    private float SpreadAngle = 7.5f;
+    private float SpreadAngle = 15f;
 
     private int bulletCount=3;
 
@@ -13,7 +13,7 @@ public class SawedOff : MonoBehaviour
     
     public void ShootGun()
     {
-        for (int i = 0; i <Random.Range(5,8); i++)
+        for (int i = 0; i <Random.Range(4,6); i++)
         {
             float spreadAngle = Random.Range(-SpreadAngle, SpreadAngle);
 
