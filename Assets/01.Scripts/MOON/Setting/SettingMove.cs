@@ -2,6 +2,7 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SettingMove : MonoBehaviour
 {
@@ -96,5 +97,9 @@ public class SettingMove : MonoBehaviour
         seq.AppendCallback(() => SettingPanel.SetActive(false));
         seq.Append(transform.DOLocalMoveY(162, 1.5f)).SetEase(Ease.OutSine);
 
+    }
+    public void GoStart()
+    {
+        SceneManager.LoadScene("StartScene");
     }
 }
