@@ -60,14 +60,12 @@ public class Cliff : MonoBehaviour
     }
     private IEnumerator DownTimeDelay()
     {
-        player.MovementCompo.moveSpeed = 0;
-        player.MovementCompo.jumpPower = 0;
-        dark.DOFade(1, delayTime);
-        yield return new WaitForSeconds(delayTime);
+        Time.timeScale = 0;
+        dark.DOFade(1, delayTime).SetUpdate(true);
+        yield return new WaitForSecondsRealtime(delayTime);
         Player.transform.position = cliffReturn[childIndex].position;
-        dark.DOFade(0, darkTime);
-        yield return new WaitForSeconds(darkTime/2);
-        player.MovementCompo.moveSpeed = saveSpeed;
-        player.MovementCompo.jumpPower = saveJump;
+        dark.DOFade(0, darkTime).SetUpdate(true);
+        yield return new WaitForSecondsRealtime(darkTime/2);
+        Time.timeScale = 1;
     }
 }

@@ -76,9 +76,9 @@ public class SettingMove : MonoBehaviour
         seq.Append(transform.DOLocalMoveY(-990, 0.275f)).SetEase(Ease.OutExpo);
 
         seq.AppendCallback(()=> SettingPanel.SetActive(true));
-        seq.Join(SettingBorderLeft.DOAnchorPosX(openBorderLeftX, 0.75f));
-        seq.Join(SettingBorderRight.DOAnchorPosX(openBorderRightX, 0.75f));
-        seq.Join(SettingBack.DOScaleX(15, 0.75f));
+        seq.Join(SettingBorderLeft.DOAnchorPosX(openBorderLeftX, 0.75f)).SetEase(Ease.Linear);
+        seq.Join(SettingBorderRight.DOAnchorPosX(openBorderRightX, 0.75f)).SetEase(Ease.Linear);
+        seq.Join(SettingBack.DOScaleX(15, 0.75f)).SetEase(Ease.Linear);
         soundPlayer.PlaySound(scrollOpen);
 
         BGMPlayer.PlaySound(SettingBGM);
@@ -89,9 +89,9 @@ public class SettingMove : MonoBehaviour
 
         Time.timeScale = 1;
 
-        seq.Append(SettingBorderLeft.DOAnchorPosX(closeBorderLeftX, 0.75f));
-        seq.Join(SettingBorderRight.DOAnchorPosX(closeBorderRightX, 0.75f));
-        seq.Join(SettingBack.DOScaleX(1, 0.75f));
+        seq.Append(SettingBorderLeft.DOAnchorPosX(closeBorderLeftX, 0.75f)).SetEase(Ease.Linear);
+        seq.Join(SettingBorderRight.DOAnchorPosX(closeBorderRightX, 0.75f)).SetEase(Ease.Linear);
+        seq.Join(SettingBack.DOScaleX(1, 0.75f)).SetEase(Ease.Linear);
         BGMPlayer.StopAndGoToPool();
         seq.AppendCallback(() => SettingPanel.SetActive(false));
         seq.Append(transform.DOLocalMoveY(162, 1.5f)).SetEase(Ease.OutSine);

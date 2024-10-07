@@ -58,7 +58,7 @@ public class Ditch : MonoBehaviour
             gameOverTime -= 0.1f;
             if (gameOverTime <= 0)
             {
-                //??????? ??????
+                PlayerManager.Instance.Player.HealthCompo.NoEventHit(PlayerManager.Instance.Player.HealthCompo.CurrentHealth);
                 break;
             }
         }
@@ -70,8 +70,8 @@ public class Ditch : MonoBehaviour
         {
             _player = collision.GetComponent<Player>();
             isIn = true;
-            ditchOut = 20;
-            gameOverTime = 100;
+            ditchOut = 7;
+            gameOverTime = 5;
             saveSpeed = _player.MovementCompo.moveSpeed;
             saveJump = _player.MovementCompo.jumpPower;
             _player.MovementCompo.moveSpeed = 0;

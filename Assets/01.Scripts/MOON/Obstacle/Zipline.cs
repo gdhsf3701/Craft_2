@@ -14,6 +14,7 @@ public class Zipline : MonoBehaviour
     private bool _isPlayer = false;
     public static bool isMove = false;
     [SerializeField] SoundSO sound, exitSound;
+    [SerializeField] float min;
 
     bool can = true;
 
@@ -46,6 +47,7 @@ public class Zipline : MonoBehaviour
             {
                 can = false;
                 _player.MovementCompo.rbCompo.bodyType = RigidbodyType2D.Kinematic;
+                _player.MovementCompo.rbCompo.velocity = Vector2.zero;
                 _player.PlayerInput._controls.Disable();
                 StartCoroutine(MoveToTarget());
                 soundPlayer = PoolManager.Instance.Pop("SoundPlayer") as SoundPlayer;
@@ -72,10 +74,10 @@ public class Zipline : MonoBehaviour
     IEnumerator MoveToTarget()
     {
         _player.stateMachine.ChangeState(PlayerEnum.Idle);
-        while (Mathf.Abs(_player.transform.position.y - targetY) > 0.1f)
+        while (Mathf.Abs(_player.transform.position.y - (targetY- min)) > 0.1f)
         {
             Vector3 currentPosition = _player.transform.position;
-            Vector3 targetPosition = new Vector3(currentPosition.x, targetY, currentPosition.z);
+            Vector3 targetPosition = new Vector3(currentPosition.x, targetY- min, currentPosition.z);
 
             _player.transform.position = Vector3.Lerp(currentPosition, targetPosition, 5 * Time.deltaTime);
 
