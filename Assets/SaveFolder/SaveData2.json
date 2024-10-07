@@ -1,7 +1,5 @@
 {
     "playTime": 0.0,
     "currentScene": "",
-    "stageNumber": 0,
-    "sfxVol": 1,
-    "bgmVol": 1
+    "stageNumber": 0
 }

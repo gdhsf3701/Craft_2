@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using EasySave.Json;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,42 +9,55 @@ public class StartButtons : MonoBehaviour
 {
 
     [SerializeField] private GameObject ga;
+    private bool _isNotFull = false;
 
     private void Start()
     {
         FadeManager.instance.FadeOut(1f);  
     }
-
-
     public void StartButtonClick()
     {
-        StartCoroutine(Waitasec());
-
+        StartCoroutine(StartCoroutine());
     }
 
-    IEnumerator Waitasec()
+    IEnumerator StartCoroutine()
     {
+        string dataPath = "";
         FadeManager.instance.FadeIn(1);
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene(SceneName.Stage0);
+        for (int i = 1; i < 6; i++)
+        {
+            if (!EasyToJson.IsExistJson("SaveData" + i))
+            {
+                dataPath += "SaveData" + i;
+                _isNotFull = true;
+                break;
+            }
+        }
+        if (_isNotFull)
+        {
+            SaveManager.Instance.SetDataPath(dataPath,new SaveData());
+            SceneManager.LoadScene(SceneName.Stage0);
+        }
+        else if(!_isNotFull)
+        {
+            SceneManager.LoadScene(SceneName.Delete);
+        }
     }
 
-    IEnumerator Waitasec2()
+    IEnumerator ContinueCo()
     {
         FadeManager.instance.FadeIn(1);
         yield return new WaitForSeconds(2);
-        FadeManager.instance.FadeOut(1);
-        ga.SetActive(true);
+        SceneManager.LoadScene(SceneName.Select);
     }
 
     public void LeaveButtonClick()
     {
-        print("ss");
         Application.Quit();
     }
     public void ContinueButtonClick()
     {
-        Debug.Log("��");
-        StartCoroutine(Waitasec2());
+        StartCoroutine(ContinueCo());
     }
 }
