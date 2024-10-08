@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a6ae6eb380b1a742a7559d8f8d8207a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _effectName: HitEffect
+  _effectName: Blood
 --- !u!1 &6845731709564122931
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,6 +254,7 @@ GameObject:
   - component: {fileID: 5107006070455371126}
   - component: {fileID: 4503942969248558047}
   - component: {fileID: 4115931028923605270}
+  - component: {fileID: 5638221463983791956}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -476,6 +477,27 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _maxHealth: 6
+--- !u!95 &5638221463983791956
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6845731709564122931}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1166629986054839975
 PrefabInstance:
   m_ObjectHideFlags: 0
