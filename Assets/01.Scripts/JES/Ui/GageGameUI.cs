@@ -69,7 +69,6 @@ public class GageGameUI : MonoBehaviour
                 break;
             }
         }
-        //실패했을때 함수
         gameObject.SetActive(false);
         print("실패");
     }
