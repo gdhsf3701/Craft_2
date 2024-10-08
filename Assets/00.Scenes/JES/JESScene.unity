@@ -1542,6 +1542,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1479169619121334588, guid: 9343a14680aa9774a84dd12ae38dd9ef, type: 3}
+      propertyPath: _effectName
+      value: Blood
+      objectReference: {fileID: 0}
     - target: {fileID: 3620365721806292588, guid: 9343a14680aa9774a84dd12ae38dd9ef, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.42
