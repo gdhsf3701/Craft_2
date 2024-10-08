@@ -71738,6 +71738,10 @@ PrefabInstance:
       propertyPath: Goal.y
       value: 13.12
       objectReference: {fileID: 0}
+    - target: {fileID: 2879973507518279471, guid: dd027ecf82b9ca0409691a45d3c3454a, type: 3}
+      propertyPath: <NowHP>k__BackingField
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4735738377120423892, guid: dd027ecf82b9ca0409691a45d3c3454a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -71749,6 +71753,10 @@ PrefabInstance:
     - target: {fileID: 4735738377120423892, guid: dd027ecf82b9ca0409691a45d3c3454a, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6925058590309322183, guid: dd027ecf82b9ca0409691a45d3c3454a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7477554095841664232, guid: dd027ecf82b9ca0409691a45d3c3454a, type: 3}
       propertyPath: m_LocalPosition.x
