@@ -186,4 +186,9 @@ public class Player : Agent
     {
         stateMachine.CurrentState.AnimationEndTrigger();
     }
+
+    public void SetWalkSound(SoundSO right, SoundSO left)
+    {
+        transform.Find("Visual").GetComponent<PlayerAnimationEndTrigger>().SetWalkSound(right, left);
+    }
 }

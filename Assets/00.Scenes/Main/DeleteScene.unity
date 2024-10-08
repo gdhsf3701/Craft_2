@@ -569,7 +569,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 270161067}
         m_TargetAssemblyTypeName: SaveScene, Assembly-CSharp
         m_MethodName: PanelOff
         m_Mode: 1
@@ -1017,7 +1017,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 270161067}
         m_TargetAssemblyTypeName: SaveScene, Assembly-CSharp
         m_MethodName: DeletePanelClick
         m_Mode: 1
