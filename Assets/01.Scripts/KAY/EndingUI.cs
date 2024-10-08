@@ -32,7 +32,7 @@ public class EndingUI : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
 
-        text1.RemoveFromClassList("Show");
+     
         text1.AddToClassList("Hide");
 
         yield return new WaitForSeconds(1f);
@@ -73,7 +73,7 @@ public class EndingUI : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Escape))
         {
             isClicked = false;
-            SceneManager.LoadScene("StartScene");
+            SceneManager.LoadScene(SceneName.Start);
         }
     }
 }

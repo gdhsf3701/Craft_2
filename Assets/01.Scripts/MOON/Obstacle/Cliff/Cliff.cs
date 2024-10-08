@@ -60,6 +60,7 @@ public class Cliff : MonoBehaviour
     }
     private IEnumerator DownTimeDelay()
     {
+        yield return new WaitForSecondsRealtime(delayTime);
         Time.timeScale = 0;
         dark.DOFade(1, delayTime).SetUpdate(true);
         yield return new WaitForSecondsRealtime(delayTime);
