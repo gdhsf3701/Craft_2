@@ -12,12 +12,14 @@ public class Stage3_Door : MonoBehaviour
     [SerializeField] GameObject Player;
     [SerializeField] Player player;
     [SerializeField] private RawImage fade;
+    [SerializeField]GageGameUI gage;
     public bool done = false;
     float saveSpeed = 0;
     float saveJump = 0;
     private void Awake()
     {
         player = Player.GetComponent<Player>();
+        gage = GameObject.Find("GageBar").GetComponent<GageGameUI>();
     }
     private void Start()
     {
@@ -58,5 +60,6 @@ public class Stage3_Door : MonoBehaviour
         yield return new WaitForSeconds(0.3f/2);
         player.MovementCompo.moveSpeed = saveSpeed;
         player.MovementCompo.jumpPower = saveJump;
+        gage.gameObject.SetActive(true);
     }
 }

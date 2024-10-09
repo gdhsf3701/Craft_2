@@ -10,9 +10,9 @@ public class GageGameUI : MonoBehaviour
     private Tween _tween;
     private Image _barImage;
     private  bool Fail = false;
-    [SerializeField]Stage3EnemyManager[] _enemyManagers;
+    [SerializeField]Stage3EnemyManager _enemyManager;
     [SerializeField] GameObject _timeline;
-    GameObject nowEnemy;
+    [SerializeField]GameObject killedEnemy;
     bool done = false;
 
     private void Awake()
@@ -47,10 +47,6 @@ public class GageGameUI : MonoBehaviour
                 FailSeq();
         }
     }   
-    public void ChangeNowEnemy(GameObject game)
-    {
-        nowEnemy = game;
-    }
     private void ClearSeq()
     {
         _timeline.SetActive(true);
@@ -65,20 +61,14 @@ public class GageGameUI : MonoBehaviour
     }
     public void DestroyEnemy()
     {
-        Destroy(nowEnemy);
+        Destroy(killedEnemy);
     }
 
 
     private void FailSeq()
     {
         Fail = false;
-        foreach(var enemy in _enemyManagers)
-        {
-            if (enemy.AllDeadCheck())
-            {
-                break;
-            }
-        }
+        _enemyManager.AllDeadCheck();
         Time.timeScale = 1;
         gameObject.SetActive(false);
         print("½ÇÆÐ");
