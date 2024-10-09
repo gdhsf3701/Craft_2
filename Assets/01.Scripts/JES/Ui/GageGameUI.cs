@@ -20,6 +20,7 @@ public class GageGameUI : MonoBehaviour
     }
     private void OnEnable()
     {
+        _barImage.fillAmount = 0;
         if (done && !Fail)
         {
             _tween = _barImage.DOFillAmount(1, 1f).OnComplete(() => FailSeq()).SetUpdate(true);
@@ -54,6 +55,7 @@ public class GageGameUI : MonoBehaviour
         //성공했을때 함수
         Destroy(nowEnemy);
         _barImage.fillAmount = 0;
+        Time.timeScale = 1;
         gameObject.SetActive(false);
         //_barImage의 초기화
         print("성공");
@@ -69,6 +71,7 @@ public class GageGameUI : MonoBehaviour
                 break;
             }
         }
+        Time.timeScale = 1;
         gameObject.SetActive(false);
         print("실패");
     }
