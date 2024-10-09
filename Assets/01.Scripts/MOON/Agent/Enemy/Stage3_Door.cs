@@ -30,7 +30,6 @@ public class Stage3_Door : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.F))
             {
-                print("a");
                 done = true;
                 if (enemyManager.AllDeadCheck())
                 {
