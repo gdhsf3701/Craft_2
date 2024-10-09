@@ -30,7 +30,7 @@ public class Cover : MonoBehaviour
 
     private void Start()
     {
-        camera = FindAnyObjectByType<CinemachineVirtualCamera>();
+        camera = GameObject.Find("Virtual Camera").GetComponent<CinemachineVirtualCamera>();
         player = GameObject.Find("Player");
         renderer = player.GetComponentInChildren<SpriteRenderer>();
         maxCameraSize -= 0.1f;
