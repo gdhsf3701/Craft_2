@@ -360,6 +360,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1573022228}
     - target: {fileID: 5872561796095318726, guid: c7c723dabfeede749a9ccbbda1fb6cc3, type: 3}
+      propertyPath: killedEnemy
+      value: 
+      objectReference: {fileID: 1049268195}
+    - target: {fileID: 5872561796095318726, guid: c7c723dabfeede749a9ccbbda1fb6cc3, type: 3}
+      propertyPath: _enemyManager
+      value: 
+      objectReference: {fileID: 1913495550}
+    - target: {fileID: 5872561796095318726, guid: c7c723dabfeede749a9ccbbda1fb6cc3, type: 3}
       propertyPath: _enemyManagers.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -465,6 +473,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8523943261533670365, guid: c7c723dabfeede749a9ccbbda1fb6cc3, type: 3}
   m_PrefabInstance: {fileID: 101115338}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &101115340 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5872561796095318726, guid: c7c723dabfeede749a9ccbbda1fb6cc3, type: 3}
+  m_PrefabInstance: {fileID: 101115338}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2968de8e710231e4faef990f313db929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &116064703
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14256,6 +14275,7 @@ MonoBehaviour:
   Player: {fileID: 80091513}
   player: {fileID: 0}
   fade: {fileID: 2042256775}
+  gage: {fileID: 101115340}
   done: 0
 --- !u!1001 &1336729583
 PrefabInstance:
