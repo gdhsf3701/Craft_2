@@ -7,7 +7,7 @@ using UnityEngine.Serialization;
 public class Player : Agent
 {
 
-    public UnityAction FinalDeadEvent;
+    public UnityEvent FinalDeadEvent;
     public PlayerStateMachine stateMachine;
 
     [Header("Normal Attack")] 
