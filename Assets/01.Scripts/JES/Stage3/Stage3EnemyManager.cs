@@ -17,6 +17,7 @@ public class Stage3EnemyManager : MonoSingleton<Stage3EnemyManager>
         {
             enemyList.Add(enemy);
             enemy.OnDeathEvent += HandleDeadEvent;
+            enemy.HealthCompo.OnHitEvent.AddListener(SpotEvent);
             enemy.Initalize(this);
         }
         count = enemyList.Count;
