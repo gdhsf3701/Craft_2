@@ -25,10 +25,11 @@ public class SettingMove : MonoBehaviour
 
     SoundPlayer BGMPlayer;
 
-    [SerializeField]TextMeshProUGUI BGM,SFX;
+    private BgmManger bgmManger;
 
     private void Awake()
     {
+        bgmManger = FindAnyObjectByType<BgmManger>();
         SettingPanel.SetActive(false);
         SettingBack.localScale = new Vector3(1,8,0);
     }
@@ -78,13 +79,13 @@ public class SettingMove : MonoBehaviour
         seq.Append(transform.DOLocalMoveY(-990, 0.225f)).SetEase(Ease.OutExpo);
         seq.Append(transform.DOLocalMoveY(-950, 0.25f)).SetEase(Ease.OutExpo);
         seq.Append(transform.DOLocalMoveY(-990, 0.275f)).SetEase(Ease.OutExpo);
+        bgmManger.BGMStop();
 
         seq.AppendCallback(()=> SettingPanel.SetActive(true));
         seq.Join(SettingBorderLeft.DOAnchorPosX(openBorderLeftX, 0.75f)).SetEase(Ease.Linear);
         seq.Join(SettingBorderRight.DOAnchorPosX(openBorderRightX, 0.75f)).SetEase(Ease.Linear);
         seq.Join(SettingBack.DOScaleX(15, 0.75f)).SetEase(Ease.Linear);
         soundPlayer.PlaySound(scrollOpen);
-
         BGMPlayer.PlaySound(SettingBGM);
     }
     private void SettingClose()
@@ -99,6 +100,7 @@ public class SettingMove : MonoBehaviour
         BGMPlayer.StopAndGoToPool();
         seq.AppendCallback(() => SettingPanel.SetActive(false));
         seq.Append(transform.DOLocalMoveY(162, 1.5f)).SetEase(Ease.OutSine);
+        bgmManger.BGMStart();
 
     }
     public void GoStart()
