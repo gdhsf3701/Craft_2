@@ -44,7 +44,7 @@ public class Door : MonoBehaviour
 
         yield return new WaitForSeconds(1);
         _playerTrm.position = _target.position;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2.5f);
         _fadeImage.DOFade(0, 1.5f);
         
         if (_cutScene != null)
@@ -64,7 +64,7 @@ public class Door : MonoBehaviour
     IEnumerator SceneChanger()
     {
         FadeManager.instance.FadeIn(1);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         SceneManager.LoadScene(SceneName.Stage1);
     }
 }
