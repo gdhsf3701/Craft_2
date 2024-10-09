@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using EasySave.Json;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SaveScene : MonoSingleton<SaveScene>
 {
@@ -48,5 +49,10 @@ public class SaveScene : MonoSingleton<SaveScene>
     public void DeletePanelClick()
     {
         deleteBtn.DeleteBtnClick();
+    }
+
+    public void ExitBtn()
+    {
+        SceneManager.LoadScene(SceneName.Start);
     }
 }

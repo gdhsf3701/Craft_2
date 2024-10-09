@@ -15,7 +15,7 @@ public class Plr_move : MonoBehaviour
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        animator = GetComponentInChildren<Animator>();
+        animator = transform.Find("Vis").GetComponent<Animator>();
         sr = GetComponentInChildren<SpriteRenderer>();
     }
 
