@@ -42,7 +42,7 @@ public class Stage3EnemyManager : MonoSingleton<Stage3EnemyManager>
     }
     public bool AllDeadCheck()
     {
-        if(count > 0)
+        if (transform.childCount > 0)
         {
             //다 못죽임
             SpotEvent();
