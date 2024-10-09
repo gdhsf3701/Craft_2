@@ -7,7 +7,7 @@ using UnityEngine.Serialization;
 public class Player : Agent
 {
 
-    public UnityAction FinalDeadEvent;
+    public UnityEvent FinalDeadEvent;
     public PlayerStateMachine stateMachine;
 
     [Header("Normal Attack")] 
@@ -185,5 +185,10 @@ public class Player : Agent
     public void AnimationEndTrigger()
     {
         stateMachine.CurrentState.AnimationEndTrigger();
+    }
+
+    public void SetWalkSound(SoundSO right, SoundSO left)
+    {
+        transform.Find("Visual").GetComponent<PlayerAnimationEndTrigger>().SetWalkSound(right, left);
     }
 }

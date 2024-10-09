@@ -10,8 +10,9 @@ public class GageGameUI : MonoBehaviour
     private Tween _tween;
     private Image _barImage;
     private  bool Fail = false;
-    [SerializeField]Stage3EnemyManager[] _enemyManagers;
-    GameObject nowEnemy;
+    [SerializeField]Stage3EnemyManager _enemyManager;
+    [SerializeField] GameObject _timeline;
+    [SerializeField]GameObject killedEnemy;
     bool done = false;
 
     private void Awake()
@@ -20,6 +21,7 @@ public class GageGameUI : MonoBehaviour
     }
     private void OnEnable()
     {
+        _barImage.fillAmount = 0;
         if (done && !Fail)
         {
             _tween = _barImage.DOFillAmount(1, 1f).OnComplete(() => FailSeq()).SetUpdate(true);
@@ -39,36 +41,35 @@ public class GageGameUI : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.F)&&!Fail) {
             _tween.Kill();
-            if(_barImage.fillAmount>=0.594f&& _barImage.fillAmount <= 0.736f)
+            if(_barImage.fillAmount>= 0.587f&& _barImage.fillAmount <= 0.736f)
                 ClearSeq();
             else
                 FailSeq();
         }
     }   
-    public void ChangeNowEnemy(GameObject game)
-    {
-        nowEnemy = game;
-    }
     private void ClearSeq()
     {
-        //성공했을때 함수
-        Destroy(nowEnemy);
+        _timeline.SetActive(true);
+   
         _barImage.fillAmount = 0;
+        Time.timeScale = 1;
         gameObject.SetActive(false);
         //_barImage의 초기화
         print("성공");
+
+        
     }
+    public void DestroyEnemy()
+    {
+        Destroy(killedEnemy);
+    }
+
 
     private void FailSeq()
     {
         Fail = false;
-        foreach(var enemy in _enemyManagers)
-        {
-            if (enemy.AllDeadCheck())
-            {
-                break;
-            }
-        }
+        _enemyManager.AllDeadCheck();
+        Time.timeScale = 1;
         gameObject.SetActive(false);
         print("실패");
     }

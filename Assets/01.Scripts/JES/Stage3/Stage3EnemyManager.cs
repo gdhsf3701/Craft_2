@@ -10,12 +10,14 @@ public class Stage3EnemyManager : MonoSingleton<Stage3EnemyManager>
     private List<GunKnifeEnemy> enemyList= new List<GunKnifeEnemy>();
     private int count;
     private bool findPlayer = false;
+    [SerializeField] private GameObject _timeline;
     private void Start()
     {
         foreach (var enemy in GetComponentsInChildren<GunKnifeEnemy>())
         {
             enemyList.Add(enemy);
             enemy.OnDeathEvent += HandleDeadEvent;
+            enemy.HealthCompo.OnHitEvent.AddListener(SpotEvent);
             enemy.Initalize(this);
         }
         count = enemyList.Count;
@@ -42,7 +44,7 @@ public class Stage3EnemyManager : MonoSingleton<Stage3EnemyManager>
     }
     public bool AllDeadCheck()
     {
-        if(count > 0)
+        if (transform.childCount > 0)
         {
             //다 못죽임
             SpotEvent();
@@ -55,6 +57,6 @@ public class Stage3EnemyManager : MonoSingleton<Stage3EnemyManager>
     }
     private void Scene5Play()
     {
-        //씬 5 재생
+        _timeline.SetActive(true);
     }
 }

@@ -801,7 +801,7 @@ RectTransform:
   m_GameObject: {fileID: 210124313}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.998775, y: 3.4804623, z: 4.6135}
+  m_LocalScale: {x: 2.998775, y: 6.32, z: 4.6135}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1909777728}
@@ -2401,7 +2401,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC2DC\uC791"
+  m_text: "\uC0C8\uB85C \uC2DC\uC791"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c6c8497d719f5f6428caf135b6c1da2f, type: 2}
   m_sharedMaterial: {fileID: -3876770387911787502, guid: c6c8497d719f5f6428caf135b6c1da2f, type: 2}
@@ -2535,7 +2535,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC2DC\uC791"
+  m_text: "\uC0C8\uB85C \uC2DC\uC791"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c6c8497d719f5f6428caf135b6c1da2f, type: 2}
   m_sharedMaterial: {fileID: -3876770387911787502, guid: c6c8497d719f5f6428caf135b6c1da2f, type: 2}
@@ -3204,8 +3204,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 945574762, guid: c363ba0750ba2a84093314de638615ec, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3488,8 +3488,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -1677953886, guid: c363ba0750ba2a84093314de638615ec, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4278,7 +4278,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -1720056217, guid: c363ba0750ba2a84093314de638615ec, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5315,7 +5315,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC2DC\uC791"
+  m_text: "\uC0C8\uB85C \uC2DC\uC791"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c6c8497d719f5f6428caf135b6c1da2f, type: 2}
   m_sharedMaterial: {fileID: -3876770387911787502, guid: c6c8497d719f5f6428caf135b6c1da2f, type: 2}
@@ -5697,7 +5697,7 @@ RectTransform:
   m_GameObject: {fileID: 1567582539}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.998775, y: 3.4804623, z: 4.6135}
+  m_LocalScale: {x: 2.998775, y: 6.32, z: 4.6135}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 822699188}
@@ -7006,8 +7006,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -1677953886, guid: c363ba0750ba2a84093314de638615ec, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -7381,7 +7381,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -1720056217, guid: c363ba0750ba2a84093314de638615ec, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7456,7 +7456,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC2DC\uC791"
+  m_text: "\uC0C8\uB85C \uC2DC\uC791"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c6c8497d719f5f6428caf135b6c1da2f, type: 2}
   m_sharedMaterial: {fileID: -3876770387911787502, guid: c6c8497d719f5f6428caf135b6c1da2f, type: 2}
@@ -7590,8 +7590,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 945574762, guid: c363ba0750ba2a84093314de638615ec, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -8897,8 +8897,6 @@ PlayableDirector:
     value: {fileID: 984033050}
   - key: {fileID: 151735012286620117, guid: 396e7e2207d2ee945972228143046b0d, type: 2}
     value: {fileID: 1740343834}
-  - key: {fileID: 748340946482043238, guid: 396e7e2207d2ee945972228143046b0d, type: 2}
-    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!95 &9014144124681010242

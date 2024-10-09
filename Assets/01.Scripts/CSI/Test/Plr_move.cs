@@ -8,20 +8,20 @@ public class Plr_move : MonoBehaviour
     private Rigidbody2D rb2d;
     float moveSpeed = 5f;
     SpriteRenderer sr;
-
+    [SerializeField]private InputReader SO;
     Animator animator;
 
 
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        animator = GetComponentInChildren<Animator>();
+        animator = transform.Find("Vis").GetComponent<Animator>();
         sr = GetComponentInChildren<SpriteRenderer>();
     }
 
     private void Update()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveHorizontal = SO.Movement.x;
         sr.flipX = moveHorizontal < 0;
 
         Vector2 movement = new Vector2(moveHorizontal, 0);
@@ -32,4 +32,5 @@ public class Plr_move : MonoBehaviour
             animator.SetFloat("Speed", movement.sqrMagnitude);
         }
     }
+
 }

@@ -11,8 +11,7 @@ public class SaveData
     public SaveData()
     {
         playTime = 0;
-        currentScene = "";
+        currentScene = SceneName.Stage0;
         stageNumber = 0;
-       
     }
 }

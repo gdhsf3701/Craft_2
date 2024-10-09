@@ -11,7 +11,12 @@ public class PlayerAnimationEndTrigger : MonoBehaviour
     {
         _player.AnimationEndTrigger();
     }
- 
+
+    public void SetWalkSound(SoundSO right, SoundSO left)
+    {
+        _moveRightSound = right;
+        _moveLeftSound = left;
+    }
     private void AnimationAttackTrigger()
     {
         _player.AttackSetting();

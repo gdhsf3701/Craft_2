@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3677063634948956656}
   - component: {fileID: 3572970943247914850}
   - component: {fileID: 8534986539374140950}
+  - component: {fileID: 5115835556028716941}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
@@ -122,6 +123,51 @@ MonoBehaviour:
   _player: {fileID: 4503942969248558047}
   _moveRightSound: {fileID: 11400000, guid: fcda750f375197141b017a09bb33b8ab, type: 2}
   _moveLeftSound: {fileID: 11400000, guid: 7eb024bfef176a641b078612966beb0a, type: 2}
+--- !u!114 &5115835556028716941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399602199934999592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: dfe329d4cba5cc144b444434d907481b, type: 2}
+    - {fileID: 11400000, guid: 54318238335e4944292b061d59327b6c, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1646687887588138710
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,7 +303,7 @@ GameObject:
   - component: {fileID: 5638221463983791956}
   m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -381,6 +427,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lastAttackTime: 0
+  FinalDeadEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: DeadUI, Assembly-CSharp
+        m_MethodName: OnDeadUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _damage: 0
   _knockPower: 0
   isRun: 0
@@ -394,8 +455,8 @@ MonoBehaviour:
   damageData: {fileID: 0}
   <PlayerInput>k__BackingField: {fileID: 11400000, guid: eb449ca5b0f1c484688841204694a5c2, type: 2}
   attackCoolDown: 0
-  _skill1: {fileID: 11400000, guid: b3b6fce22386ba84db48f8b02eb6708c, type: 2}
-  _skill2: {fileID: 11400000, guid: 3c4c3a2703a8fb44f820fc85374c16b7, type: 2}
+  _skill1: {fileID: 11400000, guid: 3c4c3a2703a8fb44f820fc85374c16b7, type: 2}
+  _skill2: {fileID: 11400000, guid: b3b6fce22386ba84db48f8b02eb6708c, type: 2}
   _fallSound: {fileID: 11400000, guid: 87cf7233f02bf444fb7e876bce1a7a54, type: 2}
   comboCount: 0
 --- !u!114 &4115931028923605270
