@@ -15,7 +15,7 @@ public class EnemyBackTrigger : MonoBehaviour
         if (collision.transform.CompareTag("Player"))
         {
             gameUI.gameObject.SetActive(true);
-            gameUI.ChangeNowEnemy(gameObject);
+            gameUI.ChangeNowEnemy(transform.parent.gameObject);
         }
     }
 }
