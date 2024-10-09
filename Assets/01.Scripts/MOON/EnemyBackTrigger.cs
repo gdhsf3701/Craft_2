@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemyBackTrigger : MonoBehaviour
 {
-    private GageGameUI gameUI;
+    [SerializeField]private GageGameUI gameUI;
     private void Awake()
     {
         gameUI = GameObject.Find("GageBar").GetComponent<GageGameUI>();
