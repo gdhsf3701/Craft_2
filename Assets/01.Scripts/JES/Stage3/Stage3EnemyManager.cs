@@ -10,6 +10,7 @@ public class Stage3EnemyManager : MonoSingleton<Stage3EnemyManager>
     private List<GunKnifeEnemy> enemyList= new List<GunKnifeEnemy>();
     private int count;
     private bool findPlayer = false;
+    [SerializeField] private GameObject _timeline;
     private void Start()
     {
         foreach (var enemy in GetComponentsInChildren<GunKnifeEnemy>())
@@ -55,6 +56,6 @@ public class Stage3EnemyManager : MonoSingleton<Stage3EnemyManager>
     }
     private void Scene5Play()
     {
-        //씬 5 재생
+        _timeline.SetActive(true);
     }
 }

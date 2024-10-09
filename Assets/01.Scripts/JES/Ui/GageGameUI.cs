@@ -11,6 +11,7 @@ public class GageGameUI : MonoBehaviour
     private Image _barImage;
     private  bool Fail = false;
     [SerializeField]Stage3EnemyManager[] _enemyManagers;
+    [SerializeField] GameObject _timeline;
     GameObject nowEnemy;
     bool done = false;
 
@@ -52,14 +53,21 @@ public class GageGameUI : MonoBehaviour
     }
     private void ClearSeq()
     {
-        //성공했을때 함수
-        Destroy(nowEnemy);
+        _timeline.SetActive(true);
+   
         _barImage.fillAmount = 0;
         Time.timeScale = 1;
         gameObject.SetActive(false);
         //_barImage의 초기화
         print("성공");
+
+        
     }
+    public void DestroyEnemy()
+    {
+        Destroy(nowEnemy);
+    }
+
 
     private void FailSeq()
     {
