@@ -36,7 +36,7 @@ public class FailScene : MonoBehaviour
             PlayerManager.Instance.Player.PlayerInput._controls.Player.Enable();
             Debug.Log("Enable");
 
-        }
+        }   
 
     }
     void OnDisable()
