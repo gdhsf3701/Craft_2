@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using TMPro;
 
 public class Stage3_Door : MonoBehaviour
 {
     [SerializeField] Transform target;
     [SerializeField] Stage3EnemyManager enemyManager;
     private bool _isPlayer;
+    [SerializeField]TextMeshProUGUI text;
     [SerializeField] GameObject Player;
     [SerializeField] Player player;
     [SerializeField] private RawImage fade;
@@ -43,11 +45,12 @@ public class Stage3_Door : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         _isPlayer = true;
-
+        text.gameObject.SetActive(true);
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         _isPlayer = false;
+        text.gameObject.SetActive(false);
     }
     public IEnumerator WaitFade()
     {
