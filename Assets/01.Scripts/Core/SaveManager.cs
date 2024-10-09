@@ -75,13 +75,16 @@ public class SaveManager : MonoBehaviour
     {
         return _soundData.bgmVol;
     }
-    public void SetStageNumber(int stageNumber)
+    public void SetStageNumber(int stageNumber,string stageName)
     {
         _saveData.stageNumber = stageNumber;
+        _saveData.currentScene = stageName;
+        SaveData();
     }//스테이지 넘어갈때마다 실행
     public void SetTime(float time)
     {
         _saveData.playTime += time;
+        SaveData();
     }
     private void SaveData()
     {
