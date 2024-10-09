@@ -48,6 +48,7 @@ public class JumpKeyWait : MonoBehaviour
 
     IEnumerator Musul()
     {
+        print("disable");
         PlayerManager.Instance.Player.PlayerInput._controls.Player.Disable();
         ChatSystem.Instance.TypCoStart("스승님", "이제 익숙해진 것 같아 보이니..", 0.2f);
 
