@@ -41,7 +41,7 @@ public class GageGameUI : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.F)&&!Fail) {
             _tween.Kill();
-            if(_barImage.fillAmount>=0.594f&& _barImage.fillAmount <= 0.736f)
+            if(_barImage.fillAmount>= 0.587f&& _barImage.fillAmount <= 0.736f)
                 ClearSeq();
             else
                 FailSeq();
