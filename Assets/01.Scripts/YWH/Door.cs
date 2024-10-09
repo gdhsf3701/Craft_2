@@ -42,7 +42,7 @@ public class Door : MonoBehaviour
     IEnumerator Delay()
     {
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2f);
         _playerTrm.position = _target.position;
         yield return new WaitForSeconds(2.5f);
         _fadeImage.DOFade(0, 1.5f);
