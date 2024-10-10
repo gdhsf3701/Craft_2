@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Stage5 : MonoBehaviour
 {
     public CanvasGroup zawal;
@@ -49,5 +49,15 @@ public class Stage5 : MonoBehaviour
     {
         PlayerManager.Instance.Player.PlayerInput._controls.Player.Enable();
     }
+    public void Dead()
+    {
+        StartCoroutine(Wait());
+    }
 
+    IEnumerator Wait()
+    {
+        FadeManager.instance.FadeIn(1);
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene("BossFinal");
+    }
 }
