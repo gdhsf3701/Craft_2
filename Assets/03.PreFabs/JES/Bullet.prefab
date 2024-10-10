@@ -225,7 +225,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4798058504378649488, guid: 580fc0bc25e6df5428f7016b92ccaecd, type: 3}
       propertyPath: damageRadius
-      value: 0.14
+      value: 0.67
       objectReference: {fileID: 0}
     - target: {fileID: 4798058504378649488, guid: 580fc0bc25e6df5428f7016b92ccaecd, type: 3}
       propertyPath: filter.useDepth
