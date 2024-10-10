@@ -55,11 +55,6 @@ public class Health : MonoBehaviour
 
     public void NoEventHit(int damage)
     {
-        _currentHealth -= damage;
-        
-        if(_currentHealth <= 0)
-        {
-            OnDeadEvent?.Invoke();
-        }
+       TakeDamage(damage,Vector2.zero, Vector2.zero, 0);
     }
 }
