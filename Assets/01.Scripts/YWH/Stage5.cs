@@ -14,6 +14,7 @@ public class Stage5 : MonoBehaviour
 
     public void Ment2()
     {
+        SaveManager.Instance.SetStageNumber(5, SceneName.Boss);
         ChatSystem.Instance.Boss1(boss, "보스", "니가 요즘 유명한 그 계집인가?", 0.1f);
         print("gg");
     }
@@ -59,6 +60,7 @@ public class Stage5 : MonoBehaviour
         FadeManager.instance.FadeIn(1);
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene("Stage5Faile");
+
     }
     public void BackTO()
     {
@@ -67,8 +69,8 @@ public class Stage5 : MonoBehaviour
 
     IEnumerator Wait2()
     { 
-        FadeManager.instance.FadeIn(1);
+        FadeManager.instance.FadeIn(1); 
         yield return new WaitForSeconds(2);
-        SceneManager.LoadScene("BossFinal");
+        SaveManager.Instance.LoadScene();
     }
 }
