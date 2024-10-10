@@ -12,6 +12,7 @@ public class GageGameUI : MonoBehaviour
     private  bool Fail = false;
     [SerializeField]Stage3EnemyManager _enemyManager;
     [SerializeField] GameObject _timeline;
+    [SerializeField] GameObject Enermy_Group;
     [SerializeField]GameObject killedEnemy;
     bool done = false;
 
@@ -50,7 +51,7 @@ public class GageGameUI : MonoBehaviour
     private void ClearSeq()
     {
         _timeline.SetActive(true);
-   
+        Enermy_Group.SetActive(false);
         _barImage.fillAmount = 0;
         Time.timeScale = 1;
         gameObject.SetActive(false);
