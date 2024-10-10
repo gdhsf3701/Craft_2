@@ -55,7 +55,7 @@ public class Stage5Door : MonoBehaviour
         {
             _playerTrm.position = _target.position;
         }
-        timelineOne?.Play();
+
         _fadeImage.DOFade(0, 1.5f);
         PlayerManager.Instance.Player.PlayerInput._controls.Player.Disable();
 
@@ -66,6 +66,8 @@ public class Stage5Door : MonoBehaviour
         }
 
         yield return new WaitForSeconds(2);
-     
+
+                    timelineOne.Play();
     }
+
 }
