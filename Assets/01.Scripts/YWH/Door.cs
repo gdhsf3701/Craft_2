@@ -2,7 +2,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
-using System;
 using System.Collections;
 using UnityEngine.SceneManagement;
 public class Door : MonoBehaviour
