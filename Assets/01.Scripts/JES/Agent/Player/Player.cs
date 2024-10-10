@@ -178,6 +178,7 @@ public class Player : Agent
     public override void SetDeadState()
     {
         stateMachine.ChangeState(PlayerEnum.Dead);
+        PlayerInput.OnAttackKeyEvent = null;
     }
     
     public void AnimationEndTrigger()

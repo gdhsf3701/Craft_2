@@ -11,7 +11,7 @@ public class InputReader : ScriptableObject, IPlayerActions
 
     public Controls _controls;
 
-    public event Action OnAttackKeyEvent;
+    public Action OnAttackKeyEvent;
     public event Action OnKickKeyEvent;
     public event Action OnJumpKeyEvent;
     public event Action OnKnifeKeyEvent;

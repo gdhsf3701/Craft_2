@@ -15,10 +15,11 @@ public class CheckRange : Conditional
    
    public override TaskStatus OnUpdate()
    {
-      Vector3 playerPosition = target.Value.position;
-      Vector3 myPositionp = transform.position;
-      Vector3 direction = playerPosition - myPositionp;
+      Vector2 playerPosition = target.Value.position;
+      Vector2 myPositionp = transform.position;
+      Vector2 direction = playerPosition - myPositionp;
 
+      
       if (direction.magnitude < range)
       {
          isPlayerSpoted.Value = true;
