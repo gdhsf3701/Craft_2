@@ -24,13 +24,13 @@ public class CSI_Hcarriage : MonoBehaviour
 
     private void Start()
     {
-        _slider.maxValue = 300;
-        _slider.value = 300;
+        _slider.maxValue = Hp.CurrentHealth;
+        _slider.value = Hp.CurrentHealth;
     }
 
     private void Update()
     {
-        _slider.value = 300;
+        _slider.value = Hp.CurrentHealth;
         if (!DIe)
         {
             transform.position = Vector3.MoveTowards(transform.position, Goal, Speed * Time.deltaTime);
