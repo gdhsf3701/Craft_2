@@ -24,7 +24,7 @@ public class GageGameUI : MonoBehaviour
         _barImage.fillAmount = 0;
         if (done && !Fail)
         {
-            _tween = _barImage.DOFillAmount(1, 1f).OnComplete(() => FailSeq()).SetUpdate(true);
+            _tween = _barImage.DOFillAmount(1, 1.5f).SetEase(Ease.Linear).OnComplete(() => FailSeq()).SetUpdate(true);
             Time.timeScale = 0;
         }
         else if (Fail)
@@ -54,8 +54,8 @@ public class GageGameUI : MonoBehaviour
         _barImage.fillAmount = 0;
         Time.timeScale = 1;
         gameObject.SetActive(false);
-        //_barImageÀÇ ÃÊ±âÈ­
-        print("¼º°ø");
+        //_barImageï¿½ï¿½ ï¿½Ê±ï¿½È­
+        print("ï¿½ï¿½ï¿½ï¿½");
 
         
     }
@@ -71,6 +71,6 @@ public class GageGameUI : MonoBehaviour
         _enemyManager.AllDeadCheck();
         Time.timeScale = 1;
         gameObject.SetActive(false);
-        print("½ÇÆÐ");
+        print("ï¿½ï¿½ï¿½ï¿½");
     }
 }
