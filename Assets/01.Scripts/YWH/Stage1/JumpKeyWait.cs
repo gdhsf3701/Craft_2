@@ -80,6 +80,7 @@ public class JumpKeyWait : MonoBehaviour
 
         ChatSystem.Instance.TypCoStart("스승님", "나를 따라와보거라!!", 0.2f);
         yield return new WaitUntil(() => ChatSystem.Instance.endText == true);
+        PlayerManager.Instance.Player.PlayerInput._controls.Player.Enable();
         ChatSystem.Instance.StopTyp();
         playableDirector.Play();
      
@@ -96,7 +97,7 @@ public class JumpKeyWait : MonoBehaviour
     {
         if (playableDirector == aDirector)
         {
-            PlayerManager.Instance.Player.PlayerInput._controls.Player.Enable();
+            
             Debug.Log("Enable");
 
         }

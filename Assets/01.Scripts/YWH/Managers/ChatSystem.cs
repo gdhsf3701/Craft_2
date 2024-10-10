@@ -57,10 +57,7 @@ public class ChatSystem : MonoSingleton<ChatSystem>
         canvasGroup.DOFade(1, 1);
     }
 
-    private void Start()
-    {
-        Boss1(zawalMini, "금자월", "테스트 ㅋㅋ", 0.2f);
-    }
+ 
 
     public void StopTyp()
     {
