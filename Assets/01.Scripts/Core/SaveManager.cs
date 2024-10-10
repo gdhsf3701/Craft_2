@@ -1,5 +1,6 @@
 using UnityEngine;
 using EasySave.Json;
+using UnityEngine.SceneManagement;
 
 public class SoundData
 {
@@ -96,5 +97,10 @@ public class SaveManager : MonoBehaviour
     {
         _soundData.bgmVol = bgm;
         EasyToJson.ToJson(_soundData,_soundPath,true);
+    }
+
+    public void LoadScene()
+    {
+        SceneManager.LoadScene(_saveData.currentScene);
     }
 }
