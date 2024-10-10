@@ -41,4 +41,9 @@ public class CutScene : MonoBehaviour
 
     }
 
+    public void SceneChanger()
+    {
+        SceneManager.LoadScene(SceneName.Stage3);
+    }
+
 }
