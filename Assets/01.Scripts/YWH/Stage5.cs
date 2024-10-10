@@ -9,12 +9,12 @@ public class Stage5 : MonoBehaviour
 
     public void Close()
     {
-        ChatSystem.Instance.BubbleStop(zawal,boss);
+        ChatSystem.Instance.BubbleStop(zawal, boss);
     }
 
     public void Ment2()
     {
-        ChatSystem.Instance.Boss1(boss,"보스", "니가 요즘 유명한 그 계집인가?",0.1f);
+        ChatSystem.Instance.Boss1(boss, "보스", "니가 요즘 유명한 그 계집인가?", 0.1f);
         print("gg");
     }
     public void Ment3()
@@ -56,6 +56,17 @@ public class Stage5 : MonoBehaviour
 
     IEnumerator Wait()
     {
+        FadeManager.instance.FadeIn(1);
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene("Stage5Faile");
+    }
+    public void BackTO()
+    {
+        StartCoroutine(Wait2());
+    }
+
+    IEnumerator Wait2()
+    { 
         FadeManager.instance.FadeIn(1);
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene("BossFinal");
