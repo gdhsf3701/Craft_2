@@ -66,6 +66,7 @@ public class Door : MonoBehaviour
     {
         FadeManager.instance.FadeIn(1);
         yield return new WaitForSeconds(2);
+        SaveManager.Instance.SetStageNumber(1,SceneName.Stage1);
         SceneManager.LoadScene(SceneName.Stage1);
     }
 }
