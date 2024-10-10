@@ -29,7 +29,7 @@ public class SettingMove : MonoBehaviour
 
     private void Awake()
     {
-        bgmManger = FindAnyObjectByType<BgmManger>();
+        bgmManger = BgmManger.Instance;
         SettingPanel.SetActive(false);
         SettingBack.localScale = new Vector3(1,8,0);
     }
