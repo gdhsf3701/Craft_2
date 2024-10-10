@@ -578,7 +578,7 @@ Transform:
   m_GameObject: {fileID: 138136407}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.659616, y: -2.7332199, z: -10}
+  m_LocalPosition: {x: -19.4, y: -2.73, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -616,6 +616,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3889107793769390233, guid: 6ddebfa897c52684287f6ce3d09a184d, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4111410077219596468, guid: 6ddebfa897c52684287f6ce3d09a184d, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4560341012586346077, guid: 6ddebfa897c52684287f6ce3d09a184d, type: 3}
       propertyPath: m_Alpha
       value: 0
@@ -627,6 +635,10 @@ PrefabInstance:
     - target: {fileID: 5161915544191955075, guid: 6ddebfa897c52684287f6ce3d09a184d, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8428274496439223770, guid: 6ddebfa897c52684287f6ce3d09a184d, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8635939470998132530, guid: 6ddebfa897c52684287f6ce3d09a184d, type: 3}
       propertyPath: m_Pivot.x
@@ -932,6 +944,14 @@ PrefabInstance:
     - target: {fileID: 4115931028923605270, guid: 9343a14680aa9774a84dd12ae38dd9ef, type: 3}
       propertyPath: OnDeadEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: HpbarUi, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503942969248558047, guid: 9343a14680aa9774a84dd12ae38dd9ef, type: 3}
+      propertyPath: FinalDeadEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 533924178}
+    - target: {fileID: 4503942969248558047, guid: 9343a14680aa9774a84dd12ae38dd9ef, type: 3}
+      propertyPath: FinalDeadEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnDeadUI
       objectReference: {fileID: 0}
     - target: {fileID: 6845731709564122931, guid: 9343a14680aa9774a84dd12ae38dd9ef, type: 3}
       propertyPath: m_Name
@@ -1269,6 +1289,17 @@ Transform:
   - {fileID: 1189711954}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &533924178 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6959774733759064688, guid: eb9ed1de37f5e3b4c977f5c26df7d72b, type: 3}
+  m_PrefabInstance: {fileID: 1597142268}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2673dbc9290376b4494fa1f5f502e003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &547383951
 GameObject:
   m_ObjectHideFlags: 0
@@ -16112,7 +16143,7 @@ Transform:
   m_GameObject: {fileID: 1846219858}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -161.2127, y: 73.13095, z: -10.2460165}
+  m_LocalPosition: {x: -168.95308, y: 73.13417, z: -10.2460165}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
