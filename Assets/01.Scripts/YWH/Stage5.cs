@@ -7,9 +7,15 @@ public class Stage5 : MonoBehaviour
     public CanvasGroup zawal;
     public CanvasGroup boss;
 
+    public void Close()
+    {
+        ChatSystem.Instance.BubbleStop(zawal,boss);
+    }
+
     public void Ment2()
     {
         ChatSystem.Instance.Boss1(boss,"보스", "니가 요즘 유명한 그 계집인가?",0.1f);
+        print("gg");
     }
     public void Ment3()
     {
@@ -35,7 +41,13 @@ public class Stage5 : MonoBehaviour
     {
         ChatSystem.Instance.Boss1(zawal, "금자월", "해야할 일이.. .있는데…", 0.1f);
     }
-
-
+    public void PlayerDisable()
+    {
+        PlayerManager.Instance.Player.PlayerInput._controls.Player.Disable();
+    }
+    public void PlayerEnable()
+    {
+        PlayerManager.Instance.Player.PlayerInput._controls.Player.Enable();
+    }
 
 }
