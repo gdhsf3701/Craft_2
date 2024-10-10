@@ -7,6 +7,7 @@ public class Stage3Suck : MonoBehaviour
 {
     public void Suck()
     {
+        SaveManager.Instance.SetStageNumber(4,SceneName.Stage4);
         SceneManager.LoadScene(SceneName.Stage4);
     }
 }
