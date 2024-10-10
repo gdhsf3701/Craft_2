@@ -22,7 +22,7 @@ public class SceneName
     public const string Stage3 = "Stage3Scene";
     public const string Stage4 = "Stage4Scene";
     public const string Stage5 = "Stage5Scene";
-    public const string Boss = "BossScene";
+    public const string Boss = "BossFinal";
     public const string End = "EndScene";
 }
 public class SaveManager : MonoBehaviour
