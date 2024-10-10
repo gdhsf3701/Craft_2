@@ -1022,7 +1022,7 @@ MonoBehaviour:
   _text: {fileID: 369092700}
   _fadeImage: {fileID: 1571272336}
   _target: {fileID: 1183227261}
-  timelineOne: {fileID: 0}
+  timelineOne: {fileID: 1951112372}
   _boss1: {fileID: 359452233}
   _boss2: {fileID: 359452233}
   _player: {fileID: 244650722}
@@ -1224,7 +1224,7 @@ Transform:
   m_GameObject: {fileID: 1183227260}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 58.42, y: 0.38, z: -7.2913055}
+  m_LocalPosition: {x: 65, y: 0.38, z: -7.2913055}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3849,6 +3849,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1491836718}
+  - component: {fileID: 1491836719}
   m_Layer: 0
   m_Name: 5StageChat
   m_TagString: Untagged
@@ -3871,6 +3872,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1491836719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491836717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a8c8efd34a267948a2a9e06bab8e343, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zawal: {fileID: 244650722}
+  boss: {fileID: 359452233}
 --- !u!1 &1514806973
 GameObject:
   m_ObjectHideFlags: 0
@@ -5789,6 +5804,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1951112371}
+  - component: {fileID: 1951112372}
   m_Layer: 0
   m_Name: CutScene-
   m_TagString: Untagged
@@ -5808,10 +5824,28 @@ Transform:
   m_LocalPosition: {x: 82, y: -0.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2125489169}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!320 &1951112372
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951112370}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: d19294381c269554c88e2835641c3dca, type: 2}
+  m_InitialState: 0
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -7119477227675758636, guid: d19294381c269554c88e2835641c3dca, type: 2}
+    value: {fileID: 2125489171}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &2016622009
 GameObject:
   m_ObjectHideFlags: 0
@@ -5998,6 +6032,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2125489169}
   - component: {fileID: 2125489170}
+  - component: {fileID: 2125489171}
+  - component: {fileID: 2125489172}
   m_Layer: 8
   m_Name: Boss1
   m_TagString: Untagged
@@ -6013,13 +6049,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2125489168}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.62, y: 0.56, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 81.38, y: 0.120000005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1446435945}
-  m_Father: {fileID: 1951112371}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2125489170
 SpriteRenderer:
@@ -6073,6 +6109,87 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &2125489171
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125489168}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2125489172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125489168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: d6eaf47480f344d469229584b33fb036, type: 2}
+    - {fileID: 11400000, guid: 1bf38348aa86e7c429ac9e8a2e4b3b6e, type: 2}
+    - {fileID: 11400000, guid: bb6a9d35c82a93148a68ee05eacc7006, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1491836719}
+          m_TargetAssemblyTypeName: Stage5, Assembly-CSharp
+          m_MethodName: Ment2
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1491836719}
+          m_TargetAssemblyTypeName: Stage5, Assembly-CSharp
+          m_MethodName: Close
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1491836719}
+          m_TargetAssemblyTypeName: Stage5, Assembly-CSharp
+          m_MethodName: PlayerEnable
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2125700093
 GameObject:
   m_ObjectHideFlags: 0
@@ -6224,6 +6341,7 @@ SceneRoots:
   - {fileID: 1571272335}
   - {fileID: 1751988739}
   - {fileID: 8398586}
+  - {fileID: 2125489169}
   - {fileID: 1951112371}
   - {fileID: 753641809}
   - {fileID: 349501980}

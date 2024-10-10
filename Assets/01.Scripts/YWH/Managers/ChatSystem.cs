@@ -64,7 +64,12 @@ public class ChatSystem : MonoSingleton<ChatSystem>
         canvasGroup.DOFade(0, 1);
       
     }
+    public void BubbleStop(CanvasGroup c1, CanvasGroup c2)
+    {
 
+        c1.DOFade(0, 1);
+        c2.DOFade(0, 1);
+    }    
     public void Boss1(CanvasGroup canvasGroup, string name, string text, float rate)
     {
         TMP_Text targetText = canvasGroup.GetComponentInChildren<TMP_Text>();
