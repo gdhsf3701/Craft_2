@@ -31,7 +31,8 @@ public class NevObject : MonoBehaviour
 
         if (screenPos.z > 0 && screenPos.x > 0 && screenPos.x < Screen.width && screenPos.y > 0 && screenPos.y < Screen.height)
         {
-            pointer.SetActive(false);
+            Destroy(pointer);
+            gameObject.SetActive(false);
             return;
         }
 
