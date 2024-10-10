@@ -16,8 +16,6 @@ public class Teleporter : MonoBehaviour
     [SerializeField] private GameObject[] destroyGameobject;
     [SerializeField] private TextMeshProUGUI _text;
     [SerializeField] private EnemySpawner enemyspawn;
-    [SerializeField] CinemachineVirtualCamera cam;
-    [SerializeField] CinemachineConfiner2D setting;
 
     bool done = false;
     float saveSpeed = 0;
@@ -37,8 +35,6 @@ public class Teleporter : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        cam.m_Lens.OrthographicSize = 5;
-        setting.InvalidateCache();
         if (destroyGameobject != null)
         {
             foreach (GameObject gameObject in destroyGameobject)

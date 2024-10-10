@@ -16,6 +16,7 @@ public class Stage5Door : MonoBehaviour
     [SerializeField] private CanvasGroup _boss1;
     [SerializeField] private CanvasGroup _boss2;
     [SerializeField] private CanvasGroup _player;
+    [SerializeField] private BgmManger BGM;
     private bool _isPlayer = false;
     private Transform _playerTrm;
     private void OnTriggerEnter2D(Collider2D collision)
@@ -36,6 +37,7 @@ public class Stage5Door : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.F))
             {
+                BGM.BGM2Start();
                 _fadeImage.DOFade(1, 1.5f);
                 _isPlayer = false;
                 StartCoroutine(Delay());
