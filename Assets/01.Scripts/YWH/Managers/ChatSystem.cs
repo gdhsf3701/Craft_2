@@ -65,50 +65,53 @@ public class ChatSystem : MonoSingleton<ChatSystem>
       
     }
 
-    public void Boss1(CanvasGroup canvasGroup,string name, string text, float rate)
+    public void Boss1(CanvasGroup canvasGroup, string name, string text, float rate)
     {
-        TMP_Text targettext = enemyMini.transform.GetComponentInChildren<TMP_Text>();
+        TMP_Text targetText = canvasGroup.GetComponentInChildren<TMP_Text>();
+
+        if (targetText == null)
+        {
+            Debug.LogError("dd");
+            return;
+        }
+
+        endText = false;
 
         canvasGroup.DOFade(1, 0.2f).OnComplete(() =>
         {
-            StartCoroutine(Typing(text, rate,targettext));
-            StartCoroutine(waitforEnemy(targettext, canvasGroup));
+            StartCoroutine(Typing(text, rate, targetText));
         });
 
-       
-
+        StartCoroutine(waitforEnemy(targetText, canvasGroup));
     }
 
-    IEnumerator waitforEnemy(TMP_Text text,CanvasGroup canvasGroup)
+    IEnumerator waitforEnemy(TMP_Text text, CanvasGroup canvasGroup)
     {
         yield return new WaitUntil(() => endText == true);
+
         yield return new WaitForSeconds(1);
-        canvasGroup.DOFade(0, 0.2f);
-   
-        text.text = "";
+        canvasGroup.DOFade(0, 0.2f).OnComplete(() =>
+        {
+            text.text = "";
+        });
     }
-
-
-
 
     private IEnumerator Typing(string text, float rate, TMP_Text descText)
     {
-
         for (int i = 0; i <= text.Length; i++)
         {
             descText.text = text.Substring(0, i);
-            
             yield return new WaitForSecondsRealtime(rate);
 
             if (endText == true)
             {
-                i = text.Length;
-                descText.text = text;                   
+                descText.text = text;
+                break;
             }
         }
+
         yield return new WaitForSeconds(1.5f);
-       
         endText = true;
-      
     }
+
 }
