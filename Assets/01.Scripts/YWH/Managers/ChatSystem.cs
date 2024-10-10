@@ -57,6 +57,8 @@ public class ChatSystem : MonoSingleton<ChatSystem>
         canvasGroup.DOFade(1, 1);
     }
 
+ 
+
     public void StopTyp()
     {
         canvasGroup.DOFade(0, 1);

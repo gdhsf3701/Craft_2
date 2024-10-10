@@ -39,7 +39,7 @@ public class MasterMeet : MonoBehaviour
         yield return new WaitUntil(() => ChatSystem.Instance.endText == true);
         ChatSystem.Instance.StopTyp();
         Debug.Log("Enable");
-        yield return new WaitForSeconds(6.5f);
+        yield return new WaitForSeconds(8.5f);
         PlayerManager.Instance.Player.PlayerInput._controls.Player.Enable();
         keyUI.DOFade(1, 1);
         yield return new WaitUntil(() => PlayerManager.Instance.Player.MovementCompo.rbCompo.velocity.y>0);

@@ -3951,7 +3951,7 @@ PrefabInstance:
     - target: {fileID: 7199918745912738134, guid: 6ddebfa897c52684287f6ce3d09a184d, type: 3}
       propertyPath: zawalMini
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 244650722}
     - target: {fileID: 8635939470998132530, guid: 6ddebfa897c52684287f6ce3d09a184d, type: 3}
       propertyPath: m_Pivot.x
       value: 0
