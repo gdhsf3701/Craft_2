@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -57,6 +58,11 @@ public class Player : Agent
         PlayerInput.OnKnifeKeyEvent += HandleKnifeKeyEvent;
         PlayerInput.OnRunKeyHoldEvent += HandleRunKeyEvnet;
         PlayerInput.OnRunKeyReleasedEvent += HandleCancleRunEvent;
+    }
+
+    private void Start()
+    {
+        AnimatorCompo = transform.Find("Visual").GetComponent<Animator>();
     }
 
     private void HandleCancleRunEvent()

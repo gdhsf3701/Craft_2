@@ -45,7 +45,7 @@ public class CSI_Item : MonoBehaviour
 
     private void Awake()
     {
-        Player = GameObject.Find("Player_CSI");//플래이어 이름을 넣어야합니다......[SerializeField]--사용 금지--(양산 불가.)
+        Player = GameObject.Find("Player");//플래이어 이름을 넣어야합니다......[SerializeField]--사용 금지--(양산 불가.)
         Player_item = GameObject.Find("Item_");//플래이어 자식으로 있는 아이템
         Ihand = false;
         can_change = false;
