@@ -451,7 +451,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 137912036353237289, guid: eb9ed1de37f5e3b4c977f5c26df7d72b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1330533230386810012, guid: eb9ed1de37f5e3b4c977f5c26df7d72b, type: 3}
       propertyPath: m_AnchorMax.y
@@ -710,6 +710,7 @@ GameObject:
   m_Component:
   - component: {fileID: 348003895}
   - component: {fileID: 348003896}
+  - component: {fileID: 348003897}
   m_Layer: 0
   m_Name: CameraBorder
   m_TagString: Untagged
@@ -783,6 +784,20 @@ PolygonCollider2D:
       - {x: 280.05078, y: 9.069681}
       - {x: 51.416233, y: 8.792317}
   m_UseDelaunayMesh: 0
+--- !u!114 &348003897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348003894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd4c2929441cac042850c843eaed3ed5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bgmSO: {fileID: 11400000, guid: 6f89cd05da833eb46adf525290ecaec9, type: 2}
+  _bgmSO2: {fileID: 0}
 --- !u!1 &506101545
 GameObject:
   m_ObjectHideFlags: 0

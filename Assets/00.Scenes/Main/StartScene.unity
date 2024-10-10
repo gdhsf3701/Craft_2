@@ -7726,7 +7726,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 105878325}
         m_TargetAssemblyTypeName: StartButtons, Assembly-CSharp
         m_MethodName: LeaveButtonClick
         m_Mode: 1
