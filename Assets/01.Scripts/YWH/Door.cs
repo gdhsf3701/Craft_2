@@ -31,6 +31,10 @@ public class Door : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.F))
             {
+                if (_cutScene != null)
+                {
+                    _playerTrm.GetComponent<Plr_move>().enabled = false;
+                }
                 _fadeImage.DOFade(1, 1.5f);
              
                 StartCoroutine(Delay());
@@ -41,7 +45,6 @@ public class Door : MonoBehaviour
 
     IEnumerator Delay()
     {
-
         yield return new WaitForSeconds(2f);
         _playerTrm.position = _target.position;
         yield return new WaitForSeconds(2.5f);
@@ -50,10 +53,8 @@ public class Door : MonoBehaviour
         if (_cutScene != null)
         {
             _cutScene.SetActive(true);
-            _playerTrm.GetComponent<Plr_move>().enabled = false;
         }
         _isPlayer = false;
-
     }
 
     public void Stage0Change()
