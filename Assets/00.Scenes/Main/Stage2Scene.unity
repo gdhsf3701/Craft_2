@@ -447,6 +447,14 @@ PrefabInstance:
       propertyPath: data.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7014542105561166987, guid: c8438d5c2c0c1b84fa0306d2791d198d, type: 3}
+      propertyPath: GameObjects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7014542105561166987, guid: c8438d5c2c0c1b84fa0306d2791d198d, type: 3}
+      propertyPath: GameObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 5164530040293024933, guid: 76a79c68b7308ac4fa6ef8c548f52750, type: 3}
     - target: {fileID: 8186797622196175824, guid: c8438d5c2c0c1b84fa0306d2791d198d, type: 3}
       propertyPath: m_Name
       value: SpawnItem

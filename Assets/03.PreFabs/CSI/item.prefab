@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8422475495766792839
 Transform:
   m_ObjectHideFlags: 0
@@ -48,6 +48,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itahamsu: 0
+  OnDstroyEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &670938413774757346
 SpriteRenderer:
   m_ObjectHideFlags: 0
