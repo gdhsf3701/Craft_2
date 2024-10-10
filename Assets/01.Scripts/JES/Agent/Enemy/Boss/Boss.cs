@@ -59,10 +59,10 @@ public class Boss : MonoBehaviour
 
     public void Flip()
     {
-        if(IsFacingRight)
-            transform.rotation = Quaternion.Euler(0,180f,0);
+        if (IsFacingRight)
+            transform.localRotation = Quaternion.Euler(0,180f,0);
         else
-            transform.rotation = Quaternion.identity;
+            transform.localRotation = Quaternion.identity;
         IsFacingRight = !IsFacingRight;
     }
 
