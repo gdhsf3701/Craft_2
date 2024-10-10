@@ -19,12 +19,14 @@ public class Stage5Door : MonoBehaviour
     [SerializeField] private BgmManger BGM;
     private bool _isPlayer = false;
     private Transform _playerTrm;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         _text.gameObject.SetActive(true);
         _isPlayer = true;
         _playerTrm = collision.transform;
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         _text.gameObject.SetActive(false);
@@ -37,27 +39,32 @@ public class Stage5Door : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.F))
             {
-                BGM.BGM2Start();
+                BGM?.BGM2Start();
                 _fadeImage.DOFade(1, 1.5f);
                 _isPlayer = false;
                 StartCoroutine(Delay());
-
             }
         }
     }
 
     IEnumerator Delay()
     {
-
         yield return new WaitForSeconds(1.5f);
-        _playerTrm.position = _target.position;
-       
-        _fadeImage.DOFade(0, 1.5f);
-      
-        ChatSystem.Instance.Boss1(_player, "금자월", "이제서야.. 도착했어.", 0.5f);
-        yield return new WaitUntil(() => ChatSystem.Instance.endText == true);
-        yield return new WaitForSeconds(2);
-        ChatSystem.Instance.Boss1(_boss1, "보스1", "니가 요즘 유명한 그 계집인가?", 0.2f);
+        if (_playerTrm != null && _target != null)
+        {
+            _playerTrm.position = _target.position;
+        }
 
+        _fadeImage.DOFade(0, 1.5f);
+        PlayerManager.Instance.Player.PlayerInput._controls.Player.Disable();
+
+        if (ChatSystem.Instance != null)
+        {
+            ChatSystem.Instance.Boss1(_player, "금자월", "이제서야.. 도착했어.", 0.5f);
+            yield return new WaitUntil(() => ChatSystem.Instance.endText == true);
+        }
+
+        yield return new WaitForSeconds(2);
+        timelineOne?.Play();
     }
 }
