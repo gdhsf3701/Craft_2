@@ -1,5 +1,6 @@
 using UnityEngine;
 using EasySave.Json;
+using UnityEngine.SceneManagement;
 
 public class SoundData
 {
@@ -22,7 +23,7 @@ public class SceneName
     public const string Stage3 = "Stage3Scene";
     public const string Stage4 = "Stage4Scene";
     public const string Stage5 = "Stage5Scene";
-    public const string Boss = "BossScene";
+    public const string Boss = "BossFinal";
     public const string End = "EndScene";
 }
 public class SaveManager : MonoBehaviour
@@ -96,5 +97,10 @@ public class SaveManager : MonoBehaviour
     {
         _soundData.bgmVol = bgm;
         EasyToJson.ToJson(_soundData,_soundPath,true);
+    }
+
+    public void LoadScene()
+    {
+        SceneManager.LoadScene(_saveData.currentScene);
     }
 }
