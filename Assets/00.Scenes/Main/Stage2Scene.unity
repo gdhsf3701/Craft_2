@@ -480,7 +480,7 @@ GameObject:
   - component: {fileID: 206815751}
   m_Layer: 6
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71833,6 +71833,10 @@ PrefabInstance:
       propertyPath: _skill2
       value: 
       objectReference: {fileID: 11400000, guid: 3c4c3a2703a8fb44f820fc85374c16b7, type: 2}
+    - target: {fileID: 4503942969248558047, guid: 9343a14680aa9774a84dd12ae38dd9ef, type: 3}
+      propertyPath: FinalDeadEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4503942969248558047, guid: 9343a14680aa9774a84dd12ae38dd9ef, type: 3}
       propertyPath: FinalDeadEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
