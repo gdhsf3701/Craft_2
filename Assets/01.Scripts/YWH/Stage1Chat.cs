@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Stage1Chat : MonoBehaviour
 {
     public void Chat()
     {
-        ChatSystem.Instance.TypCoStart("±ÝÀÚ¿ù", "!¡¦ ¾î¸Ó´Ï.. ¾Æ¹öÁö¡¦ ", 0.1f);
+        ChatSystem.Instance.TypCoStart("ï¿½ï¿½ï¿½Ú¿ï¿½", "!ï¿½ï¿½ ï¿½ï¿½Ó´ï¿½.. ï¿½Æ¹ï¿½ï¿½ï¿½ï¿½ï¿½ ", 0.1f);
 
     }
    

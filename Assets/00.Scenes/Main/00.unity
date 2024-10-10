@@ -2084,6 +2084,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lastAttackTime: 0
+  FinalDeadEvent:
+    m_PersistentCalls:
+      m_Calls: []
   _damage: 1
   _knockPower: 0
   isRun: 0
