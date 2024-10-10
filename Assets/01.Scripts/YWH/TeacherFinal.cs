@@ -14,6 +14,7 @@ public class TeacherFinal : MonoBehaviour
     {
         FadeManager.instance.FadeIn(1);
         yield return new WaitForSeconds(2);
+        SaveManager.Instance.SetStageNumber(2,SceneName.Stage2);
         SceneManager.LoadScene(SceneName.Stage2);
     }
 }
