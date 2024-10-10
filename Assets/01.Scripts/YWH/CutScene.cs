@@ -37,12 +37,13 @@ public class CutScene : MonoBehaviour
 
     public void SignalRecieve()
     {
-        ChatSystem.Instance.TypCoStart("±ÝÀÚ¿ù", "ÀÌ°É·Î ÀüºÎ ³¡ÀÌ±º.", 0.2f);
+        ChatSystem.Instance.TypCoStart("ï¿½ï¿½ï¿½Ú¿ï¿½", "ï¿½Ì°É·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì±ï¿½.", 0.2f);
 
     }
 
     public void SceneChanger()
     {
+        SaveManager.Instance.SetStageNumber(3,SceneName.Stage3);
         SceneManager.LoadScene(SceneName.Stage3);
     }
 
