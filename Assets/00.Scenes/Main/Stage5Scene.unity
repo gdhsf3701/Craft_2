@@ -5133,7 +5133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5382409963816968133, guid: 6ddebfa897c52684287f6ce3d09a184d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7199918745912738134, guid: 6ddebfa897c52684287f6ce3d09a184d, type: 3}
       propertyPath: enemyMini
