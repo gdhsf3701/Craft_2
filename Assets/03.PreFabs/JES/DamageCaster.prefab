@@ -47,7 +47,7 @@ MonoBehaviour:
   filter:
     useTriggers: 0
     useLayerMask: 1
-    useDepth: 1
+    useDepth: 0
     useOutsideDepth: 0
     useNormalAngle: 0
     useOutsideNormalAngle: 0
