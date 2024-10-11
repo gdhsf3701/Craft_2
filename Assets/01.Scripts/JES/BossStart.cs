@@ -14,4 +14,9 @@ public class BossStart : MonoSingleton<BossStart>
         animator.enabled = true;
         behaviorTree.enabled = true;
     }
+    public void OffBoss()
+    {
+        animator.enabled = false;
+        behaviorTree.enabled = false;
+    }
 }

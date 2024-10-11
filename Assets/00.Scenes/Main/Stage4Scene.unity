@@ -578,7 +578,7 @@ Transform:
   m_GameObject: {fileID: 138136407}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.4, y: -2.73, z: -10}
+  m_LocalPosition: {x: -11.659616, y: -2.7332199, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10044,6 +10044,7 @@ GameObject:
   - component: {fileID: 1300015194}
   - component: {fileID: 1300015196}
   - component: {fileID: 1300015195}
+  - component: {fileID: 1300015197}
   m_Layer: 0
   m_Name: DiedQueen (1)
   m_TagString: Untagged
@@ -10060,8 +10061,8 @@ Transform:
   m_GameObject: {fileID: 1300015193}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.37, y: -12.61, z: -0.24601637}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalPosition: {x: 15.4, y: -16.5, z: -0.24601637}
+  m_LocalScale: {x: -1.3114, y: 1.2725, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1824130601}
@@ -10139,6 +10140,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1300015197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300015193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 542f17ecedbbc2f49a809726608acac0, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2069746773}
+          m_TargetAssemblyTypeName: SUck, Assembly-CSharp
+          m_MethodName: Suck
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1306867021
 GameObject:
   m_ObjectHideFlags: 0
@@ -16189,7 +16220,7 @@ Transform:
   m_GameObject: {fileID: 1846219858}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -168.95308, y: 73.13417, z: -10.2460165}
+  m_LocalPosition: {x: -161.2127, y: 73.13095, z: -10.2460165}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16624,8 +16655,8 @@ Transform:
   m_GameObject: {fileID: 2035725759}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.05, y: -12.5, z: -0.24601637}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 18.914497, y: -16.36, z: -0.24601637}
+  m_LocalScale: {x: 1.3114, y: 1.2725, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1824130601}
@@ -20018,6 +20049,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2069746771}
   - component: {fileID: 2069746772}
+  - component: {fileID: 2069746773}
   m_Layer: 0
   m_Name: Stage4-2Sucess
   m_TagString: Untagged
@@ -20063,6 +20095,18 @@ PlayableDirector:
     value: {fileID: 1300015195}
   m_ExposedReferences:
     m_References: []
+--- !u!114 &2069746773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069746770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faab42830c89dd140972854bef2e75ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2080216298
 PrefabInstance:
   m_ObjectHideFlags: 0

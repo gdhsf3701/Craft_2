@@ -16,29 +16,10 @@ public class CutScene : MonoBehaviour
 
     }
 
-    void OnEnable()
-    {
-        _timeline.stopped += OnPlayableDirectorStopped;
-    }
-
-    void OnPlayableDirectorStopped(PlayableDirector aDirector)
-    {
-        if (_timeline == aDirector)
-        {
-
-            SceneManager.LoadScene("StartScene");
-
-        }
-
-    }
-    void OnDisable()
-    {
-        _timeline.stopped -= OnPlayableDirectorStopped;
-    }
 
     public void SignalRecieve()
     {
-        ChatSystem.Instance.TypCoStart("���ڿ�", "�̰ɷ� ���� ���̱�.", 0.2f);
+        ChatSystem.Instance.TypCoStart("금자월", " 이걸로 전부 끝이군.", 0.2f);
 
     }
 

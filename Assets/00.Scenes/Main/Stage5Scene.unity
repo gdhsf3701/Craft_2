@@ -802,7 +802,19 @@ MonoBehaviour:
         m_CallState: 2
   OnDeadEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1491836719}
+        m_TargetAssemblyTypeName: Stage5, Assembly-CSharp
+        m_MethodName: ClearGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _maxHealth: 1250
 --- !u!70 &251516335
 CapsuleCollider2D:
@@ -969,6 +981,11 @@ Transform:
   - {fileID: 1446435945}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &305542259 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6845731709564122931, guid: 9343a14680aa9774a84dd12ae38dd9ef, type: 3}
+  m_PrefabInstance: {fileID: 314692541}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &314692541
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1023,7 +1040,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3620365721806292588, guid: 9343a14680aa9774a84dd12ae38dd9ef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 181
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 3620365721806292588, guid: 9343a14680aa9774a84dd12ae38dd9ef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -1061,11 +1078,6 @@ PrefabInstance:
       addedObject: {fileID: 1867751279}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9343a14680aa9774a84dd12ae38dd9ef, type: 3}
---- !u!95 &314692542 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 5638221463983791956, guid: 9343a14680aa9774a84dd12ae38dd9ef, type: 3}
-  m_PrefabInstance: {fileID: 314692541}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &323240026
 GameObject:
   m_ObjectHideFlags: 0
@@ -2036,7 +2048,7 @@ MonoBehaviour:
   _text: {fileID: 369092700}
   _fadeImage: {fileID: 1571272336}
   _target: {fileID: 1183227261}
-  _cutScene: {fileID: 0}
+  _cutScene: {fileID: 305542259}
 --- !u!114 &973024376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2057,6 +2069,7 @@ MonoBehaviour:
   _boss2: {fileID: 359452233}
   _player: {fileID: 244650722}
   BGM: {fileID: 1808773434}
+  rr: {fileID: 1945093337}
 --- !u!1 &983437318
 GameObject:
   m_ObjectHideFlags: 0
@@ -5016,6 +5029,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zawal: {fileID: 244650722}
   boss: {fileID: 359452233}
+  ff: {fileID: 1804171199}
 --- !u!1 &1514806973
 GameObject:
   m_ObjectHideFlags: 0
@@ -5407,7 +5421,7 @@ Transform:
   m_GameObject: {fileID: 1653228238}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6940,7 +6954,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!320 &1804171200
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -7182,8 +7196,6 @@ PlayableDirector:
     value: {fileID: 251516333}
   - key: {fileID: 7973746434672580435, guid: d19294381c269554c88e2835641c3dca, type: 2}
     value: {fileID: 983437320}
-  - key: {fileID: 721673205694769567, guid: d19294381c269554c88e2835641c3dca, type: 2}
-    value: {fileID: 314692542}
   m_ExposedReferences:
     m_References:
     - 94f2ed2d0ace9eb47aaeacf530fa8655: {fileID: 451156256}
