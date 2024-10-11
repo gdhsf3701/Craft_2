@@ -17,6 +17,7 @@ public class Stage5Door : MonoBehaviour
     [SerializeField] private CanvasGroup _boss2;
     [SerializeField] private CanvasGroup _player;
     [SerializeField] private BgmManger BGM;
+    [SerializeField] private Transform rr;
     private bool _isPlayer = false;
     private Transform _playerTrm;
 
@@ -61,6 +62,7 @@ public class Stage5Door : MonoBehaviour
 
         if (ChatSystem.Instance != null)
         {
+            rr.rotation = new Quaternion(0, 180, 0, 1);
             ChatSystem.Instance.Boss1(_player, "금자월", "이제서야.. 도착했어.", 0.5f);
             yield return new WaitUntil(() => ChatSystem.Instance.endText == true);
         }
@@ -68,6 +70,7 @@ public class Stage5Door : MonoBehaviour
         yield return new WaitForSeconds(2);
 
                     timelineOne.Play();
+                   
     }
 
 }
